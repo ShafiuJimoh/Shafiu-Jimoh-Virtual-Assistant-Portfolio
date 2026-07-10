@@ -3,195 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shafiu Jimoh - Executive Virtual Assistant & Digital Marketing Expert</title>
-    <meta name="description" content="Executive Virtual Assistant with 2.5+ years experience in automation, SEO optimization, and strategic content creation. Proven results: 45% traffic growth, 95% client retention.">
+    <title>Shafiu Jimoh | Executive Virtual Assistant & Remote Operations Specialist</title>
+    <meta name="description" content="Shafiu Jimoh — Executive Virtual Assistant, Personal Assistant & Remote Operations Specialist with 4+ years experience. 95% client retention, 100% on-time delivery, $75,000+ revenue contribution. Available globally.">
+    <meta name="keywords" content="Virtual Assistant, Executive Assistant, Personal Assistant, Remote Operations, Workflow Automation, Calendar Management, Administrative Support, Abuja Nigeria">
     <link rel="icon" type="image/png" href="logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">SJ</div>
+            <div class="preloader-bar"><div class="preloader-fill"></div></div>
+            <p class="preloader-text">Loading Experience...</p>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="logo.png" alt="Shady Shafiu Services Logo" class="logo-img">
+                <img src="logo.png" alt="Shafiu Jimoh Logo" class="logo-img">
                 <span class="logo-text">SHAFIU JIMOH</span>
             </div>
             <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#impact" class="nav-link">Impact</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#contact" class="nav-link cta-btn">Let's Connect</a></li>
+                <li><a href="#certifications" class="nav-link">Credentials</a></li>
+                <li><a href="#contact" class="nav-link cta-btn">Hire Me</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with 3D Canvas -->
     <section id="home" class="hero-section">
-        <div class="hero-background">
-            <div class="hero-shape shape-1"></div>
-            <div class="hero-shape shape-2"></div>
-            <div class="hero-shape shape-3"></div>
-        </div>
+        <canvas id="heroCanvas" class="hero-canvas"></canvas>
+        <div class="hero-overlay"></div>
         <div class="container hero-content">
             <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Available for Remote Work Globally</span>
+                </div>
                 <h1 class="hero-title">
-                    <span class="title-line">Executive Virtual Assistant</span>
-                    <span class="title-line accent">Transforming Operations Through</span>
-                    <span class="title-line gradient-text">Strategic Automation</span>
+                    <span class="title-line">Executive &amp;</span>
+                    <span class="title-line gradient-text">Virtual Assistant</span>
+                    <span class="title-line">That Delivers Results</span>
                 </h1>
                 <p class="hero-subtitle">
-                    I help businesses achieve operational excellence through expert administration, 
-                    workflow automation, and data-driven digital marketing strategies. With 2.5+ years 
-                    of proven experience, I deliver measurable results that drive growth.
+                    4+ years of C-suite executive support, workflow automation, and multi-timezone remote operations.
+                    I don't just assist — I <strong>transform how businesses operate</strong>.
                 </p>
                 <div class="hero-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">2.5+</div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-number counter" data-target="4">0</div>
+                        <div class="stat-suffix">+</div>
                         <div class="stat-label">Years Experience</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">45%</div>
-                        <div class="stat-label">Traffic Growth</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">95%</div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-number counter" data-target="95">0</div>
+                        <div class="stat-suffix">%</div>
                         <div class="stat-label">Client Retention</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label">Clients Managed</div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-number counter" data-target="100">0</div>
+                        <div class="stat-suffix">%</div>
+                        <div class="stat-label">On-Time Delivery</div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-number">$75K</div>
+                        <div class="stat-suffix">+</div>
+                        <div class="stat-label">Revenue Contributed</div>
                     </div>
                 </div>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        <span>Start Your Project</span>
+                    <a href="#contact" class="btn btn-primary magnetic">
+                        <span>Start Working Together</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="#achievements" class="btn btn-secondary">
-                        <span>View My Work</span>
-                        <i class="fas fa-chart-line"></i>
+                    <a href="#experience" class="btn btn-secondary magnetic">
+                        <span>View Experience</span>
+                        <i class="fas fa-briefcase"></i>
                     </a>
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="floating-card card-1">
+                <div class="hero-3d-card" id="hero3DCard">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="profile-ring">
+                                <img src="logo.png" alt="Shafiu Jimoh" class="profile-img">
+                            </div>
+                            <h3>Shafiu Jimoh</h3>
+                            <p>Executive Virtual Assistant</p>
+                            <div class="role-tags">
+                                <span>VA</span><span>EA</span><span>PA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating-orb orb-1"></div>
+                    <div class="floating-orb orb-2"></div>
+                    <div class="floating-orb orb-3"></div>
+                </div>
+                <div class="floating-chip chip-1">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Calendar Mastery</span>
+                </div>
+                <div class="floating-chip chip-2">
                     <i class="fas fa-robot"></i>
-                    <p>Automation Expert</p>
+                    <span>Workflow Automation</span>
                 </div>
-                <div class="floating-card card-2">
+                <div class="floating-chip chip-3">
                     <i class="fas fa-chart-line"></i>
-                    <p>SEO Optimization</p>
+                    <span>80% Less Conflicts</span>
                 </div>
-                <div class="floating-card card-3">
-                    <i class="fas fa-users"></i>
-                    <p>Social Media Pro</p>
-                </div>
-                <div class="floating-card card-4">
-                    <i class="fas fa-pen-fancy"></i>
-                    <p>Content Creator</p>
+                <div class="floating-chip chip-4">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>100% Confidential</span>
                 </div>
             </div>
         </div>
         <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
             <span>Scroll to explore</span>
-            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about-section">
+        <div class="about-bg-3d" id="aboutCanvas"></div>
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Who I Am</span>
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Delivering excellence through strategic virtual assistance</p>
+                <h2 class="section-title">The Professional <span class="gradient-text">Behind the Results</span></h2>
+                <p class="section-subtitle">Precision-driven administrative excellence with a passion for operational transformation</p>
             </div>
             <div class="about-content">
-                <div class="about-image">
-                    <div class="image-wrapper">
-                        <img src="logo.png" alt="Shafiu Jimoh - Virtual Assistant Expert">
-                        <div class="image-overlay">
-                            <div class="badge badge-1">
-                                <i class="fas fa-certificate"></i>
-                                <span>6 Certifications</span>
+                <div class="about-image-wrapper">
+                    <div class="about-3d-cube" id="cube3D">
+                        <div class="cube-face front">
+                            <img src="logo.png" alt="Shafiu Jimoh">
+                        </div>
+                        <div class="cube-face back">
+                            <div class="cube-text">
+                                <i class="fas fa-star"></i>
+                                <p>4+ Years of Excellence</p>
                             </div>
-                            <div class="badge badge-2">
-                                <i class="fas fa-award"></i>
-                                <span>Award Winner</span>
+                        </div>
+                        <div class="cube-face right">
+                            <div class="cube-text">
+                                <i class="fas fa-globe"></i>
+                                <p>Global Remote Ops</p>
+                            </div>
+                        </div>
+                        <div class="cube-face left">
+                            <div class="cube-text">
+                                <i class="fas fa-bolt"></i>
+                                <p>Zero Supervision</p>
+                            </div>
+                        </div>
+                        <div class="cube-face top">
+                            <div class="cube-text">
+                                <i class="fas fa-rocket"></i>
+                                <p>Automation Expert</p>
+                            </div>
+                        </div>
+                        <div class="cube-face bottom">
+                            <div class="cube-text">
+                                <i class="fas fa-handshake"></i>
+                                <p>Trusted Partner</p>
                             </div>
                         </div>
                     </div>
+                    <div class="about-badges">
+                        <div class="about-badge b1"><i class="fas fa-certificate"></i><span>7 Certifications</span></div>
+                        <div class="about-badge b2"><i class="fas fa-globe"></i><span>Remote-First</span></div>
+                        <div class="about-badge b3"><i class="fas fa-shield-alt"></i><span>Confidential</span></div>
+                    </div>
                 </div>
                 <div class="about-text">
-                    <h3 class="about-heading">Executive Virtual Assistant with Strategic Impact</h3>
-                    <p class="about-description">
-                        With 2.5+ years of hands-on experience, I specialize in providing high-level administrative 
-                        support that transforms business operations. My expertise lies at the intersection of 
-                        <strong>executive assistance, workflow automation, and digital marketing</strong>, enabling 
-                        businesses to scale efficiently while maintaining operational excellence.
+                    <h3>Results-Driven Executive Support Specialist</h3>
+                    <p>
+                        I am a high-impact <strong>Virtual Assistant, Executive Assistant, and Personal Assistant</strong> 
+                        with 4+ years of delivering precision-driven administrative excellence to C-suite executives and 
+                        growing businesses worldwide. My expertise spans executive calendar management, email orchestration, 
+                        stakeholder coordination, HR administration, project coordination, and intelligent workflow automation.
                     </p>
-                    <p class="about-description">
-                        I've successfully managed multiple client accounts simultaneously, achieving a 
-                        <strong>95% retention rate</strong> while delivering over <strong>$50,000 in project value</strong>. 
-                        My approach combines strategic thinking with tactical execution, leveraging cutting-edge 
-                        automation tools like GoHighLevel, N8N, and Zapier to create systems that work.
+                    <p>
+                        Based in Abuja, Nigeria, I operate as a fully remote professional with a proven track record of 
+                        working <strong>independently across multiple time zones</strong> — delivering 100% on-time results 
+                        with zero supervision required. I've successfully managed 5 concurrent client accounts, contributed 
+                        to $75,000+ in client revenue, and reduced manual workloads by up to 60% through smart automation.
                     </p>
                     <div class="expertise-grid">
-                        <div class="expertise-item">
-                            <div class="expertise-icon">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
+                        <div class="expertise-item tilt-card">
+                            <div class="expertise-icon"><i class="fas fa-user-tie"></i></div>
                             <div>
-                                <h4>Executive Support</h4>
-                                <p>Calendar management, stakeholder coordination, meeting preparation</p>
+                                <h4>C-Suite Executive Support</h4>
+                                <p>Calendar, email, stakeholder & travel management at the highest level</p>
                             </div>
                         </div>
-                        <div class="expertise-item">
-                            <div class="expertise-icon">
-                                <i class="fas fa-cogs"></i>
-                            </div>
+                        <div class="expertise-item tilt-card">
+                            <div class="expertise-icon"><i class="fas fa-robot"></i></div>
                             <div>
-                                <h4>Administrative Excellence</h4>
-                                <p>Process optimization, documentation, database management</p>
+                                <h4>Workflow Automation</h4>
+                                <p>GoHighLevel, N8N, Zapier, AI agents — 40-60% workload reduction</p>
                             </div>
                         </div>
-                        <div class="expertise-item">
-                            <div class="expertise-icon">
-                                <i class="fas fa-share-alt"></i>
-                            </div>
+                        <div class="expertise-item tilt-card">
+                            <div class="expertise-icon"><i class="fas fa-project-diagram"></i></div>
                             <div>
-                                <h4>Social Media Management</h4>
-                                <p>Content planning, community building, engagement strategy</p>
+                                <h4>Project Coordination</h4>
+                                <p>Agile/Scrum, milestone tracking, vendor management, delivery assurance</p>
                             </div>
                         </div>
-                        <div class="expertise-item">
-                            <div class="expertise-icon">
-                                <i class="fas fa-rocket"></i>
-                            </div>
+                        <div class="expertise-item tilt-card">
+                            <div class="expertise-icon"><i class="fas fa-users-cog"></i></div>
                             <div>
-                                <h4>Growth Marketing</h4>
-                                <p>SEO optimization, content creation, analytics tracking</p>
+                                <h4>HR Administration</h4>
+                                <p>Recruitment support, onboarding, records management, compliance documentation</p>
                             </div>
                         </div>
                     </div>
                     <div class="about-cta">
                         <a href="#contact" class="btn btn-primary">
-                            <span>Work With Me</span>
+                            <span>Hire Me Now</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/shafiujimoh" target="_blank" class="btn btn-outline">
                             <i class="fab fa-linkedin"></i>
-                            <span>View LinkedIn</span>
+                            <span>LinkedIn Profile</span>
                         </a>
                     </div>
                 </div>
@@ -199,564 +257,221 @@
         </div>
     </section>
 
-    <!-- Achievements Slideshow Section -->
-    <section id="achievements" class="achievements-section">
+    <!-- Impact / Achievements Section -->
+    <section id="impact" class="impact-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Results That Matter</span>
-                <h2 class="section-title">Key Achievements & Metrics</h2>
-                <p class="section-subtitle">Proven track record of delivering measurable business impact</p>
+                <span class="section-tag">Quantified Impact</span>
+                <h2 class="section-title">Key Metrics & <span class="gradient-text">Achievements</span></h2>
+                <p class="section-subtitle">Numbers that prove the value I bring to every engagement</p>
             </div>
-            
-            <div class="slideshow-container">
-                <div class="slide active">
-                    <div class="slide-content">
-                        <div class="slide-image">
-                            <img src="images/metric1-traffic.jpg" alt="45% Organic Traffic Growth Achievement" loading="lazy">
-                        </div>
-                        <div class="slide-text">
-                            <div class="achievement-badge">
-                                <i class="fas fa-chart-line"></i>
-                                <span>SEO Excellence</span>
-                            </div>
-                            <h3>45% Organic Traffic Growth</h3>
-                            <p class="metric-highlight">Improved search rankings from page 3 to page 1</p>
-                            <p>Implemented comprehensive SEO strategy including keyword optimization, technical improvements, and strategic content creation. Delivered 10+ SEO-optimized pieces monthly, resulting in dramatic traffic increase and improved lead generation.</p>
-                            <div class="achievement-stats">
-                                <div class="achievement-stat">
-                                    <span class="stat-value">45%</span>
-                                    <span class="stat-label">Traffic Increase</span>
-                                </div>
-                                <div class="achievement-stat">
-                                    <span class="stat-value">Page 1</span>
-                                    <span class="stat-label">Rankings Achieved</span>
-                                </div>
-                                <div class="achievement-stat">
-                                    <span class="stat-value">10+</span>
-                                    <span class="stat-label">Articles/Month</span>
-                                </div>
-                            </div>
-                        </div>
+
+            <!-- 3D Metric Cards -->
+            <div class="metrics-3d-grid">
+                <div class="metric-3d-card" data-tilt>
+                    <div class="metric-icon-3d">
+                        <i class="fas fa-calendar-alt"></i>
                     </div>
+                    <div class="metric-value">80%</div>
+                    <div class="metric-title">Calendar Conflict Reduction</div>
+                    <div class="metric-desc">Through proactive buffer management and automated reminder systems</div>
                 </div>
-
-                <div class="slide">
-                    <div class="slide-content">
-                        <div class="slide-image">
-                            <img src="images/metric2-automation.jpg" alt="30% Efficiency Improvement Through Automation" loading="lazy">
-                        </div>
-                        <div class="slide-text">
-                            <div class="achievement-badge">
-                                <i class="fas fa-robot"></i>
-                                <span>Automation Mastery</span>
-                            </div>
-                            <h3>30% Efficiency Improvement</h3>
-                            <p class="metric-highlight">Automated workflows saving 15+ hours weekly</p>
-                            <p>Designed and implemented comprehensive automation systems using GoHighLevel, N8N, and Zapier. Created seamless integrations between CRM, email, calendar, and project management tools, eliminating manual data entry and reducing task completion time.</p>
-                            <div class="achievement-stats">
-                                <div class="achievement-stat">
-                                    <span class="stat-value">30%</span>
-                                    <span class="stat-label">Time Saved</span>
-                                </div>
-                                <div class="achievement-stat">
-                                    <span class="stat-value">15+</span>
-                                    <span class="stat-label">Hours/Week</span>
-                                </div>
-                                <div class="achievement-stat">
-                                    <span class="stat-value">Zero</span>
-                                    <span class="stat-label">Data Errors</span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="metric-3d-card" data-tilt>
+                    <div class="metric-icon-3d">
+                        <i class="fas fa-bolt"></i>
                     </div>
+                    <div class="metric-value">60%</div>
+                    <div class="metric-title">Manual Workload Reduction</div>
+                    <div class="metric-desc">Via intelligent process automation and AI-assisted workflow design</div>
                 </div>
-
-                <div class="slide">
-                    <div class="slide-content">
-                        <div class="slide-image">
-                            <img src="images/metric3-email.jpg" alt="35% Email Open Rate Achievement" loading="lazy">
-                        </div>
-                        <div class="slide-text">
-                            <div class="achievement-badge">
-                                <i class="fas fa-envelope-open-text"></i>
-                                <span>Email Marketing</span>
-                            </div>
-                            <h3>35% Email Open Rate</h3>
-                            <p class="metric-highlight">Well above industry average of 20-25%</p>
-                            <p>Crafted compelling email campaigns with optimized subject lines, personalized content, and strategic CTAs. Achieved 8% click-through rate through A/B testing and audience segmentation, directly contributing to revenue growth.</p>
-                            <div class="achievement-stats">
-                                <div class="achievement-stat">
-                                    <span class="stat-value">35%</span>
-                                    <span class="stat-label">Open Rate</span>
-                                </div>
-                                <div class="achievement-stat">
-                                    <span class="stat-value">8%</span>
-                                    <span class="stat-label">Click-Through</span>
-                                </div>
-                                <div class="achievement-stat">
-                                    <span class="stat-value">15%</span>
-                                    <span class="stat-label">Conversion Boost</span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="metric-3d-card" data-tilt>
+                    <div class="metric-icon-3d">
+                        <i class="fas fa-handshake"></i>
                     </div>
+                    <div class="metric-value">95%+</div>
+                    <div class="metric-title">Client Retention Rate</div>
+                    <div class="metric-desc">Built on reliable delivery, proactive communication and exceeding expectations</div>
                 </div>
-
-                <div class="slide">
-                    <div class="slide-content">
-                        <div class="slide-image">
-                            <img src="images/metric4-social.jpg" alt="180% Social Media Growth" loading="lazy">
-                        </div>
-                        <div class="slide-text">
-                            <div class="achievement-badge">
-                                <i class="fas fa-users"></i>
-                                <span>Social Growth</span>
-                            </div>
-                            <h3>180% Social Media Growth</h3>
-                            <p class="metric-highlight">Built community of 2,800+ engaged followers</p>
-                            <p>Developed and executed comprehensive social media strategy with content calendar, strategic posting schedule, and authentic engagement. Increased brand visibility by 40% while maintaining 5.2% engagement rate, significantly above industry benchmarks.</p>
-                            <div class="achievement-stats">
-                                <div class="achievement-stat">
-                                    <span class="stat-value">180%</span>
-                                    <span class="stat-label">Growth Rate</span>
-                                </div>
-                                <div class="achievement-stat">
-                                    <span class="stat-value">2,800+</span>
-                                    <span class="stat-label">Followers</span>
-                                </div>
-                                <div class="achievement-stat">
-                                    <span class="stat-value">5.2%</span>
-                                    <span class="stat-label">Engagement</span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="metric-3d-card" data-tilt>
+                    <div class="metric-icon-3d">
+                        <i class="fas fa-dollar-sign"></i>
                     </div>
+                    <div class="metric-value">$75K+</div>
+                    <div class="metric-title">Client Revenue Contributed</div>
+                    <div class="metric-desc">Across 5 concurrent accounts with 100% on-time delivery rate</div>
                 </div>
-
-                <div class="slide">
-                    <div class="slide-content">
-                        <div class="slide-image">
-                            <img src="images/metric5-revenue.jpg" alt="$75,000+ Revenue Generated" loading="lazy">
-                        </div>
-                        <div class="slide-text">
-                            <div class="achievement-badge">
-                                <i class="fas fa-dollar-sign"></i>
-                                <span>Revenue Impact</span>
-                            </div>
-                            <h3>$75,000+ Revenue Generated</h3>
-                            <p class="metric-highlight">Direct contribution through high-converting copy</p>
-                            <p>Created persuasive sales copy and marketing materials using proven frameworks like AIDA. Optimized landing pages, crafted compelling CTAs, and implemented conversion best practices, resulting in 15% improvement in conversion rates.</p>
-                            <div class="achievement-stats">
-                                <div class="achievement-stat">
-                                    <span class="stat-value">$75K+</span>
-                                    <span class="stat-label">Revenue</span>
-                                </div>
-                                <div class="achievement-stat">
-                                    <span class="stat-value">15%</span>
-                                    <span class="stat-label">Conversion Boost</span>
-                                </div>
-                                <div class="achievement-stat">
-                                    <span class="stat-value">100+</span>
-                                    <span class="stat-label">Projects</span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="metric-3d-card" data-tilt>
+                    <div class="metric-icon-3d">
+                        <i class="fas fa-envelope"></i>
                     </div>
+                    <div class="metric-value">200+</div>
+                    <div class="metric-title">Daily Emails Processed</div>
+                    <div class="metric-desc">Using AI-assisted triage, cutting response time from 4hrs to 45 minutes</div>
                 </div>
-
-                <div class="slide">
-                    <div class="slide-content">
-                        <div class="slide-image">
-                            <img src="images/metric6-youtube.jpg" alt="500K+ Views Per Video" loading="lazy">
-                        </div>
-                        <div class="slide-text">
-                            <div class="achievement-badge">
-                                <i class="fab fa-youtube"></i>
-                                <span>Content Creation</span>
-                            </div>
-                            <h3>500K+ Views Per Video</h3>
-                            <p class="metric-highlight">3 viral videos exceeding 500,000 views each</p>
-                            <p>Authored 100+ YouTube scripts using engaging storytelling techniques and audience psychology. Contributed to channels gaining 50,000+ subscribers with an average of 75,000 views per video through attention-grabbing hooks and strategic content structure.</p>
-                            <div class="achievement-stats">
-                                <div class="achievement-stat">
-                                    <span class="stat-value">500K+</span>
-                                    <span class="stat-label">Views/Video</span>
-                                </div>
-                                <div class="achievement-stat">
-                                    <span class="stat-value">50K+</span>
-                                    <span class="stat-label">Subscribers</span>
-                                </div>
-                                <div class="achievement-stat">
-                                    <span class="stat-value">100+</span>
-                                    <span class="stat-label">Scripts Written</span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="metric-3d-card" data-tilt>
+                    <div class="metric-icon-3d">
+                        <i class="fas fa-chart-line"></i>
                     </div>
+                    <div class="metric-value">45%</div>
+                    <div class="metric-title">Organic Traffic Growth</div>
+                    <div class="metric-desc">Data-informed content coordination and SEO strategy implementation</div>
                 </div>
-
-                <div class="slide">
-                    <div class="slide-content">
-                        <div class="slide-image">
-                            <img src="images/metric7-retention.jpg" alt="95% Client Retention Rate" loading="lazy">
-                        </div>
-                        <div class="slide-text">
-                            <div class="achievement-badge">
-                                <i class="fas fa-handshake"></i>
-                                <span>Client Success</span>
-                            </div>
-                            <h3>95% Client Retention Rate</h3>
-                            <p class="metric-highlight">Long-term partnerships built on trust and results</p>
-                            <p>Maintained exceptional client satisfaction through consistent delivery, proactive communication, and exceeding expectations. Managed relationships generating over $50,000 in project value while providing strategic guidance and operational support.</p>
-                            <div class="achievement-stats">
-                                <div class="achievement-stat">
-                                    <span class="stat-value">95%</span>
-                                    <span class="stat-label">Retention</span>
-                                </div>
-                                <div class="achievement-stat">
-                                    <span class="stat-value">$50K+</span>
-                                    <span class="stat-label">Project Value</span>
-                                </div>
-                                <div class="achievement-stat">
-                                    <span class="stat-value">5</span>
-                                    <span class="stat-label">Active Clients</span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="metric-3d-card" data-tilt>
+                    <div class="metric-icon-3d">
+                        <i class="fas fa-check-double"></i>
                     </div>
+                    <div class="metric-value">500+</div>
+                    <div class="metric-title">Zero-Error Deliverables</div>
+                    <div class="metric-desc">Systematic quality assurance protocols in every single workflow</div>
                 </div>
-
-                <div class="slide">
-                    <div class="slide-content">
-                        <div class="slide-image">
-                            <img src="images/metric8-clients.jpg" alt="5 Simultaneous Clients Managed" loading="lazy">
-                        </div>
-                        <div class="slide-text">
-                            <div class="achievement-badge">
-                                <i class="fas fa-tasks"></i>
-                                <span>Multitasking Pro</span>
-                            </div>
-                            <h3>5 Simultaneous Clients</h3>
-                            <p class="metric-highlight">Exceptional organizational and prioritization skills</p>
-                            <p>Successfully managed multiple client accounts concurrently with distinct needs, timelines, and deliverables. Utilized project management tools and time-blocking strategies to ensure all commitments were met with high quality and on schedule.</p>
-                            <div class="achievement-stats">
-                                <div class="achievement-stat">
-                                    <span class="stat-value">5</span>
-                                    <span class="stat-label">Clients</span>
-                                </div>
-                                <div class="achievement-stat">
-                                    <span class="stat-value">100%</span>
-                                    <span class="stat-label">On-Time</span>
-                                </div>
-                                <div class="achievement-stat">
-                                    <span class="stat-value">30+</span>
-                                    <span class="stat-label">Tasks/Week</span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="metric-3d-card featured" data-tilt>
+                    <div class="metric-icon-3d">
+                        <i class="fas fa-trophy"></i>
                     </div>
+                    <div class="metric-value">100%</div>
+                    <div class="metric-title">On-Time Task Completion</div>
+                    <div class="metric-desc">Across all clients, all accounts, all deliverables — no exceptions</div>
                 </div>
+            </div>
 
-                <!-- Slideshow Controls -->
-                <button class="slide-control prev" onclick="changeSlide(-1)">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="slide-control next" onclick="changeSlide(1)">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-
-                <!-- Slide Indicators -->
-                <div class="slide-indicators">
-                    <span class="indicator active" onclick="goToSlide(0)"></span>
-                    <span class="indicator" onclick="goToSlide(1)"></span>
-                    <span class="indicator" onclick="goToSlide(2)"></span>
-                    <span class="indicator" onclick="goToSlide(3)"></span>
-                    <span class="indicator" onclick="goToSlide(4)"></span>
-                    <span class="indicator" onclick="goToSlide(5)"></span>
-                    <span class="indicator" onclick="goToSlide(6)"></span>
-                    <span class="indicator" onclick="goToSlide(7)"></span>
+            <!-- Achievement Highlight -->
+            <div class="achievement-spotlight">
+                <div class="spotlight-inner glass-card">
+                    <div class="spotlight-icon"><i class="fas fa-star"></i></div>
+                    <div class="spotlight-content">
+                        <h3>Notable Achievement</h3>
+                        <p>Led a cybersecurity job search campaign for an executive client at Conscilium Tax & Consulting, successfully securing a <strong>six-figure annual compensation role</strong> with additional benefits package — <strong>within just 3 months</strong>. A testament to relentless research, strategic outreach, and executive-level project coordination.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section with 3D Elements -->
     <section id="skills" class="skills-section">
+        <div class="skills-3d-bg" id="skillsCanvas"></div>
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Expertise</span>
-                <h2 class="section-title">Core Competencies</h2>
-                <p class="section-subtitle">Comprehensive skill set across business and technical domains</p>
+                <h2 class="section-title">Core <span class="gradient-text">Competencies</span></h2>
+                <p class="section-subtitle">A comprehensive toolkit built for elite executive and virtual assistance</p>
             </div>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-robot"></i>
-                        <h3>Automation & AI</h3>
+
+            <!-- Skill Orbs / 3D Visualization -->
+            <div class="skills-3d-container">
+                <div class="skills-sphere-wrapper">
+                    <canvas id="skillsSphere" width="400" height="400"></canvas>
+                </div>
+                <div class="skills-categories">
+                    <div class="skill-category-3d active" data-category="executive">
+                        <div class="category-tab">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Executive Support</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="skill-pill-grid">
+                                <div class="skill-pill"><span>Executive Calendar Management</span><div class="pill-bar" style="--w:98%"></div></div>
+                                <div class="skill-pill"><span>Email Triage & Management</span><div class="pill-bar" style="--w:97%"></div></div>
+                                <div class="skill-pill"><span>Stakeholder Coordination</span><div class="pill-bar" style="--w:96%"></div></div>
+                                <div class="skill-pill"><span>Travel Arrangements</span><div class="pill-bar" style="--w:94%"></div></div>
+                                <div class="skill-pill"><span>Meeting Prep & Minute-Taking</span><div class="pill-bar" style="--w:97%"></div></div>
+                                <div class="skill-pill"><span>Confidential Data Handling</span><div class="pill-bar" style="--w:99%"></div></div>
+                                <div class="skill-pill"><span>Vendor & Consultant Management</span><div class="pill-bar" style="--w:92%"></div></div>
+                                <div class="skill-pill"><span>Multi-Timezone Scheduling</span><div class="pill-bar" style="--w:95%"></div></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">GoHighLevel CRM</span>
-                                <span class="skill-level">Expert</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
+                    <div class="skill-category-3d" data-category="automation">
+                        <div class="category-tab">
+                            <i class="fas fa-robot"></i>
+                            <span>Automation & AI</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="skill-pill-grid">
+                                <div class="skill-pill"><span>GoHighLevel CRM</span><div class="pill-bar" style="--w:95%"></div></div>
+                                <div class="skill-pill"><span>N8N Workflows</span><div class="pill-bar" style="--w:93%"></div></div>
+                                <div class="skill-pill"><span>Zapier Automation</span><div class="pill-bar" style="--w:95%"></div></div>
+                                <div class="skill-pill"><span>AI-Assisted Task Management</span><div class="pill-bar" style="--w:90%"></div></div>
+                                <div class="skill-pill"><span>Apify & OpenRouter</span><div class="pill-bar" style="--w:85%"></div></div>
+                                <div class="skill-pill"><span>Email Categorization Automation</span><div class="pill-bar" style="--w:92%"></div></div>
+                                <div class="skill-pill"><span>AI Agents & MCP</span><div class="pill-bar" style="--w:88%"></div></div>
+                                <div class="skill-pill"><span>Onboarding Workflow Systems</span><div class="pill-bar" style="--w:91%"></div></div>
                             </div>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">N8N Workflows</span>
-                                <span class="skill-level">Expert</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                    <div class="skill-category-3d" data-category="tools">
+                        <div class="category-tab">
+                            <i class="fas fa-tools"></i>
+                            <span>Tech Tools</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="skill-pill-grid">
+                                <div class="skill-pill"><span>Google Workspace (Full Suite)</span><div class="pill-bar" style="--w:98%"></div></div>
+                                <div class="skill-pill"><span>Microsoft Office 365</span><div class="pill-bar" style="--w:96%"></div></div>
+                                <div class="skill-pill"><span>Excel (Pivot, VLOOKUP, Validation)</span><div class="pill-bar" style="--w:92%"></div></div>
+                                <div class="skill-pill"><span>WordPress CMS</span><div class="pill-bar" style="--w:90%"></div></div>
+                                <div class="skill-pill"><span>Trello & Asana</span><div class="pill-bar" style="--w:93%"></div></div>
+                                <div class="skill-pill"><span>Slack / Zoom / Teams</span><div class="pill-bar" style="--w:97%"></div></div>
+                                <div class="skill-pill"><span>CSV/JSON Data Processing</span><div class="pill-bar" style="--w:88%"></div></div>
+                                <div class="skill-pill"><span>CRM Systems</span><div class="pill-bar" style="--w:91%"></div></div>
                             </div>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Zapier Automation</span>
-                                <span class="skill-level">Expert</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                    <div class="skill-category-3d" data-category="project">
+                        <div class="category-tab">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Project Management</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="skill-pill-grid">
+                                <div class="skill-pill"><span>Agile Methodology</span><div class="pill-bar" style="--w:92%"></div></div>
+                                <div class="skill-pill"><span>Scrum Framework</span><div class="pill-bar" style="--w:90%"></div></div>
+                                <div class="skill-pill"><span>PMP Standards</span><div class="pill-bar" style="--w:87%"></div></div>
+                                <div class="skill-pill"><span>Milestone & Deliverable Tracking</span><div class="pill-bar" style="--w:95%"></div></div>
+                                <div class="skill-pill"><span>Client Onboarding Workflows</span><div class="pill-bar" style="--w:96%"></div></div>
+                                <div class="skill-pill"><span>Resource Planning</span><div class="pill-bar" style="--w:88%"></div></div>
+                                <div class="skill-pill"><span>Cross-functional Coordination</span><div class="pill-bar" style="--w:93%"></div></div>
+                                <div class="skill-pill"><span>Risk & Deadline Management</span><div class="pill-bar" style="--w:90%"></div></div>
                             </div>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">AI Agents & MCP</span>
-                                <span class="skill-level">Advanced</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                    <div class="skill-category-3d" data-category="hr">
+                        <div class="category-tab">
+                            <i class="fas fa-users-cog"></i>
+                            <span>HR & Admin</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="skill-pill-grid">
+                                <div class="skill-pill"><span>HR Administration</span><div class="pill-bar" style="--w:90%"></div></div>
+                                <div class="skill-pill"><span>Recruitment Support</span><div class="pill-bar" style="--w:88%"></div></div>
+                                <div class="skill-pill"><span>Employee Onboarding</span><div class="pill-bar" style="--w:92%"></div></div>
+                                <div class="skill-pill"><span>Records & Compliance Management</span><div class="pill-bar" style="--w:94%"></div></div>
+                                <div class="skill-pill"><span>Documentation Management</span><div class="pill-bar" style="--w:97%"></div></div>
+                                <div class="skill-pill"><span>Data Entry & Validation</span><div class="pill-bar" style="--w:99%"></div></div>
+                                <div class="skill-pill"><span>Reporting & Analytics</span><div class="pill-bar" style="--w:91%"></div></div>
+                                <div class="skill-pill"><span>Process Improvement</span><div class="pill-bar" style="--w:93%"></div></div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Digital Marketing</h3>
-                    </div>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">SEO Optimization</span>
-                                <span class="skill-level">Expert</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">WordPress Management</span>
-                                <span class="skill-level">Expert</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Content Strategy</span>
-                                <span class="skill-level">Expert</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Social Media Marketing</span>
-                                <span class="skill-level">Advanced</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-tools"></i>
-                        <h3>Business Tools</h3>
-                    </div>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Microsoft Office 365</span>
-                                <span class="skill-level">Advanced</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Google Workspace</span>
-                                <span class="skill-level">Advanced</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Trello & Asana</span>
-                                <span class="skill-level">Advanced</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Database Management</span>
-                                <span class="skill-level">Advanced</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-project-diagram"></i>
-                        <h3>Project Management</h3>
-                    </div>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Agile Methodology</span>
-                                <span class="skill-level">Advanced</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Scrum Framework</span>
-                                <span class="skill-level">Advanced</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">PMP Standards</span>
-                                <span class="skill-level">Advanced</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Resource Planning</span>
-                                <span class="skill-level">Advanced</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-user-tie"></i>
-                        <h3>Executive Support</h3>
-                    </div>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Calendar Management</span>
-                                <span class="skill-level">Expert</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Stakeholder Coordination</span>
-                                <span class="skill-level">Expert</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Meeting Preparation</span>
-                                <span class="skill-level">Expert</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Confidential Communication</span>
-                                <span class="skill-level">Expert</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-pen-fancy"></i>
-                        <h3>Content Creation</h3>
-                    </div>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Copywriting</span>
-                                <span class="skill-level">Expert</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">YouTube Scriptwriting</span>
-                                <span class="skill-level">Expert</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Email Campaigns</span>
-                                <span class="skill-level">Expert</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Blog Articles</span>
-                                <span class="skill-level">Expert</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Tool Stack -->
+            <div class="tool-stack">
+                <h3>Tool Stack</h3>
+                <div class="tool-icons">
+                    <div class="tool-icon" data-tool="Google Workspace"><i class="fab fa-google"></i><span>Google</span></div>
+                    <div class="tool-icon" data-tool="Microsoft Office"><i class="fab fa-microsoft"></i><span>Microsoft</span></div>
+                    <div class="tool-icon" data-tool="WordPress"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
+                    <div class="tool-icon" data-tool="Slack"><i class="fab fa-slack"></i><span>Slack</span></div>
+                    <div class="tool-icon" data-tool="Zoom"><i class="fas fa-video"></i><span>Zoom</span></div>
+                    <div class="tool-icon" data-tool="Trello"><i class="fab fa-trello"></i><span>Trello</span></div>
+                    <div class="tool-icon" data-tool="GitHub"><i class="fab fa-github"></i><span>GitHub</span></div>
+                    <div class="tool-icon" data-tool="LinkedIn"><i class="fab fa-linkedin"></i><span>LinkedIn</span></div>
+                    <div class="tool-icon" data-tool="GoHighLevel"><i class="fas fa-rocket"></i><span>GHL</span></div>
+                    <div class="tool-icon" data-tool="N8N"><i class="fas fa-network-wired"></i><span>N8N</span></div>
+                    <div class="tool-icon" data-tool="Zapier"><i class="fas fa-bolt"></i><span>Zapier</span></div>
+                    <div class="tool-icon" data-tool="Asana"><i class="fas fa-tasks"></i><span>Asana</span></div>
                 </div>
             </div>
         </div>
@@ -767,152 +482,92 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">What I Offer</span>
-                <h2 class="section-title">Services</h2>
-                <p class="section-subtitle">Comprehensive solutions tailored to your business needs</p>
+                <h2 class="section-title">Services Built for <span class="gradient-text">Real Results</span></h2>
+                <p class="section-subtitle">Comprehensive remote support tailored for executives, founders, and growing teams</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3 class="service-title">Executive Virtual Assistance</h3>
-                    <p class="service-description">
-                        Comprehensive high-level administrative support including calendar management, email correspondence, 
-                        travel planning, meeting preparation, document organization, and strategic stakeholder coordination.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Calendar & schedule management</li>
-                        <li><i class="fas fa-check"></i> Email & inbox organization</li>
-                        <li><i class="fas fa-check"></i> Meeting coordination & prep</li>
-                        <li><i class="fas fa-check"></i> Travel arrangements</li>
-                        <li><i class="fas fa-check"></i> Document management</li>
+            <div class="services-grid-3d">
+                <div class="service-card-3d">
+                    <div class="service-glow"></div>
+                    <div class="service-icon-3d"><i class="fas fa-user-tie"></i></div>
+                    <h3>Executive Assistance</h3>
+                    <p>Complete C-suite support — calendars, emails, travel, stakeholder management, meeting prep, and confidential communications handled with precision and discretion.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Multi-timezone calendar orchestration</li>
+                        <li><i class="fas fa-check"></i> Email triage & executive correspondence</li>
+                        <li><i class="fas fa-check"></i> Meeting agendas & minute-taking</li>
+                        <li><i class="fas fa-check"></i> Travel & appointment coordination</li>
+                        <li><i class="fas fa-check"></i> Confidential document management</li>
                     </ul>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3 class="service-title">Administrative Support</h3>
-                    <p class="service-description">
-                        Professional administrative services including data entry, document preparation, research, 
-                        database management, and operational support to streamline your business processes.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Data entry & management</li>
-                        <li><i class="fas fa-check"></i> Document preparation</li>
-                        <li><i class="fas fa-check"></i> Research & analysis</li>
-                        <li><i class="fas fa-check"></i> Database organization</li>
-                        <li><i class="fas fa-check"></i> Process documentation</li>
+                <div class="service-card-3d">
+                    <div class="service-glow"></div>
+                    <div class="service-icon-3d"><i class="fas fa-user-circle"></i></div>
+                    <h3>Personal Assistance</h3>
+                    <p>Dedicated personal support for busy professionals — from scheduling personal appointments and managing lifestyle tasks to research, errands and day-to-day life management.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Personal calendar & schedule management</li>
+                        <li><i class="fas fa-check"></i> Research & information gathering</li>
+                        <li><i class="fas fa-check"></i> Personal & family task coordination</li>
+                        <li><i class="fas fa-check"></i> Vendor & service provider liaison</li>
+                        <li><i class="fas fa-check"></i> Reminder systems & follow-up protocols</li>
                     </ul>
                 </div>
 
-                <div class="service-card featured">
-                    <div class="featured-badge">Most Popular</div>
-                    <div class="service-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3 class="service-title">Process Automation</h3>
-                    <p class="service-description">
-                        Expert automation solutions using GoHighLevel, N8N, and Zapier. Create seamless workflows 
-                        that eliminate manual tasks, reduce errors, and dramatically improve operational efficiency.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> GoHighLevel CRM setup</li>
-                        <li><i class="fas fa-check"></i> Zapier workflow automation</li>
-                        <li><i class="fas fa-check"></i> N8N process optimization</li>
+                <div class="service-card-3d featured-service">
+                    <div class="service-glow featured-glow"></div>
+                    <div class="featured-label">Most In-Demand</div>
+                    <div class="service-icon-3d"><i class="fas fa-robot"></i></div>
+                    <h3>Workflow Automation</h3>
+                    <p>Transform manual, time-consuming processes into intelligent automated systems. Reduce your workload by 40-60% using AI-powered tools and custom integrations.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> GoHighLevel CRM automation</li>
+                        <li><i class="fas fa-check"></i> N8N & Zapier workflow design</li>
                         <li><i class="fas fa-check"></i> AI agent implementation</li>
-                        <li><i class="fas fa-check"></i> Custom integrations</li>
+                        <li><i class="fas fa-check"></i> Automated onboarding systems</li>
+                        <li><i class="fas fa-check"></i> Email automation & categorization</li>
                     </ul>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="service-title">Digital Marketing & SEO</h3>
-                    <p class="service-description">
-                        Strategic digital marketing services including SEO optimization, content strategy, WordPress 
-                        management, and comprehensive analytics to drive traffic and improve online visibility.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> SEO optimization</li>
-                        <li><i class="fas fa-check"></i> Content strategy</li>
-                        <li><i class="fas fa-check"></i> WordPress management</li>
-                        <li><i class="fas fa-check"></i> Analytics & reporting</li>
-                        <li><i class="fas fa-check"></i> Keyword research</li>
+                <div class="service-card-3d">
+                    <div class="service-glow"></div>
+                    <div class="service-icon-3d"><i class="fas fa-project-diagram"></i></div>
+                    <h3>Project Coordination</h3>
+                    <p>End-to-end project management support — from planning and milestone tracking to vendor coordination and stakeholder reporting, using Agile and Scrum methodologies.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Agile/Scrum project management</li>
+                        <li><i class="fas fa-check"></i> Milestone & deadline tracking</li>
+                        <li><i class="fas fa-check"></i> Cross-functional team coordination</li>
+                        <li><i class="fas fa-check"></i> Vendor & consultant management</li>
+                        <li><i class="fas fa-check"></i> Executive reporting & analytics</li>
                     </ul>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-share-alt"></i>
-                    </div>
-                    <h3 class="service-title">Social Media Management</h3>
-                    <p class="service-description">
-                        Full-service social media management including content creation, community building, engagement 
-                        strategies, content calendars, and performance analytics across all major platforms.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Content calendar creation</li>
-                        <li><i class="fas fa-check"></i> Community engagement</li>
-                        <li><i class="fas fa-check"></i> Brand visibility strategy</li>
-                        <li><i class="fas fa-check"></i> Performance analytics</li>
-                        <li><i class="fas fa-check"></i> Multi-platform management</li>
+                <div class="service-card-3d">
+                    <div class="service-glow"></div>
+                    <div class="service-icon-3d"><i class="fas fa-users-cog"></i></div>
+                    <h3>HR & Administrative Support</h3>
+                    <p>Professional HR administration and comprehensive administrative support — from recruitment and onboarding to records management, compliance documentation, and data handling.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Recruitment & candidate sourcing</li>
+                        <li><i class="fas fa-check"></i> Employee onboarding coordination</li>
+                        <li><i class="fas fa-check"></i> Personnel records management</li>
+                        <li><i class="fas fa-check"></i> Data entry & structured reporting</li>
+                        <li><i class="fas fa-check"></i> Compliance & documentation management</li>
                     </ul>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-pen-fancy"></i>
-                    </div>
-                    <h3 class="service-title">Content Creation & Copywriting</h3>
-                    <p class="service-description">
-                        Professional content creation services including copywriting, YouTube scriptwriting, email 
-                        campaigns, blog articles, and strategic content that drives engagement and conversions.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Sales copywriting</li>
-                        <li><i class="fas fa-check"></i> YouTube scripts</li>
-                        <li><i class="fas fa-check"></i> Email campaigns</li>
-                        <li><i class="fas fa-check"></i> Blog articles</li>
-                        <li><i class="fas fa-check"></i> Landing page copy</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h3 class="service-title">Project Management</h3>
-                    <p class="service-description">
-                        Professional project management using Agile and Scrum methodologies. Coordinate cross-functional 
-                        teams, manage timelines, resources, and deliver projects successfully on schedule.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Agile project management</li>
-                        <li><i class="fas fa-check"></i> Scrum implementation</li>
-                        <li><i class="fas fa-check"></i> Resource planning</li>
-                        <li><i class="fas fa-check"></i> Timeline management</li>
-                        <li><i class="fas fa-check"></i> Team coordination</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="service-title">HR & Training Consulting</h3>
-                    <p class="service-description">
-                        Human resource consulting including recruitment support, performance evaluation, employee 
-                        engagement strategies, and comprehensive training programs for virtual assistance tools.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> HR management support</li>
-                        <li><i class="fas fa-check"></i> Recruitment assistance</li>
-                        <li><i class="fas fa-check"></i> Performance evaluation</li>
-                        <li><i class="fas fa-check"></i> Training programs</li>
-                        <li><i class="fas fa-check"></i> Employee engagement</li>
+                <div class="service-card-3d">
+                    <div class="service-glow"></div>
+                    <div class="service-icon-3d"><i class="fas fa-chart-line"></i></div>
+                    <h3>Digital Operations & SEO</h3>
+                    <p>Strategic digital presence management including SEO optimization, WordPress content management, social media administration, data analytics, and content coordination.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> SEO content optimization</li>
+                        <li><i class="fas fa-check"></i> WordPress CMS management</li>
+                        <li><i class="fas fa-check"></i> Social media administration</li>
+                        <li><i class="fas fa-check"></i> Analytics & performance reporting</li>
+                        <li><i class="fas fa-check"></i> Content calendar management</li>
                     </ul>
                 </div>
             </div>
@@ -924,166 +579,264 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Professional Journey</span>
-                <h2 class="section-title">Work Experience</h2>
-                <p class="section-subtitle">Proven track record across diverse roles and industries</p>
+                <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+                <p class="section-subtitle">A proven track record across executive, administrative, and operational roles</p>
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Executive Virtual Assistant</h3>
-                            <span class="company">ICMGx Agency</span>
-                            <span class="period">January 2025 - Present</span>
+            <div class="timeline-3d">
+                <!-- Role 1 -->
+                <div class="timeline-item-3d">
+                    <div class="timeline-connector">
+                        <div class="connector-line"></div>
+                        <div class="connector-dot pulse-dot"></div>
+                    </div>
+                    <div class="timeline-card-3d glass-card">
+                        <div class="timeline-header-3d">
+                            <div class="role-info">
+                                <h3>Executive Assistant & Project Coordinator</h3>
+                                <span class="company-tag">Conscilium Tax &amp; Consulting</span>
+                            </div>
+                            <div class="period-badge">Dec 2025 – May 2026</div>
                         </div>
-                        <ul class="timeline-achievements">
-                            <li>Manage multiple client accounts with 95% retention rate, generating over $50K in project value</li>
-                            <li>Improved task completion efficiency by 30% through automation workflows using GoHighLevel, N8N, and Zapier</li>
-                            <li>Increased client websites' organic traffic by 45% through strategic SEO content optimization</li>
-                            <li>Create and upload 10+ SEO-optimized pieces monthly, boosting search rankings from page 3 to page 1</li>
-                            <li>Provide executive calendar management, inbox control, and strategic scheduling across multiple time zones</li>
+                        <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Abuja, Nigeria | Hybrid</div>
+                        <ul class="achievement-list">
+                            <li><i class="fas fa-chevron-right"></i> Served as Executive Assistant and strategic operational support to the CEO, managing multi-business operations</li>
+                            <li><i class="fas fa-chevron-right"></i> Managed and synchronized complex business and personal calendars, eliminating double-bookings and reducing conflicts by 80%</li>
+                            <li><i class="fas fa-chevron-right"></i> Triaged and prioritized 200+ daily executive emails using AI-assisted systems, cutting response time from 4 hours to 45 minutes</li>
+                            <li><i class="fas fa-chevron-right"></i> Coordinated international business activities, stakeholder engagements, vendor management, and executive communications</li>
+                            <li><i class="fas fa-chevron-right"></i> Tracked project milestones, deliverables, and operational deadlines across multiple client accounts using Agile frameworks</li>
+                            <li><i class="fas fa-chevron-right"></i> Led cybersecurity job search activities for a client, securing a six-figure annual compensation role within 3 months</li>
+                            <li><i class="fas fa-chevron-right"></i> Conducted market research, business research, and executive reporting to support high-stakes decision-making</li>
+                            <li><i class="fas fa-chevron-right"></i> Designed automated administrative workflows integrating AI tools, reducing processing effort by 40%</li>
                         </ul>
-                        <div class="timeline-skills">
-                            <span>Executive Assistance</span>
-                            <span>Automation</span>
-                            <span>SEO</span>
-                            <span>Client Management</span>
+                        <div class="timeline-tags">
+                            <span>Executive Support</span><span>Calendar Management</span><span>Project Coordination</span><span>Automation</span><span>Stakeholder Management</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Freelance Copywriter</h3>
-                            <span class="company">Self-Employed</span>
-                            <span class="period">June 2023 - Present</span>
+                <!-- Role 2 -->
+                <div class="timeline-item-3d">
+                    <div class="timeline-connector">
+                        <div class="connector-line"></div>
+                        <div class="connector-dot"></div>
+                    </div>
+                    <div class="timeline-card-3d glass-card">
+                        <div class="timeline-header-3d">
+                            <div class="role-info">
+                                <h3>Administrative & Data Operations Specialist</h3>
+                                <span class="company-tag">TermiteMD</span>
+                            </div>
+                            <div class="period-badge">Mar 2025 – Sep 2025</div>
                         </div>
-                        <ul class="timeline-achievements">
-                            <li>Delivered high-converting copy that increased audience engagement by 20% and conversion rates by 15%</li>
-                            <li>Developed email campaigns achieving 35% open rates and 8% click-through rates</li>
-                            <li>Created persuasive sales copy resulting in $75K+ in client revenue generation</li>
-                            <li>Specialized in long-form content, landing pages, and email marketing sequences</li>
+                        <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Remote</div>
+                        <ul class="achievement-list">
+                            <li><i class="fas fa-chevron-right"></i> Scraped, normalized, and validated web data at scale — delivering zero-error structured reports in CSV and Google Sheets formats</li>
+                            <li><i class="fas fa-chevron-right"></i> Updated and maintained WordPress CMS pages with meticulous attention to content accuracy and user experience</li>
+                            <li><i class="fas fa-chevron-right"></i> Organized digital workspaces and workflow documentation, improving cross-team data accessibility and reducing retrieval time by 50%+</li>
+                            <li><i class="fas fa-chevron-right"></i> Monitored site structure changes and autonomously adapted data collection protocols to maintain consistency</li>
                         </ul>
-                        <div class="timeline-skills">
-                            <span>Copywriting</span>
-                            <span>Email Marketing</span>
-                            <span>Sales Copy</span>
-                            <span>Conversion Optimization</span>
+                        <div class="timeline-tags">
+                            <span>Data Operations</span><span>WordPress</span><span>Data Validation</span><span>Independent Execution</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>YouTube Scriptwriter</h3>
-                            <span class="company">Self-Employed</span>
-                            <span class="period">June 2023 - Present</span>
+                <!-- Role 3 -->
+                <div class="timeline-item-3d">
+                    <div class="timeline-connector">
+                        <div class="connector-line"></div>
+                        <div class="connector-dot"></div>
+                    </div>
+                    <div class="timeline-card-3d glass-card">
+                        <div class="timeline-header-3d">
+                            <div class="role-info">
+                                <h3>Virtual Assistant & Client Operations Manager</h3>
+                                <span class="company-tag">ICMGx Agency</span>
+                            </div>
+                            <div class="period-badge">Jan 2025 – Dec 2025</div>
                         </div>
-                        <ul class="timeline-achievements">
-                            <li>Authored 100+ scripts for YouTube channels, generating average of 75K views per video</li>
-                            <li>Contributed to channels gaining 50K+ subscribers through engaging storytelling content</li>
-                            <li>Delivered scripts for 3 viral videos exceeding 500K views each</li>
-                            <li>Expertise in educational content, entertainment, and business-focused video scripts</li>
+                        <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Remote</div>
+                        <ul class="achievement-list">
+                            <li><i class="fas fa-chevron-right"></i> Simultaneously managed 5 concurrent client accounts, contributing to $75,000+ in total client revenue with 100% on-time delivery</li>
+                            <li><i class="fas fa-chevron-right"></i> Engineered automated onboarding and workflow systems, reducing manual administrative workload by 60%</li>
+                            <li><i class="fas fa-chevron-right"></i> Provided comprehensive executive support including email management, scheduling, meeting documentation, and communication management</li>
+                            <li><i class="fas fa-chevron-right"></i> Managed WordPress publishing, SEO optimization, and content workflows for diverse client brand portfolios</li>
+                            <li><i class="fas fa-chevron-right"></i> Developed structured data strategies aligning administrative processes with client business objectives</li>
+                            <li><i class="fas fa-chevron-right"></i> Implemented workflow automation solutions improving productivity and efficiency across all client accounts</li>
                         </ul>
-                        <div class="timeline-skills">
-                            <span>Scriptwriting</span>
-                            <span>YouTube Strategy</span>
-                            <span>Storytelling</span>
-                            <span>Content Creation</span>
+                        <div class="timeline-tags">
+                            <span>Multi-Account Management</span><span>Process Automation</span><span>SEO</span><span>WordPress</span><span>Client Relations</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Administrative Intern</h3>
-                            <span class="company">Nigerian Airspace Management Agency (NAMA)</span>
-                            <span class="period">August 2023</span>
+                <!-- Role 4 -->
+                <div class="timeline-item-3d">
+                    <div class="timeline-connector">
+                        <div class="connector-line"></div>
+                        <div class="connector-dot"></div>
+                    </div>
+                    <div class="timeline-card-3d glass-card">
+                        <div class="timeline-header-3d">
+                            <div class="role-info">
+                                <h3>NYSC Administrative & HR Intern</h3>
+                                <span class="company-tag">Nigerian Airspace Management Agency (NAMA)</span>
+                            </div>
+                            <div class="period-badge">2024 – 2025</div>
                         </div>
-                        <ul class="timeline-achievements">
-                            <li>Optimized office operations by digitizing filing systems, reducing document retrieval time by 40%</li>
-                            <li>Created detailed reports and presentations for senior management</li>
-                            <li>Maintained accurate database records with high accuracy</li>
-                            <li>Supported cross-functional teams in administrative and operational tasks</li>
+                        <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Abuja, Nigeria</div>
+                        <ul class="achievement-list">
+                            <li><i class="fas fa-chevron-right"></i> Served within the Administration and Human Resources departments during the National Youth Service Corps programme</li>
+                            <li><i class="fas fa-chevron-right"></i> Coordinated administrative activities across multiple departments and operational units within a federal agency</li>
+                            <li><i class="fas fa-chevron-right"></i> Assisted with employee documentation, records management, onboarding support, and personnel administration</li>
+                            <li><i class="fas fa-chevron-right"></i> Scheduled meetings, prepared reports, managed correspondence, and maintained departmental records</li>
+                            <li><i class="fas fa-chevron-right"></i> Assisted with compliance documentation, information management, and confidential record handling</li>
+                            <li><i class="fas fa-chevron-right"></i> Participated in specialized administrative assignments supporting security-related operations</li>
                         </ul>
-                        <div class="timeline-skills">
-                            <span>Administration</span>
-                            <span>Documentation</span>
-                            <span>Database Management</span>
-                            <span>Process Optimization</span>
+                        <div class="timeline-tags">
+                            <span>HR Administration</span><span>Records Management</span><span>Compliance</span><span>Government Operations</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Social Media Manager</h3>
-                            <span class="company">Self-Employed</span>
-                            <span class="period">March 2022 - Present</span>
+                <!-- Role 5 -->
+                <div class="timeline-item-3d">
+                    <div class="timeline-connector">
+                        <div class="connector-line"></div>
+                        <div class="connector-dot"></div>
+                    </div>
+                    <div class="timeline-card-3d glass-card">
+                        <div class="timeline-header-3d">
+                            <div class="role-info">
+                                <h3>Freelance Virtual Assistant & Digital Operations Specialist</h3>
+                                <span class="company-tag">Self-Employed (Multiple Clients)</span>
+                            </div>
+                            <div class="period-badge">2022 – Dec 2024</div>
                         </div>
-                        <ul class="timeline-achievements">
-                            <li>Built and managed community of 2,800+ followers with 5.2% engagement rate</li>
-                            <li>Increased follower growth by 180% over 24 months through strategic content planning</li>
-                            <li>Created content calendar resulting in 40% increase in brand visibility</li>
-                            <li>Managed multiple social media platforms including Instagram, Twitter, and LinkedIn</li>
+                        <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Remote | E-commerce, Real Estate, Fashion, Media</div>
+                        <ul class="achievement-list">
+                            <li><i class="fas fa-chevron-right"></i> Delivered virtual assistance, content management, and digital analytics for clients: Ocean Wealth U Commerce, Bid3 Realty, Fashion Quirk</li>
+                            <li><i class="fas fa-chevron-right"></i> Designed data collection workflows gathering structured performance metrics from Instagram Insights and TikTok Analytics</li>
+                            <li><i class="fas fa-chevron-right"></i> Developed and maintained content calendars and reporting pipelines ensuring consistent performance tracking</li>
+                            <li><i class="fas fa-chevron-right"></i> Managed social media accounts (Mar 2022 – present), developing content strategies for brand visibility and engagement</li>
+                            <li><i class="fas fa-chevron-right"></i> Created marketing, sales, and email copy for clients across multiple industries (Jun 2023 – present)</li>
+                            <li><i class="fas fa-chevron-right"></i> Researched, wrote, and structured YouTube scripts for digital content creators, supporting audience retention and growth</li>
                         </ul>
-                        <div class="timeline-skills">
-                            <span>Social Media</span>
-                            <span>Community Building</span>
-                            <span>Content Strategy</span>
-                            <span>Analytics</span>
+                        <div class="timeline-tags">
+                            <span>Virtual Assistance</span><span>Social Media</span><span>Content Creation</span><span>Copywriting</span><span>Analytics</span>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="certifications-container">
-                <h3 class="certifications-title">Professional Certifications</h3>
-                <div class="certifications-grid">
-                    <div class="cert-card">
-                        <i class="fas fa-certificate"></i>
-                        <h4>Virtual Assistant Certificate</h4>
-                        <p>ALX Africa</p>
-                        <span class="cert-year">2024</span>
-                    </div>
-                    <div class="cert-card">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h4>Professional Diploma of Virtual Executive Assistant</h4>
-                        <p>MTF Institute - Udemy</p>
-                        <span class="cert-year">2025</span>
-                    </div>
-                    <div class="cert-card">
-                        <i class="fas fa-project-diagram"></i>
-                        <h4>Project Management Certification</h4>
-                        <p>Udemy</p>
-                        <span class="cert-year">2025</span>
-                    </div>
-                    <div class="cert-card">
-                        <i class="fas fa-users"></i>
-                        <h4>Advanced HR Management</h4>
-                        <p>MTF Institute - Udemy</p>
-                        <span class="cert-year">2025</span>
-                    </div>
-                    <div class="cert-card">
-                        <i class="fas fa-robot"></i>
-                        <h4>AI Automation & Workflow</h4>
-                        <p>Udemy</p>
-                        <span class="cert-year">2025</span>
-                    </div>
-                    <div class="cert-card">
-                        <i class="fas fa-tasks"></i>
-                        <h4>Agile, Scrum & PMP Methodologies</h4>
-                        <p>Udemy</p>
-                        <span class="cert-year">2025</span>
-                    </div>
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Credentials</span>
+                <h2 class="section-title">Education & <span class="gradient-text">Certifications</span></h2>
+                <p class="section-subtitle">Academically grounded, professionally certified, continuously learning</p>
+            </div>
+
+            <!-- Education -->
+            <div class="education-card glass-card">
+                <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="edu-details">
+                    <h3>Bachelor of Science — Criminology and Security Studies</h3>
+                    <p class="edu-school">University of Ilorin, Nigeria</p>
+                    <p class="edu-period">2019 – 2024 &nbsp;|&nbsp; Second Class Lower (2:2)</p>
+                    <p class="edu-note">Academic foundation in security operations, information management, compliance, and investigative procedures — directly applicable to confidential executive support roles.</p>
+                </div>
+            </div>
+
+            <!-- Certifications Grid -->
+            <div class="certs-3d-grid">
+                <div class="cert-3d-card">
+                    <div class="cert-icon-3d"><i class="fas fa-certificate"></i></div>
+                    <div class="cert-shine"></div>
+                    <h4>Professional Diploma of Virtual Executive Assistant</h4>
+                    <p>MTF Institute — Udemy</p>
+                    <span class="cert-year-badge">2025</span>
+                </div>
+                <div class="cert-3d-card">
+                    <div class="cert-icon-3d"><i class="fas fa-award"></i></div>
+                    <div class="cert-shine"></div>
+                    <h4>Virtual Assistant Certificate</h4>
+                    <p>ALX Africa</p>
+                    <span class="cert-year-badge">2024</span>
+                </div>
+                <div class="cert-3d-card">
+                    <div class="cert-icon-3d"><i class="fas fa-robot"></i></div>
+                    <div class="cert-shine"></div>
+                    <h4>AI Automation Workflow & AI Agents</h4>
+                    <p>Udemy</p>
+                    <span class="cert-year-badge">2025</span>
+                </div>
+                <div class="cert-3d-card">
+                    <div class="cert-icon-3d"><i class="fas fa-project-diagram"></i></div>
+                    <div class="cert-shine"></div>
+                    <h4>Project Management (Agile, Scrum, PMP)</h4>
+                    <p>Udemy</p>
+                    <span class="cert-year-badge">2025</span>
+                </div>
+                <div class="cert-3d-card">
+                    <div class="cert-icon-3d"><i class="fas fa-users-cog"></i></div>
+                    <div class="cert-shine"></div>
+                    <h4>Advanced Human Resource Management</h4>
+                    <p>MTF Institute — Udemy</p>
+                    <span class="cert-year-badge">2025</span>
+                </div>
+                <div class="cert-3d-card">
+                    <div class="cert-icon-3d"><i class="fas fa-chart-bar"></i></div>
+                    <div class="cert-shine"></div>
+                    <h4>Google Analytics Certification</h4>
+                    <p>Google</p>
+                    <span class="cert-year-badge">2024</span>
+                </div>
+                <div class="cert-3d-card">
+                    <div class="cert-icon-3d"><i class="fas fa-bullhorn"></i></div>
+                    <div class="cert-shine"></div>
+                    <h4>HubSpot Content Marketing Certification</h4>
+                    <p>HubSpot Academy</p>
+                    <span class="cert-year-badge">2023</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Me -->
+    <section class="why-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">The Advantage</span>
+                <h2 class="section-title">Why Hire <span class="gradient-text">Shafiu Jimoh?</span></h2>
+            </div>
+            <div class="why-grid-3d">
+                <div class="why-card-3d">
+                    <div class="why-number">01</div>
+                    <div class="why-icon"><i class="fas fa-clock"></i></div>
+                    <h3>100% On-Time, Every Time</h3>
+                    <p>Three years of remote delivery with zero missed deadlines across 5 simultaneous client accounts. Reliability isn't a goal — it's a standard.</p>
+                </div>
+                <div class="why-card-3d">
+                    <div class="why-number">02</div>
+                    <div class="why-icon"><i class="fas fa-eye-slash"></i></div>
+                    <h3>Zero Supervision Required</h3>
+                    <p>Fully autonomous operation. I proactively identify priorities, troubleshoot roadblocks, and deliver results without needing to be managed.</p>
+                </div>
+                <div class="why-card-3d">
+                    <div class="why-number">03</div>
+                    <div class="why-icon"><i class="fas fa-lock"></i></div>
+                    <h3>Absolute Discretion</h3>
+                    <p>Experienced in handling sensitive executive, financial, personnel, and strategic information with established confidentiality protocols.</p>
+                </div>
+                <div class="why-card-3d">
+                    <div class="why-number">04</div>
+                    <div class="why-icon"><i class="fas fa-globe"></i></div>
+                    <h3>Global Time Zone Flexibility</h3>
+                    <p>Available and adaptable across all time zones. Whether you're in Lagos, London or Los Angeles — I deliver when you need it.</p>
                 </div>
             </div>
         </div>
@@ -1091,73 +844,77 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
+        <div class="contact-3d-bg" id="contactCanvas"></div>
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Get In Touch</span>
-                <h2 class="section-title">Let's Work Together</h2>
-                <p class="section-subtitle">Ready to transform your business with expert virtual assistance?</p>
+                <span class="section-tag">Let's Connect</span>
+                <h2 class="section-title">Ready to <span class="gradient-text">Transform Your Operations?</span></h2>
+                <p class="section-subtitle">Let's discuss how I can bring clarity, efficiency, and results to your team</p>
             </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+            <div class="contact-content-3d">
+                <div class="contact-info-3d">
+                    <div class="contact-info-card glass-card">
+                        <h3>Get In Touch</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon-3d"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <p class="contact-label">Email</p>
+                                <a href="mailto:shafiujimoh2003@gmail.com">shafiujimoh2003@gmail.com</a>
+                            </div>
                         </div>
-                        <h3>Email Me</h3>
-                        <a href="mailto:Shafiujimoh2003@gmail.com">Shafiujimoh2003@gmail.com</a>
-                    </div>
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                        <div class="contact-item">
+                            <div class="contact-icon-3d"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <p class="contact-label">Phone / WhatsApp</p>
+                                <a href="tel:+2348130307875">+234-813-030-7875</a>
+                            </div>
                         </div>
-                        <h3>Call Me</h3>
-                        <a href="tel:+2348130307875">+234-813-030-7875</a>
-                    </div>
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-item">
+                            <div class="contact-icon-3d"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <p class="contact-label">Location</p>
+                                <p>Abuja, Nigeria &nbsp;|&nbsp; <span class="remote-badge">Remote-First</span></p>
+                            </div>
                         </div>
-                        <h3>Location</h3>
-                        <p>Abuja, Nigeria</p>
-                        <p class="availability">Available for remote work globally</p>
-                    </div>
-                    <div class="social-links">
-                        <h3>Connect With Me</h3>
-                        <div class="social-buttons">
-                            <a href="https://www.linkedin.com/in/shafiujimoh" target="_blank" class="social-btn linkedin">
-                                <i class="fab fa-linkedin"></i>
-                                <span>LinkedIn</span>
-                            </a>
-                            <a href="https://twitter.com/shafiujimoh" target="_blank" class="social-btn twitter">
-                                <i class="fab fa-twitter"></i>
-                                <span>Twitter</span>
-                            </a>
-                            <a href="https://github.com/shafiujimoh" target="_blank" class="social-btn github">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
-                            </a>
+                        <div class="contact-item">
+                            <div class="contact-icon-3d"><i class="fab fa-linkedin"></i></div>
+                            <div>
+                                <p class="contact-label">LinkedIn</p>
+                                <a href="https://linkedin.com/in/shafiujimoh" target="_blank">linkedin.com/in/shafiujimoh</a>
+                            </div>
+                        </div>
+                        <div class="availability-banner">
+                            <div class="avail-dot"></div>
+                            <span>Currently accepting new client engagements</span>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form-container">
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                <div class="contact-form-3d">
+                    <form id="contactForm" class="glass-card">
+                        <h3>Send a Message</h3>
+                        <div class="form-row">
+                            <div class="form-group floating">
+                                <input type="text" id="name" name="name" required placeholder=" ">
+                                <label for="name">Your Name</label>
+                                <div class="form-line"></div>
+                            </div>
+                            <div class="form-group floating">
+                                <input type="email" id="email" name="email" required placeholder=" ">
+                                <label for="email">Email Address</label>
+                                <div class="form-line"></div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" required placeholder="john@example.com">
-                        </div>
-                        <div class="form-group">
+                        <div class="form-group floating">
+                            <input type="text" id="subject" name="subject" required placeholder=" ">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required placeholder="Project Inquiry">
+                            <div class="form-line"></div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group floating">
+                            <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
                             <label for="message">Your Message</label>
-                            <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project..."></textarea>
+                            <div class="form-line"></div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-submit">
+                        <button type="submit" class="btn btn-primary btn-full magnetic">
                             <span>Send Message</span>
                             <i class="fas fa-paper-plane"></i>
                         </button>
@@ -1165,73 +922,60 @@
                     <div id="formMessage" class="form-message"></div>
                 </div>
             </div>
-            <div class="why-choose-section">
-                <h3 class="why-title">Why Choose Me?</h3>
-                <div class="why-grid">
-                    <div class="why-item">
-                        <i class="fas fa-chart-line"></i>
-                        <h4>Proven Results</h4>
-                        <p>2.5+ years delivering measurable business impact with 45% traffic growth and 95% client retention</p>
-                    </div>
-                    <div class="why-item">
-                        <i class="fas fa-tools"></i>
-                        <h4>Expert Technical Skills</h4>
-                        <p>Proficient in GoHighLevel, N8N, Zapier, and AI automation tools for maximum efficiency</p>
-                    </div>
-                    <div class="why-item">
-                        <i class="fas fa-handshake"></i>
-                        <h4>Long-term Partnership</h4>
-                        <p>Building lasting relationships focused on continuous improvement and strategic growth</p>
-                    </div>
-                    <div class="why-item">
-                        <i class="fas fa-globe"></i>
-                        <h4>Global Availability</h4>
-                        <p>Available immediately for remote work with flexible scheduling across all time zones</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
+        <div class="footer-particles" id="footerParticles"></div>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="logo.png" alt="Shady Shafiu Services Logo" class="footer-logo">
-                    <p class="footer-tagline">Virtually Unseen, Totally Effective</p>
-                    <p class="footer-description">
-                        Executive Virtual Assistant specializing in automation, digital marketing, 
-                        and strategic business support.
-                    </p>
+                    <img src="logo.png" alt="Shafiu Jimoh" class="footer-logo">
+                    <h3>SHAFIU JIMOH</h3>
+                    <p class="footer-tagline">Virtually Unseen. Totally Effective.</p>
+                    <p>Executive Virtual Assistant | Personal Assistant | Remote Operations Specialist</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Quick Links</h4>
+                    <h4>Navigation</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#achievements">Achievements</a></li>
+                        <li><a href="#impact">Impact</a></li>
                         <li><a href="#skills">Skills</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#experience">Experience</a></li>
+                        <li><a href="#certifications">Credentials</a></li>
                     </ul>
                 </div>
-                <div class="footer-contact">
-                    <h4>Contact Info</h4>
+                <div class="footer-services">
+                    <h4>Services</h4>
                     <ul>
-                        <li><i class="fas fa-envelope"></i> Shafiujimoh2003@gmail.com</li>
+                        <li>Executive Assistance</li>
+                        <li>Personal Assistance</li>
+                        <li>Workflow Automation</li>
+                        <li>Project Coordination</li>
+                        <li>HR Administration</li>
+                        <li>Digital Operations</li>
+                    </ul>
+                </div>
+                <div class="footer-contact-info">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> shafiujimoh2003@gmail.com</li>
                         <li><i class="fas fa-phone"></i> +234-813-030-7875</li>
                         <li><i class="fas fa-map-marker-alt"></i> Abuja, Nigeria</li>
                     </ul>
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/in/shafiujimoh" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/shafiujimoh" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/ShafiuJimoh" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Shafiu Jimoh - All Rights Reserved</p>
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/shafiujimoh" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://twitter.com/shafiujimoh" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://github.com/shafiujimoh" target="_blank"><i class="fab fa-github"></i></a>
-                </div>
+                <p>&copy; 2026 Shafiu Jimoh — All Rights Reserved.</p>
+                <p>Executive Virtual Assistant | Open to Global Opportunities</p>
             </div>
         </div>
     </footer>
