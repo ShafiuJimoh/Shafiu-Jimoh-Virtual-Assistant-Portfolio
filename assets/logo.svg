@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">Shafiu Jimoh monogram</title>
+  <defs>
+    <linearGradient id="brassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0b96e"/>
+      <stop offset="100%" stop-color="#a9834a"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="#12181a"/>
+  <circle cx="100" cy="100" r="92" fill="none" stroke="url(#brassGrad)" stroke-width="2"/>
+  <circle cx="100" cy="100" r="78" fill="none" stroke="#c9a15a" stroke-width="1" opacity="0.55"/>
+  <circle cx="100" cy="100" r="66" fill="none" stroke="#c9a15a" stroke-width="1" opacity="0.3" stroke-dasharray="2 4"/>
+
+  <!-- corner ornaments, four points of compass -->
+  <g fill="#c9a15a">
+    <rect x="96.5" y="10" width="7" height="7" transform="rotate(45 100 13.5)"/>
+    <rect x="96.5" y="182.5" width="7" height="7" transform="rotate(45 100 186)"/>
+    <rect x="10" y="96.5" width="7" height="7" transform="rotate(45 13.5 100)"/>
+    <rect x="182.5" y="96.5" width="7" height="7" transform="rotate(45 186 100)"/>
+  </g>
+
+  <text x="100" y="128" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-style="italic" font-weight="700" font-size="66" fill="#e6ceA0">SJ</text>
+</svg>
