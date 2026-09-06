@@ -3,727 +3,560 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shafiu Jimoh | Executive Virtual Assistant & Remote Operations Specialist</title>
-    <meta name="description" content="Shafiu Jimoh — Executive Virtual Assistant, Personal Assistant & Remote Operations Specialist with 4+ years experience. 95% client retention, 100% on-time delivery, $75,000+ revenue contribution. Available globally.">
+    <title>Shafiu Jimoh | Executive Virtual Assistant &amp; Remote Operations Specialist</title>
+    <meta name="description" content="Shafiu Jimoh is an Executive Virtual Assistant and Remote Operations Specialist based in Abuja, Nigeria, supporting founders and executives with calendar management, workflow automation, project coordination and administrative support.">
     <meta name="keywords" content="Virtual Assistant, Executive Assistant, Personal Assistant, Remote Operations, Workflow Automation, Calendar Management, Administrative Support, Abuja Nigeria">
-    <link rel="icon" type="image/png" href="logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="author" content="Shafiu Jimoh">
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+
+    <link rel="canonical" href="https://shafiujimoh.github.io/Shafiu-Jimoh-Virtual-Assistant-Portfolio/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Shafiu Jimoh | Executive Virtual Assistant">
+    <meta property="og:description" content="Executive Virtual Assistant and Remote Operations Specialist supporting founders and executives across time zones.">
+    <meta property="og:image" content="assets/logo-512.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="preloader-inner">
-            <div class="preloader-logo">SJ</div>
-            <div class="preloader-bar"><div class="preloader-fill"></div></div>
-            <p class="preloader-text">Loading Experience...</p>
-        </div>
-    </div>
-
-    <!-- Cursor -->
-    <div class="custom-cursor" id="cursor"></div>
-    <div class="cursor-follower" id="cursorFollower"></div>
+    <a href="#main" class="skip-link">Skip to content</a>
 
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="logo.png" alt="Shafiu Jimoh Logo" class="logo-img">
-                <span class="logo-text">SHAFIU JIMOH</span>
-            </div>
-            <div class="nav-toggle" id="navToggle">
+    <nav class="site-nav" id="siteNav">
+        <div class="nav-inner">
+            <a href="#top" class="brand">
+                <span class="brand-mark">SJ</span>
+                <span class="brand-name">Shafiu Jimoh</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#results" class="nav-link">Results</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#credentials" class="nav-link">Credentials</a>
+                <a href="#contact" class="nav-link nav-cta">Get in touch</a>
             </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#impact" class="nav-link">Impact</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#certifications" class="nav-link">Credentials</a></li>
-                <li><a href="#contact" class="nav-link cta-btn">Hire Me</a></li>
-            </ul>
         </div>
     </nav>
 
-    <!-- Hero Section with 3D Canvas -->
-    <section id="home" class="hero-section">
-        <canvas id="heroCanvas" class="hero-canvas"></canvas>
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <div class="hero-text">
-                <div class="hero-badge">
-                    <span class="badge-dot"></span>
-                    <span>Available for Remote Work Globally</span>
-                </div>
-                <h1 class="hero-title">
-                    <span class="title-line">Executive &amp;</span>
-                    <span class="title-line gradient-text">Virtual Assistant</span>
-                    <span class="title-line">That Delivers Results</span>
-                </h1>
-                <p class="hero-subtitle">
-                    4+ years of C-suite executive support, workflow automation, and multi-timezone remote operations.
-                    I don't just assist — I <strong>transform how businesses operate</strong>.
+    <main id="main">
+    <!-- Hero -->
+    <section id="top" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-copy">
+                <div class="eyebrow-line"><span class="rule"></span><span>Executive &amp; Virtual Assistant</span></div>
+                <h1 class="hero-title">Considered support for<br><span class="accent">executives who cannot afford drift</span></h1>
+                <p class="hero-lede">
+                    I manage calendars, correspondence, projects and workflow automation for founders and
+                    executives who need a steady hand behind the scenes. Based in Abuja, Nigeria, and
+                    available across time zones.
                 </p>
-                <div class="hero-stats">
-                    <div class="stat-card glass-card">
-                        <div class="stat-number counter" data-target="4">0</div>
-                        <div class="stat-suffix">+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-card glass-card">
-                        <div class="stat-number counter" data-target="95">0</div>
-                        <div class="stat-suffix">%</div>
-                        <div class="stat-label">Client Retention</div>
-                    </div>
-                    <div class="stat-card glass-card">
-                        <div class="stat-number counter" data-target="100">0</div>
-                        <div class="stat-suffix">%</div>
-                        <div class="stat-label">On-Time Delivery</div>
-                    </div>
-                    <div class="stat-card glass-card">
-                        <div class="stat-number">$75K</div>
-                        <div class="stat-suffix">+</div>
-                        <div class="stat-label">Revenue Contributed</div>
-                    </div>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary"><span>Start a conversation</span><i class="fas fa-arrow-right"></i></a>
+                    <a href="#experience" class="btn btn-outline"><span>Read my experience</span></a>
                 </div>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary magnetic">
-                        <span>Start Working Together</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#experience" class="btn btn-secondary magnetic">
-                        <span>View Experience</span>
-                        <i class="fas fa-briefcase"></i>
-                    </a>
-                </div>
+                <dl class="hero-facts">
+                    <div>
+                        <dt>Abuja</dt>
+                        <dd>Based in Nigeria, working with clients globally</dd>
+                    </div>
+                    <div>
+                        <dt>Remote-first</dt>
+                        <dd>Comfortable across multiple time zones and teams</dd>
+                    </div>
+                    <div>
+                        <dt>Confidential</dt>
+                        <dd>Established discretion protocols for sensitive material</dd>
+                    </div>
+                </dl>
             </div>
-            <div class="hero-visual">
-                <div class="hero-3d-card" id="hero3DCard">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="profile-ring">
-                                <img src="logo.png" alt="Shafiu Jimoh" class="profile-img">
-                            </div>
-                            <h3>Shafiu Jimoh</h3>
-                            <p>Executive Virtual Assistant</p>
-                            <div class="role-tags">
-                                <span>VA</span><span>EA</span><span>PA</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="floating-orb orb-1"></div>
-                    <div class="floating-orb orb-2"></div>
-                    <div class="floating-orb orb-3"></div>
+            <div class="hero-panel">
+                <div class="profile-card glass-card">
+                    <div class="profile-ring"><span>SJ</span></div>
+                    <h3>Shafiu Jimoh</h3>
+                    <p class="location">Abuja, Nigeria</p>
+                    <ul class="role-tags">
+                        <li>Virtual Assistant</li>
+                        <li>Executive Assistant</li>
+                        <li>Personal Assistant</li>
+                    </ul>
                 </div>
-                <div class="floating-chip chip-1">
-                    <i class="fas fa-calendar-check"></i>
-                    <span>Calendar Mastery</span>
-                </div>
-                <div class="floating-chip chip-2">
-                    <i class="fas fa-robot"></i>
-                    <span>Workflow Automation</span>
-                </div>
-                <div class="floating-chip chip-3">
-                    <i class="fas fa-chart-line"></i>
-                    <span>80% Less Conflicts</span>
-                </div>
-                <div class="floating-chip chip-4">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>100% Confidential</span>
-                </div>
+                <ul class="hero-notes glass-card">
+                    <li>Calendar and inbox management across time zones</li>
+                    <li>Workflow automation with GoHighLevel, N8N and Zapier</li>
+                    <li>Project coordination using Agile and Scrum practice</li>
+                </ul>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="scroll-mouse">
-                <div class="scroll-wheel"></div>
-            </div>
-            <span>Scroll to explore</span>
-        </div>
+        <div class="scroll-cue"><span>Scroll</span><span class="stem"></span></div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="about-bg-3d" id="aboutCanvas"></div>
+    <!-- About -->
+    <section id="about" class="section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Who I Am</span>
-                <h2 class="section-title">The Professional <span class="gradient-text">Behind the Results</span></h2>
-                <p class="section-subtitle">Precision-driven administrative excellence with a passion for operational transformation</p>
-            </div>
-            <div class="about-content">
-                <div class="about-image-wrapper">
-                    <div class="about-3d-cube" id="cube3D">
-                        <div class="cube-face front">
-                            <img src="logo.png" alt="Shafiu Jimoh">
-                        </div>
-                        <div class="cube-face back">
-                            <div class="cube-text">
-                                <i class="fas fa-star"></i>
-                                <p>4+ Years of Excellence</p>
-                            </div>
-                        </div>
-                        <div class="cube-face right">
-                            <div class="cube-text">
-                                <i class="fas fa-globe"></i>
-                                <p>Global Remote Ops</p>
-                            </div>
-                        </div>
-                        <div class="cube-face left">
-                            <div class="cube-text">
-                                <i class="fas fa-bolt"></i>
-                                <p>Zero Supervision</p>
-                            </div>
-                        </div>
-                        <div class="cube-face top">
-                            <div class="cube-text">
-                                <i class="fas fa-rocket"></i>
-                                <p>Automation Expert</p>
-                            </div>
-                        </div>
-                        <div class="cube-face bottom">
-                            <div class="cube-text">
-                                <i class="fas fa-handshake"></i>
-                                <p>Trusted Partner</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="about-grid">
+                <div class="about-media reveal">
+                    <div class="about-mark"><span>SJ</span></div>
                     <div class="about-badges">
-                        <div class="about-badge b1"><i class="fas fa-certificate"></i><span>7 Certifications</span></div>
-                        <div class="about-badge b2"><i class="fas fa-globe"></i><span>Remote-First</span></div>
-                        <div class="about-badge b3"><i class="fas fa-shield-alt"></i><span>Confidential</span></div>
+                        <div class="about-badge"><i class="fas fa-graduation-cap"></i><span>7 certifications completed</span></div>
+                        <div class="about-badge"><i class="fas fa-globe"></i><span>Remote-first practice</span></div>
+                        <div class="about-badge"><i class="fas fa-lock"></i><span>Confidentiality by default</span></div>
                     </div>
                 </div>
-                <div class="about-text">
-                    <h3>Results-Driven Executive Support Specialist</h3>
+                <div class="about-copy reveal">
+                    <span class="eyebrow">Who I am</span>
+                    <h3>The professional behind the calendar</h3>
                     <p>
-                        I am a high-impact <strong>Virtual Assistant, Executive Assistant, and Personal Assistant</strong> 
-                        with 4+ years of delivering precision-driven administrative excellence to C-suite executives and 
-                        growing businesses worldwide. My expertise spans executive calendar management, email orchestration, 
-                        stakeholder coordination, HR administration, project coordination, and intelligent workflow automation.
+                        I work as a <strong>Virtual Assistant, Executive Assistant and Personal Assistant</strong>
+                        to founders and growing businesses, handling the operational detail that keeps a
+                        principal free to lead. That includes calendar management, correspondence, stakeholder
+                        coordination, HR administration, project tracking and workflow automation.
                     </p>
                     <p>
-                        Based in Abuja, Nigeria, I operate as a fully remote professional with a proven track record of 
-                        working <strong>independently across multiple time zones</strong> — delivering 100% on-time results 
-                        with zero supervision required. I've successfully managed 5 concurrent client accounts, contributed 
-                        to $75,000+ in client revenue, and reduced manual workloads by up to 60% through smart automation.
+                        I am based in Abuja, Nigeria, and operate independently across multiple time zones,
+                        typically managing several client accounts at once. My academic background in
+                        Criminology and Security Studies shapes how I approach confidentiality, documentation
+                        and structured process, which carries directly into executive support work.
                     </p>
                     <div class="expertise-grid">
-                        <div class="expertise-item tilt-card">
+                        <div class="expertise-item">
                             <div class="expertise-icon"><i class="fas fa-user-tie"></i></div>
                             <div>
-                                <h4>C-Suite Executive Support</h4>
-                                <p>Calendar, email, stakeholder & travel management at the highest level</p>
+                                <h4>Executive support</h4>
+                                <p>Calendar, email, stakeholder and travel coordination</p>
                             </div>
                         </div>
-                        <div class="expertise-item tilt-card">
-                            <div class="expertise-icon"><i class="fas fa-robot"></i></div>
+                        <div class="expertise-item">
+                            <div class="expertise-icon"><i class="fas fa-diagram-project"></i></div>
                             <div>
-                                <h4>Workflow Automation</h4>
-                                <p>GoHighLevel, N8N, Zapier, AI agents — 40-60% workload reduction</p>
+                                <h4>Workflow automation</h4>
+                                <p>GoHighLevel, N8N and Zapier used to cut repetitive work</p>
                             </div>
                         </div>
-                        <div class="expertise-item tilt-card">
-                            <div class="expertise-icon"><i class="fas fa-project-diagram"></i></div>
+                        <div class="expertise-item">
+                            <div class="expertise-icon"><i class="fas fa-list-check"></i></div>
                             <div>
-                                <h4>Project Coordination</h4>
-                                <p>Agile/Scrum, milestone tracking, vendor management, delivery assurance</p>
+                                <h4>Project coordination</h4>
+                                <p>Agile and Scrum practice for milestones and vendors</p>
                             </div>
                         </div>
-                        <div class="expertise-item tilt-card">
-                            <div class="expertise-icon"><i class="fas fa-users-cog"></i></div>
+                        <div class="expertise-item">
+                            <div class="expertise-icon"><i class="fas fa-users-gear"></i></div>
                             <div>
-                                <h4>HR Administration</h4>
-                                <p>Recruitment support, onboarding, records management, compliance documentation</p>
+                                <h4>HR administration</h4>
+                                <p>Onboarding, records and compliance documentation</p>
                             </div>
                         </div>
                     </div>
                     <div class="about-cta">
-                        <a href="#contact" class="btn btn-primary">
-                            <span>Hire Me Now</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/shafiujimoh" target="_blank" class="btn btn-outline">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn Profile</span>
-                        </a>
+                        <a href="#contact" class="btn btn-primary"><span>Work with me</span><i class="fas fa-arrow-right"></i></a>
+                        <a href="https://www.linkedin.com/in/shafiujimoh" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-linkedin"></i><span>LinkedIn profile</span></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Impact / Achievements Section -->
-    <section id="impact" class="impact-section">
+    <!-- Results / Track Record -->
+    <section id="results" class="section section-alt">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Quantified Impact</span>
-                <h2 class="section-title">Key Metrics & <span class="gradient-text">Achievements</span></h2>
-                <p class="section-subtitle">Numbers that prove the value I bring to every engagement</p>
+            <div class="section-header reveal">
+                <span class="eyebrow">Track record</span>
+                <h2 class="section-title">Outcomes from <em>recent engagements</em></h2>
+                <div class="ornament"><span></span><i></i><span></span></div>
+                <p class="section-sub">Figures below are drawn from specific roles described in the experience section, not aggregated marketing statistics.</p>
             </div>
 
-            <!-- 3D Metric Cards -->
-            <div class="metrics-3d-grid">
-                <div class="metric-3d-card" data-tilt>
-                    <div class="metric-icon-3d">
-                        <i class="fas fa-calendar-alt"></i>
+            <div class="results-list reveal">
+                <div class="result-row">
+                    <div class="result-figure">80%</div>
+                    <div class="result-desc">
+                        <span class="label">Fewer calendar conflicts</span>
+                        <span class="detail">Achieved at Conscilium Tax &amp; Consulting through buffer scheduling and reminder systems</span>
                     </div>
-                    <div class="metric-value">80%</div>
-                    <div class="metric-title">Calendar Conflict Reduction</div>
-                    <div class="metric-desc">Through proactive buffer management and automated reminder systems</div>
                 </div>
-                <div class="metric-3d-card" data-tilt>
-                    <div class="metric-icon-3d">
-                        <i class="fas fa-bolt"></i>
+                <div class="result-row">
+                    <div class="result-figure">4h → 45m</div>
+                    <div class="result-desc">
+                        <span class="label">Email response time</span>
+                        <span class="detail">Reduced for a 200-plus daily volume using structured triage rules</span>
                     </div>
-                    <div class="metric-value">60%</div>
-                    <div class="metric-title">Manual Workload Reduction</div>
-                    <div class="metric-desc">Via intelligent process automation and AI-assisted workflow design</div>
                 </div>
-                <div class="metric-3d-card" data-tilt>
-                    <div class="metric-icon-3d">
-                        <i class="fas fa-handshake"></i>
+                <div class="result-row">
+                    <div class="result-figure">60%</div>
+                    <div class="result-desc">
+                        <span class="label">Lower manual workload</span>
+                        <span class="detail">Delivered at ICMGx Agency by rebuilding onboarding as an automated workflow</span>
                     </div>
-                    <div class="metric-value">95%+</div>
-                    <div class="metric-title">Client Retention Rate</div>
-                    <div class="metric-desc">Built on reliable delivery, proactive communication and exceeding expectations</div>
                 </div>
-                <div class="metric-3d-card" data-tilt>
-                    <div class="metric-icon-3d">
-                        <i class="fas fa-dollar-sign"></i>
+                <div class="result-row">
+                    <div class="result-figure">5</div>
+                    <div class="result-desc">
+                        <span class="label">Concurrent client accounts</span>
+                        <span class="detail">Managed simultaneously with on-time delivery across all of them</span>
                     </div>
-                    <div class="metric-value">$75K+</div>
-                    <div class="metric-title">Client Revenue Contributed</div>
-                    <div class="metric-desc">Across 5 concurrent accounts with 100% on-time delivery rate</div>
                 </div>
-                <div class="metric-3d-card" data-tilt>
-                    <div class="metric-icon-3d">
-                        <i class="fas fa-envelope"></i>
+                <div class="result-row">
+                    <div class="result-figure">45%</div>
+                    <div class="result-desc">
+                        <span class="label">Organic traffic growth</span>
+                        <span class="detail">Supported through SEO-informed content coordination on WordPress</span>
                     </div>
-                    <div class="metric-value">200+</div>
-                    <div class="metric-title">Daily Emails Processed</div>
-                    <div class="metric-desc">Using AI-assisted triage, cutting response time from 4hrs to 45 minutes</div>
                 </div>
-                <div class="metric-3d-card" data-tilt>
-                    <div class="metric-icon-3d">
-                        <i class="fas fa-chart-line"></i>
+                <div class="result-row">
+                    <div class="result-figure">3 months</div>
+                    <div class="result-desc">
+                        <span class="label">Executive search closed</span>
+                        <span class="detail">A cybersecurity leadership search brought to offer stage within one quarter</span>
                     </div>
-                    <div class="metric-value">45%</div>
-                    <div class="metric-title">Organic Traffic Growth</div>
-                    <div class="metric-desc">Data-informed content coordination and SEO strategy implementation</div>
-                </div>
-                <div class="metric-3d-card" data-tilt>
-                    <div class="metric-icon-3d">
-                        <i class="fas fa-check-double"></i>
-                    </div>
-                    <div class="metric-value">500+</div>
-                    <div class="metric-title">Zero-Error Deliverables</div>
-                    <div class="metric-desc">Systematic quality assurance protocols in every single workflow</div>
-                </div>
-                <div class="metric-3d-card featured" data-tilt>
-                    <div class="metric-icon-3d">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <div class="metric-value">100%</div>
-                    <div class="metric-title">On-Time Task Completion</div>
-                    <div class="metric-desc">Across all clients, all accounts, all deliverables — no exceptions</div>
                 </div>
             </div>
 
-            <!-- Achievement Highlight -->
-            <div class="achievement-spotlight">
-                <div class="spotlight-inner glass-card">
-                    <div class="spotlight-icon"><i class="fas fa-star"></i></div>
-                    <div class="spotlight-content">
-                        <h3>Notable Achievement</h3>
-                        <p>Led a cybersecurity job search campaign for an executive client at Conscilium Tax & Consulting, successfully securing a <strong>six-figure annual compensation role</strong> with additional benefits package — <strong>within just 3 months</strong>. A testament to relentless research, strategic outreach, and executive-level project coordination.</p>
+            <div class="spotlight glass-card reveal">
+                <h3>Notable engagement</h3>
+                <p>
+                    At Conscilium Tax &amp; Consulting, I led the search and coordination for a cybersecurity
+                    leadership hire on behalf of the CEO. Working through research, outreach and interview
+                    scheduling, the search reached a signed offer within three months, for a six-figure role
+                    with a full benefits package.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="eyebrow">Capability</span>
+                <h2 class="section-title">Working <em>competencies</em></h2>
+                <div class="ornament"><span></span><i></i><span></span></div>
+                <p class="section-sub">A practical toolkit built for executive and virtual assistance work</p>
+            </div>
+
+            <div class="skills-layout reveal">
+                <div class="skill-tabs" role="tablist">
+                    <button class="skill-tab active" role="tab" aria-selected="true" data-target="panel-executive"><i class="fas fa-user-tie"></i><span>Executive support</span></button>
+                    <button class="skill-tab" role="tab" aria-selected="false" data-target="panel-automation"><i class="fas fa-gears"></i><span>Automation &amp; systems</span></button>
+                    <button class="skill-tab" role="tab" aria-selected="false" data-target="panel-tools"><i class="fas fa-toolbox"></i><span>Tech tools</span></button>
+                    <button class="skill-tab" role="tab" aria-selected="false" data-target="panel-project"><i class="fas fa-diagram-project"></i><span>Project management</span></button>
+                    <button class="skill-tab" role="tab" aria-selected="false" data-target="panel-hr"><i class="fas fa-users-gear"></i><span>HR &amp; admin</span></button>
+                </div>
+
+                <div class="skill-panels">
+                    <div class="skill-panel active" id="panel-executive">
+                        <div class="tag-cloud">
+                            <span>Executive calendar management</span>
+                            <span>Email triage &amp; correspondence</span>
+                            <span>Stakeholder coordination</span>
+                            <span>Travel arrangements</span>
+                            <span>Meeting preparation &amp; minutes</span>
+                            <span>Confidential data handling</span>
+                            <span>Vendor &amp; consultant liaison</span>
+                            <span>Multi-timezone scheduling</span>
+                        </div>
                     </div>
+                    <div class="skill-panel" id="panel-automation">
+                        <div class="tag-cloud">
+                            <span>GoHighLevel CRM</span>
+                            <span>N8N workflows</span>
+                            <span>Zapier automation</span>
+                            <span>AI-assisted task routing</span>
+                            <span>Apify &amp; OpenRouter</span>
+                            <span>Email categorization rules</span>
+                            <span>AI agents &amp; MCP</span>
+                            <span>Onboarding workflow design</span>
+                        </div>
+                    </div>
+                    <div class="skill-panel" id="panel-tools">
+                        <div class="tag-cloud">
+                            <span>Google Workspace</span>
+                            <span>Microsoft Office 365</span>
+                            <span>Excel (Pivot, VLOOKUP, validation)</span>
+                            <span>WordPress CMS</span>
+                            <span>Trello &amp; Asana</span>
+                            <span>Slack, Zoom, Teams</span>
+                            <span>CSV / JSON data handling</span>
+                            <span>CRM systems</span>
+                        </div>
+                    </div>
+                    <div class="skill-panel" id="panel-project">
+                        <div class="tag-cloud">
+                            <span>Agile methodology</span>
+                            <span>Scrum framework</span>
+                            <span>PMP standards</span>
+                            <span>Milestone tracking</span>
+                            <span>Client onboarding</span>
+                            <span>Resource planning</span>
+                            <span>Cross-functional coordination</span>
+                            <span>Risk &amp; deadline management</span>
+                        </div>
+                    </div>
+                    <div class="skill-panel" id="panel-hr">
+                        <div class="tag-cloud">
+                            <span>HR administration</span>
+                            <span>Recruitment support</span>
+                            <span>Employee onboarding</span>
+                            <span>Records &amp; compliance</span>
+                            <span>Documentation management</span>
+                            <span>Data entry &amp; validation</span>
+                            <span>Reporting &amp; analytics</span>
+                            <span>Process improvement</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-stack reveal">
+                <h3>Tool stack</h3>
+                <div class="tool-grid">
+                    <div class="tool-chip"><i class="fab fa-google"></i><span>Google Workspace</span></div>
+                    <div class="tool-chip"><i class="fab fa-microsoft"></i><span>Microsoft 365</span></div>
+                    <div class="tool-chip"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
+                    <div class="tool-chip"><i class="fab fa-slack"></i><span>Slack</span></div>
+                    <div class="tool-chip"><i class="fas fa-video"></i><span>Zoom</span></div>
+                    <div class="tool-chip"><i class="fab fa-trello"></i><span>Trello</span></div>
+                    <div class="tool-chip"><i class="fas fa-list-check"></i><span>Asana</span></div>
+                    <div class="tool-chip"><i class="fas fa-diagram-project"></i><span>GoHighLevel</span></div>
+                    <div class="tool-chip"><i class="fas fa-network-wired"></i><span>N8N</span></div>
+                    <div class="tool-chip"><i class="fas fa-bolt"></i><span>Zapier</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section with 3D Elements -->
-    <section id="skills" class="skills-section">
-        <div class="skills-3d-bg" id="skillsCanvas"></div>
+    <!-- Services -->
+    <section id="services" class="section section-alt">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Expertise</span>
-                <h2 class="section-title">Core <span class="gradient-text">Competencies</span></h2>
-                <p class="section-subtitle">A comprehensive toolkit built for elite executive and virtual assistance</p>
+            <div class="section-header reveal">
+                <span class="eyebrow">What I offer</span>
+                <h2 class="section-title">Services built for <em>daily reliability</em></h2>
+                <div class="ornament"><span></span><i></i><span></span></div>
+                <p class="section-sub">Remote support shaped around how executives and growing teams actually work</p>
             </div>
-
-            <!-- Skill Orbs / 3D Visualization -->
-            <div class="skills-3d-container">
-                <div class="skills-sphere-wrapper">
-                    <canvas id="skillsSphere" width="400" height="400"></canvas>
-                </div>
-                <div class="skills-categories">
-                    <div class="skill-category-3d active" data-category="executive">
-                        <div class="category-tab">
-                            <i class="fas fa-user-tie"></i>
-                            <span>Executive Support</span>
-                        </div>
-                        <div class="category-content">
-                            <div class="skill-pill-grid">
-                                <div class="skill-pill"><span>Executive Calendar Management</span><div class="pill-bar" style="--w:98%"></div></div>
-                                <div class="skill-pill"><span>Email Triage & Management</span><div class="pill-bar" style="--w:97%"></div></div>
-                                <div class="skill-pill"><span>Stakeholder Coordination</span><div class="pill-bar" style="--w:96%"></div></div>
-                                <div class="skill-pill"><span>Travel Arrangements</span><div class="pill-bar" style="--w:94%"></div></div>
-                                <div class="skill-pill"><span>Meeting Prep & Minute-Taking</span><div class="pill-bar" style="--w:97%"></div></div>
-                                <div class="skill-pill"><span>Confidential Data Handling</span><div class="pill-bar" style="--w:99%"></div></div>
-                                <div class="skill-pill"><span>Vendor & Consultant Management</span><div class="pill-bar" style="--w:92%"></div></div>
-                                <div class="skill-pill"><span>Multi-Timezone Scheduling</span><div class="pill-bar" style="--w:95%"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-category-3d" data-category="automation">
-                        <div class="category-tab">
-                            <i class="fas fa-robot"></i>
-                            <span>Automation & AI</span>
-                        </div>
-                        <div class="category-content">
-                            <div class="skill-pill-grid">
-                                <div class="skill-pill"><span>GoHighLevel CRM</span><div class="pill-bar" style="--w:95%"></div></div>
-                                <div class="skill-pill"><span>N8N Workflows</span><div class="pill-bar" style="--w:93%"></div></div>
-                                <div class="skill-pill"><span>Zapier Automation</span><div class="pill-bar" style="--w:95%"></div></div>
-                                <div class="skill-pill"><span>AI-Assisted Task Management</span><div class="pill-bar" style="--w:90%"></div></div>
-                                <div class="skill-pill"><span>Apify & OpenRouter</span><div class="pill-bar" style="--w:85%"></div></div>
-                                <div class="skill-pill"><span>Email Categorization Automation</span><div class="pill-bar" style="--w:92%"></div></div>
-                                <div class="skill-pill"><span>AI Agents & MCP</span><div class="pill-bar" style="--w:88%"></div></div>
-                                <div class="skill-pill"><span>Onboarding Workflow Systems</span><div class="pill-bar" style="--w:91%"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-category-3d" data-category="tools">
-                        <div class="category-tab">
-                            <i class="fas fa-tools"></i>
-                            <span>Tech Tools</span>
-                        </div>
-                        <div class="category-content">
-                            <div class="skill-pill-grid">
-                                <div class="skill-pill"><span>Google Workspace (Full Suite)</span><div class="pill-bar" style="--w:98%"></div></div>
-                                <div class="skill-pill"><span>Microsoft Office 365</span><div class="pill-bar" style="--w:96%"></div></div>
-                                <div class="skill-pill"><span>Excel (Pivot, VLOOKUP, Validation)</span><div class="pill-bar" style="--w:92%"></div></div>
-                                <div class="skill-pill"><span>WordPress CMS</span><div class="pill-bar" style="--w:90%"></div></div>
-                                <div class="skill-pill"><span>Trello & Asana</span><div class="pill-bar" style="--w:93%"></div></div>
-                                <div class="skill-pill"><span>Slack / Zoom / Teams</span><div class="pill-bar" style="--w:97%"></div></div>
-                                <div class="skill-pill"><span>CSV/JSON Data Processing</span><div class="pill-bar" style="--w:88%"></div></div>
-                                <div class="skill-pill"><span>CRM Systems</span><div class="pill-bar" style="--w:91%"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-category-3d" data-category="project">
-                        <div class="category-tab">
-                            <i class="fas fa-project-diagram"></i>
-                            <span>Project Management</span>
-                        </div>
-                        <div class="category-content">
-                            <div class="skill-pill-grid">
-                                <div class="skill-pill"><span>Agile Methodology</span><div class="pill-bar" style="--w:92%"></div></div>
-                                <div class="skill-pill"><span>Scrum Framework</span><div class="pill-bar" style="--w:90%"></div></div>
-                                <div class="skill-pill"><span>PMP Standards</span><div class="pill-bar" style="--w:87%"></div></div>
-                                <div class="skill-pill"><span>Milestone & Deliverable Tracking</span><div class="pill-bar" style="--w:95%"></div></div>
-                                <div class="skill-pill"><span>Client Onboarding Workflows</span><div class="pill-bar" style="--w:96%"></div></div>
-                                <div class="skill-pill"><span>Resource Planning</span><div class="pill-bar" style="--w:88%"></div></div>
-                                <div class="skill-pill"><span>Cross-functional Coordination</span><div class="pill-bar" style="--w:93%"></div></div>
-                                <div class="skill-pill"><span>Risk & Deadline Management</span><div class="pill-bar" style="--w:90%"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-category-3d" data-category="hr">
-                        <div class="category-tab">
-                            <i class="fas fa-users-cog"></i>
-                            <span>HR & Admin</span>
-                        </div>
-                        <div class="category-content">
-                            <div class="skill-pill-grid">
-                                <div class="skill-pill"><span>HR Administration</span><div class="pill-bar" style="--w:90%"></div></div>
-                                <div class="skill-pill"><span>Recruitment Support</span><div class="pill-bar" style="--w:88%"></div></div>
-                                <div class="skill-pill"><span>Employee Onboarding</span><div class="pill-bar" style="--w:92%"></div></div>
-                                <div class="skill-pill"><span>Records & Compliance Management</span><div class="pill-bar" style="--w:94%"></div></div>
-                                <div class="skill-pill"><span>Documentation Management</span><div class="pill-bar" style="--w:97%"></div></div>
-                                <div class="skill-pill"><span>Data Entry & Validation</span><div class="pill-bar" style="--w:99%"></div></div>
-                                <div class="skill-pill"><span>Reporting & Analytics</span><div class="pill-bar" style="--w:91%"></div></div>
-                                <div class="skill-pill"><span>Process Improvement</span><div class="pill-bar" style="--w:93%"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tool Stack -->
-            <div class="tool-stack">
-                <h3>Tool Stack</h3>
-                <div class="tool-icons">
-                    <div class="tool-icon" data-tool="Google Workspace"><i class="fab fa-google"></i><span>Google</span></div>
-                    <div class="tool-icon" data-tool="Microsoft Office"><i class="fab fa-microsoft"></i><span>Microsoft</span></div>
-                    <div class="tool-icon" data-tool="WordPress"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
-                    <div class="tool-icon" data-tool="Slack"><i class="fab fa-slack"></i><span>Slack</span></div>
-                    <div class="tool-icon" data-tool="Zoom"><i class="fas fa-video"></i><span>Zoom</span></div>
-                    <div class="tool-icon" data-tool="Trello"><i class="fab fa-trello"></i><span>Trello</span></div>
-                    <div class="tool-icon" data-tool="GitHub"><i class="fab fa-github"></i><span>GitHub</span></div>
-                    <div class="tool-icon" data-tool="LinkedIn"><i class="fab fa-linkedin"></i><span>LinkedIn</span></div>
-                    <div class="tool-icon" data-tool="GoHighLevel"><i class="fas fa-rocket"></i><span>GHL</span></div>
-                    <div class="tool-icon" data-tool="N8N"><i class="fas fa-network-wired"></i><span>N8N</span></div>
-                    <div class="tool-icon" data-tool="Zapier"><i class="fas fa-bolt"></i><span>Zapier</span></div>
-                    <div class="tool-icon" data-tool="Asana"><i class="fas fa-tasks"></i><span>Asana</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">What I Offer</span>
-                <h2 class="section-title">Services Built for <span class="gradient-text">Real Results</span></h2>
-                <p class="section-subtitle">Comprehensive remote support tailored for executives, founders, and growing teams</p>
-            </div>
-            <div class="services-grid-3d">
-                <div class="service-card-3d">
-                    <div class="service-glow"></div>
-                    <div class="service-icon-3d"><i class="fas fa-user-tie"></i></div>
-                    <h3>Executive Assistance</h3>
-                    <p>Complete C-suite support — calendars, emails, travel, stakeholder management, meeting prep, and confidential communications handled with precision and discretion.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Multi-timezone calendar orchestration</li>
-                        <li><i class="fas fa-check"></i> Email triage & executive correspondence</li>
-                        <li><i class="fas fa-check"></i> Meeting agendas & minute-taking</li>
-                        <li><i class="fas fa-check"></i> Travel & appointment coordination</li>
-                        <li><i class="fas fa-check"></i> Confidential document management</li>
+            <div class="service-grid reveal">
+                <div class="service-card glass-card">
+                    <div class="service-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3>Executive assistance</h3>
+                    <p>Full C-suite support: calendars, correspondence, travel and stakeholder communication handled with discretion.</p>
+                    <ul class="service-list">
+                        <li>Multi-timezone calendar orchestration</li>
+                        <li>Email triage and correspondence</li>
+                        <li>Meeting agendas and minute-taking</li>
+                        <li>Travel and appointment coordination</li>
+                        <li>Confidential document handling</li>
                     </ul>
                 </div>
-
-                <div class="service-card-3d">
-                    <div class="service-glow"></div>
-                    <div class="service-icon-3d"><i class="fas fa-user-circle"></i></div>
-                    <h3>Personal Assistance</h3>
-                    <p>Dedicated personal support for busy professionals — from scheduling personal appointments and managing lifestyle tasks to research, errands and day-to-day life management.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Personal calendar & schedule management</li>
-                        <li><i class="fas fa-check"></i> Research & information gathering</li>
-                        <li><i class="fas fa-check"></i> Personal & family task coordination</li>
-                        <li><i class="fas fa-check"></i> Vendor & service provider liaison</li>
-                        <li><i class="fas fa-check"></i> Reminder systems & follow-up protocols</li>
+                <div class="service-card glass-card">
+                    <div class="service-icon"><i class="fas fa-user"></i></div>
+                    <h3>Personal assistance</h3>
+                    <p>Day-to-day support for busy professionals, from scheduling to research to vendor coordination.</p>
+                    <ul class="service-list">
+                        <li>Personal calendar management</li>
+                        <li>Research and information gathering</li>
+                        <li>Family and personal task coordination</li>
+                        <li>Vendor and service provider liaison</li>
+                        <li>Reminder systems and follow-up</li>
                     </ul>
                 </div>
-
-                <div class="service-card-3d featured-service">
-                    <div class="service-glow featured-glow"></div>
-                    <div class="featured-label">Most In-Demand</div>
-                    <div class="service-icon-3d"><i class="fas fa-robot"></i></div>
-                    <h3>Workflow Automation</h3>
-                    <p>Transform manual, time-consuming processes into intelligent automated systems. Reduce your workload by 40-60% using AI-powered tools and custom integrations.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> GoHighLevel CRM automation</li>
-                        <li><i class="fas fa-check"></i> N8N & Zapier workflow design</li>
-                        <li><i class="fas fa-check"></i> AI agent implementation</li>
-                        <li><i class="fas fa-check"></i> Automated onboarding systems</li>
-                        <li><i class="fas fa-check"></i> Email automation & categorization</li>
+                <div class="service-card glass-card featured">
+                    <div class="service-flag">Most requested</div>
+                    <div class="service-icon"><i class="fas fa-gears"></i></div>
+                    <h3>Workflow automation</h3>
+                    <p>Manual, repetitive processes turned into structured, automated systems that lower ongoing workload.</p>
+                    <ul class="service-list">
+                        <li>GoHighLevel CRM automation</li>
+                        <li>N8N and Zapier workflow design</li>
+                        <li>AI agent implementation</li>
+                        <li>Automated onboarding systems</li>
+                        <li>Email routing and categorization</li>
                     </ul>
                 </div>
-
-                <div class="service-card-3d">
-                    <div class="service-glow"></div>
-                    <div class="service-icon-3d"><i class="fas fa-project-diagram"></i></div>
-                    <h3>Project Coordination</h3>
-                    <p>End-to-end project management support — from planning and milestone tracking to vendor coordination and stakeholder reporting, using Agile and Scrum methodologies.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Agile/Scrum project management</li>
-                        <li><i class="fas fa-check"></i> Milestone & deadline tracking</li>
-                        <li><i class="fas fa-check"></i> Cross-functional team coordination</li>
-                        <li><i class="fas fa-check"></i> Vendor & consultant management</li>
-                        <li><i class="fas fa-check"></i> Executive reporting & analytics</li>
+                <div class="service-card glass-card">
+                    <div class="service-icon"><i class="fas fa-diagram-project"></i></div>
+                    <h3>Project coordination</h3>
+                    <p>Planning, tracking and reporting support using Agile and Scrum practice from kickoff to close.</p>
+                    <ul class="service-list">
+                        <li>Agile and Scrum project management</li>
+                        <li>Milestone and deadline tracking</li>
+                        <li>Cross-functional coordination</li>
+                        <li>Vendor and consultant management</li>
+                        <li>Executive reporting</li>
                     </ul>
                 </div>
-
-                <div class="service-card-3d">
-                    <div class="service-glow"></div>
-                    <div class="service-icon-3d"><i class="fas fa-users-cog"></i></div>
-                    <h3>HR & Administrative Support</h3>
-                    <p>Professional HR administration and comprehensive administrative support — from recruitment and onboarding to records management, compliance documentation, and data handling.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Recruitment & candidate sourcing</li>
-                        <li><i class="fas fa-check"></i> Employee onboarding coordination</li>
-                        <li><i class="fas fa-check"></i> Personnel records management</li>
-                        <li><i class="fas fa-check"></i> Data entry & structured reporting</li>
-                        <li><i class="fas fa-check"></i> Compliance & documentation management</li>
+                <div class="service-card glass-card">
+                    <div class="service-icon"><i class="fas fa-users-gear"></i></div>
+                    <h3>HR &amp; administrative support</h3>
+                    <p>Recruitment, onboarding and records management handled with attention to compliance detail.</p>
+                    <ul class="service-list">
+                        <li>Recruitment and candidate sourcing</li>
+                        <li>Employee onboarding coordination</li>
+                        <li>Personnel records management</li>
+                        <li>Data entry and structured reporting</li>
+                        <li>Compliance documentation</li>
                     </ul>
                 </div>
-
-                <div class="service-card-3d">
-                    <div class="service-glow"></div>
-                    <div class="service-icon-3d"><i class="fas fa-chart-line"></i></div>
-                    <h3>Digital Operations & SEO</h3>
-                    <p>Strategic digital presence management including SEO optimization, WordPress content management, social media administration, data analytics, and content coordination.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> SEO content optimization</li>
-                        <li><i class="fas fa-check"></i> WordPress CMS management</li>
-                        <li><i class="fas fa-check"></i> Social media administration</li>
-                        <li><i class="fas fa-check"></i> Analytics & performance reporting</li>
-                        <li><i class="fas fa-check"></i> Content calendar management</li>
+                <div class="service-card glass-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Digital operations &amp; SEO</h3>
+                    <p>SEO-informed content coordination, WordPress management and reporting for growing digital presence.</p>
+                    <ul class="service-list">
+                        <li>SEO content optimization</li>
+                        <li>WordPress CMS management</li>
+                        <li>Social media administration</li>
+                        <li>Analytics and performance reporting</li>
+                        <li>Content calendar management</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience-section">
+    <!-- Experience -->
+    <section id="experience" class="section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Professional Journey</span>
-                <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
-                <p class="section-subtitle">A proven track record across executive, administrative, and operational roles</p>
+            <div class="section-header reveal">
+                <span class="eyebrow">Professional journey</span>
+                <h2 class="section-title">Work <em>experience</em></h2>
+                <div class="ornament"><span></span><i></i><span></span></div>
+                <p class="section-sub">A record across executive, administrative and operational roles</p>
             </div>
-            <div class="timeline-3d">
-                <!-- Role 1 -->
-                <div class="timeline-item-3d">
-                    <div class="timeline-connector">
-                        <div class="connector-line"></div>
-                        <div class="connector-dot pulse-dot"></div>
-                    </div>
-                    <div class="timeline-card-3d glass-card">
-                        <div class="timeline-header-3d">
-                            <div class="role-info">
-                                <h3>Executive Assistant & Project Coordinator</h3>
-                                <span class="company-tag">Conscilium Tax &amp; Consulting</span>
+
+            <div class="timeline reveal">
+                <div class="timeline-item">
+                    <div class="timeline-track"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+                    <div class="timeline-card glass-card">
+                        <div class="timeline-head">
+                            <div>
+                                <h3>Executive Assistant &amp; Project Coordinator</h3>
+                                <span class="company">Conscilium Tax &amp; Consulting</span>
                             </div>
-                            <div class="period-badge">Dec 2025 – May 2026</div>
+                            <span class="period">Dec 2025 &ndash; May 2026</span>
                         </div>
-                        <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Abuja, Nigeria | Hybrid</div>
-                        <ul class="achievement-list">
-                            <li><i class="fas fa-chevron-right"></i> Served as Executive Assistant and strategic operational support to the CEO, managing multi-business operations</li>
-                            <li><i class="fas fa-chevron-right"></i> Managed and synchronized complex business and personal calendars, eliminating double-bookings and reducing conflicts by 80%</li>
-                            <li><i class="fas fa-chevron-right"></i> Triaged and prioritized 200+ daily executive emails using AI-assisted systems, cutting response time from 4 hours to 45 minutes</li>
-                            <li><i class="fas fa-chevron-right"></i> Coordinated international business activities, stakeholder engagements, vendor management, and executive communications</li>
-                            <li><i class="fas fa-chevron-right"></i> Tracked project milestones, deliverables, and operational deadlines across multiple client accounts using Agile frameworks</li>
-                            <li><i class="fas fa-chevron-right"></i> Led cybersecurity job search activities for a client, securing a six-figure annual compensation role within 3 months</li>
-                            <li><i class="fas fa-chevron-right"></i> Conducted market research, business research, and executive reporting to support high-stakes decision-making</li>
-                            <li><i class="fas fa-chevron-right"></i> Designed automated administrative workflows integrating AI tools, reducing processing effort by 40%</li>
+                        <div class="location"><i class="fas fa-location-dot"></i> Abuja, Nigeria | Hybrid</div>
+                        <ul class="timeline-list">
+                            <li>Served as Executive Assistant and operational support to the CEO across multi-business operations</li>
+                            <li>Synchronized complex business and personal calendars, reducing double-bookings by 80 percent</li>
+                            <li>Triaged over 200 daily executive emails, cutting response time from four hours to 45 minutes</li>
+                            <li>Coordinated international stakeholder engagements, vendor management and communications</li>
+                            <li>Tracked project milestones and deadlines across multiple accounts using Agile practice</li>
+                            <li>Led a cybersecurity leadership search that closed within three months at a six-figure package</li>
+                            <li>Conducted market and business research to support executive decision-making</li>
+                            <li>Designed automated administrative workflows that reduced processing effort by 40 percent</li>
                         </ul>
                         <div class="timeline-tags">
-                            <span>Executive Support</span><span>Calendar Management</span><span>Project Coordination</span><span>Automation</span><span>Stakeholder Management</span>
+                            <span>Executive support</span><span>Calendar management</span><span>Project coordination</span><span>Automation</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Role 2 -->
-                <div class="timeline-item-3d">
-                    <div class="timeline-connector">
-                        <div class="connector-line"></div>
-                        <div class="connector-dot"></div>
-                    </div>
-                    <div class="timeline-card-3d glass-card">
-                        <div class="timeline-header-3d">
-                            <div class="role-info">
-                                <h3>Administrative & Data Operations Specialist</h3>
-                                <span class="company-tag">TermiteMD</span>
+                <div class="timeline-item">
+                    <div class="timeline-track"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+                    <div class="timeline-card glass-card">
+                        <div class="timeline-head">
+                            <div>
+                                <h3>Administrative &amp; Data Operations Specialist</h3>
+                                <span class="company">TermiteMD</span>
                             </div>
-                            <div class="period-badge">Mar 2025 – Sep 2025</div>
+                            <span class="period">Mar 2025 &ndash; Sep 2025</span>
                         </div>
-                        <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Remote</div>
-                        <ul class="achievement-list">
-                            <li><i class="fas fa-chevron-right"></i> Scraped, normalized, and validated web data at scale — delivering zero-error structured reports in CSV and Google Sheets formats</li>
-                            <li><i class="fas fa-chevron-right"></i> Updated and maintained WordPress CMS pages with meticulous attention to content accuracy and user experience</li>
-                            <li><i class="fas fa-chevron-right"></i> Organized digital workspaces and workflow documentation, improving cross-team data accessibility and reducing retrieval time by 50%+</li>
-                            <li><i class="fas fa-chevron-right"></i> Monitored site structure changes and autonomously adapted data collection protocols to maintain consistency</li>
+                        <div class="location"><i class="fas fa-location-dot"></i> Remote</div>
+                        <ul class="timeline-list">
+                            <li>Scraped, normalized and validated web data at scale, delivering structured reports in CSV and Google Sheets</li>
+                            <li>Maintained WordPress CMS pages with attention to content accuracy and user experience</li>
+                            <li>Organized digital workspaces and workflow documentation, improving retrieval time across teams</li>
+                            <li>Monitored site structure changes and adapted data collection protocols independently</li>
                         </ul>
                         <div class="timeline-tags">
-                            <span>Data Operations</span><span>WordPress</span><span>Data Validation</span><span>Independent Execution</span>
+                            <span>Data operations</span><span>WordPress</span><span>Independent execution</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Role 3 -->
-                <div class="timeline-item-3d">
-                    <div class="timeline-connector">
-                        <div class="connector-line"></div>
-                        <div class="connector-dot"></div>
-                    </div>
-                    <div class="timeline-card-3d glass-card">
-                        <div class="timeline-header-3d">
-                            <div class="role-info">
-                                <h3>Virtual Assistant & Client Operations Manager</h3>
-                                <span class="company-tag">ICMGx Agency</span>
+                <div class="timeline-item">
+                    <div class="timeline-track"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+                    <div class="timeline-card glass-card">
+                        <div class="timeline-head">
+                            <div>
+                                <h3>Virtual Assistant &amp; Client Operations Manager</h3>
+                                <span class="company">ICMGx Agency</span>
                             </div>
-                            <div class="period-badge">Jan 2025 – Dec 2025</div>
+                            <span class="period">Jan 2025 &ndash; Dec 2025</span>
                         </div>
-                        <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Remote</div>
-                        <ul class="achievement-list">
-                            <li><i class="fas fa-chevron-right"></i> Simultaneously managed 5 concurrent client accounts, contributing to $75,000+ in total client revenue with 100% on-time delivery</li>
-                            <li><i class="fas fa-chevron-right"></i> Engineered automated onboarding and workflow systems, reducing manual administrative workload by 60%</li>
-                            <li><i class="fas fa-chevron-right"></i> Provided comprehensive executive support including email management, scheduling, meeting documentation, and communication management</li>
-                            <li><i class="fas fa-chevron-right"></i> Managed WordPress publishing, SEO optimization, and content workflows for diverse client brand portfolios</li>
-                            <li><i class="fas fa-chevron-right"></i> Developed structured data strategies aligning administrative processes with client business objectives</li>
-                            <li><i class="fas fa-chevron-right"></i> Implemented workflow automation solutions improving productivity and efficiency across all client accounts</li>
+                        <div class="location"><i class="fas fa-location-dot"></i> Remote</div>
+                        <ul class="timeline-list">
+                            <li>Managed five concurrent client accounts, contributing to a substantial revenue book with on-time delivery</li>
+                            <li>Engineered automated onboarding and workflow systems, cutting manual workload by 60 percent</li>
+                            <li>Provided executive support including email management, scheduling and meeting documentation</li>
+                            <li>Managed WordPress publishing, SEO optimization and content workflows for client brands</li>
+                            <li>Developed structured data strategies aligning administrative process with business objectives</li>
                         </ul>
                         <div class="timeline-tags">
-                            <span>Multi-Account Management</span><span>Process Automation</span><span>SEO</span><span>WordPress</span><span>Client Relations</span>
+                            <span>Multi-account management</span><span>Process automation</span><span>SEO</span><span>Client relations</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Role 4 -->
-                <div class="timeline-item-3d">
-                    <div class="timeline-connector">
-                        <div class="connector-line"></div>
-                        <div class="connector-dot"></div>
-                    </div>
-                    <div class="timeline-card-3d glass-card">
-                        <div class="timeline-header-3d">
-                            <div class="role-info">
-                                <h3>NYSC Administrative & HR Intern</h3>
-                                <span class="company-tag">Nigerian Airspace Management Agency (NAMA)</span>
+                <div class="timeline-item">
+                    <div class="timeline-track"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+                    <div class="timeline-card glass-card">
+                        <div class="timeline-head">
+                            <div>
+                                <h3>NYSC Administrative &amp; HR Intern</h3>
+                                <span class="company">Nigerian Airspace Management Agency (NAMA)</span>
                             </div>
-                            <div class="period-badge">2024 – 2025</div>
+                            <span class="period">2024 &ndash; 2025</span>
                         </div>
-                        <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Abuja, Nigeria</div>
-                        <ul class="achievement-list">
-                            <li><i class="fas fa-chevron-right"></i> Served within the Administration and Human Resources departments during the National Youth Service Corps programme</li>
-                            <li><i class="fas fa-chevron-right"></i> Coordinated administrative activities across multiple departments and operational units within a federal agency</li>
-                            <li><i class="fas fa-chevron-right"></i> Assisted with employee documentation, records management, onboarding support, and personnel administration</li>
-                            <li><i class="fas fa-chevron-right"></i> Scheduled meetings, prepared reports, managed correspondence, and maintained departmental records</li>
-                            <li><i class="fas fa-chevron-right"></i> Assisted with compliance documentation, information management, and confidential record handling</li>
-                            <li><i class="fas fa-chevron-right"></i> Participated in specialized administrative assignments supporting security-related operations</li>
+                        <div class="location"><i class="fas fa-location-dot"></i> Abuja, Nigeria</div>
+                        <ul class="timeline-list">
+                            <li>Served within the Administration and Human Resources departments during national service</li>
+                            <li>Coordinated administrative activities across departments within a federal agency</li>
+                            <li>Assisted with employee documentation, records management and onboarding support</li>
+                            <li>Scheduled meetings, prepared reports and maintained departmental records</li>
+                            <li>Assisted with compliance documentation and confidential record handling</li>
                         </ul>
                         <div class="timeline-tags">
-                            <span>HR Administration</span><span>Records Management</span><span>Compliance</span><span>Government Operations</span>
+                            <span>HR administration</span><span>Records management</span><span>Compliance</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Role 5 -->
-                <div class="timeline-item-3d">
-                    <div class="timeline-connector">
-                        <div class="connector-line"></div>
-                        <div class="connector-dot"></div>
-                    </div>
-                    <div class="timeline-card-3d glass-card">
-                        <div class="timeline-header-3d">
-                            <div class="role-info">
-                                <h3>Freelance Virtual Assistant & Digital Operations Specialist</h3>
-                                <span class="company-tag">Self-Employed (Multiple Clients)</span>
+                <div class="timeline-item">
+                    <div class="timeline-track"><div class="timeline-dot"></div></div>
+                    <div class="timeline-card glass-card">
+                        <div class="timeline-head">
+                            <div>
+                                <h3>Freelance Virtual Assistant &amp; Digital Operations Specialist</h3>
+                                <span class="company">Self-employed, multiple clients</span>
                             </div>
-                            <div class="period-badge">2022 – Dec 2024</div>
+                            <span class="period">2022 &ndash; Dec 2024</span>
                         </div>
-                        <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Remote | E-commerce, Real Estate, Fashion, Media</div>
-                        <ul class="achievement-list">
-                            <li><i class="fas fa-chevron-right"></i> Delivered virtual assistance, content management, and digital analytics for clients: Ocean Wealth U Commerce, Bid3 Realty, Fashion Quirk</li>
-                            <li><i class="fas fa-chevron-right"></i> Designed data collection workflows gathering structured performance metrics from Instagram Insights and TikTok Analytics</li>
-                            <li><i class="fas fa-chevron-right"></i> Developed and maintained content calendars and reporting pipelines ensuring consistent performance tracking</li>
-                            <li><i class="fas fa-chevron-right"></i> Managed social media accounts (Mar 2022 – present), developing content strategies for brand visibility and engagement</li>
-                            <li><i class="fas fa-chevron-right"></i> Created marketing, sales, and email copy for clients across multiple industries (Jun 2023 – present)</li>
-                            <li><i class="fas fa-chevron-right"></i> Researched, wrote, and structured YouTube scripts for digital content creators, supporting audience retention and growth</li>
+                        <div class="location"><i class="fas fa-location-dot"></i> Remote | E-commerce, real estate, fashion, media</div>
+                        <ul class="timeline-list">
+                            <li>Delivered virtual assistance and digital analytics support for clients including Ocean Wealth U Commerce, Bid3 Realty and Fashion Quirk</li>
+                            <li>Designed data collection workflows gathering performance metrics from Instagram and TikTok</li>
+                            <li>Maintained content calendars and reporting pipelines for consistent performance tracking</li>
+                            <li>Managed social media accounts, developing content strategy for brand visibility</li>
+                            <li>Wrote marketing, sales and email copy across multiple industries</li>
+                            <li>Researched and structured YouTube scripts for digital content creators</li>
                         </ul>
                         <div class="timeline-tags">
-                            <span>Virtual Assistance</span><span>Social Media</span><span>Content Creation</span><span>Copywriting</span><span>Analytics</span>
+                            <span>Virtual assistance</span><span>Social media</span><span>Content creation</span><span>Copywriting</span>
                         </div>
                     </div>
                 </div>
@@ -731,254 +564,224 @@
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="certifications-section">
+    <!-- Credentials -->
+    <section id="credentials" class="section section-alt">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Credentials</span>
-                <h2 class="section-title">Education & <span class="gradient-text">Certifications</span></h2>
-                <p class="section-subtitle">Academically grounded, professionally certified, continuously learning</p>
+            <div class="section-header reveal">
+                <span class="eyebrow">Credentials</span>
+                <h2 class="section-title">Education &amp; <em>certifications</em></h2>
+                <div class="ornament"><span></span><i></i><span></span></div>
+                <p class="section-sub">Academically grounded and professionally certified</p>
             </div>
 
-            <!-- Education -->
-            <div class="education-card glass-card">
+            <div class="education-card glass-card reveal">
                 <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
                 <div class="edu-details">
-                    <h3>Bachelor of Science — Criminology and Security Studies</h3>
+                    <h3>Bachelor of Science, Criminology and Security Studies</h3>
                     <p class="edu-school">University of Ilorin, Nigeria</p>
-                    <p class="edu-period">2019 – 2024 &nbsp;|&nbsp; Second Class Lower (2:2)</p>
-                    <p class="edu-note">Academic foundation in security operations, information management, compliance, and investigative procedures — directly applicable to confidential executive support roles.</p>
+                    <p class="edu-period">2019 &ndash; 2024 &nbsp;|&nbsp; Second Class Lower (2:2)</p>
+                    <p class="edu-note">An academic foundation in security operations, information management, compliance and investigative procedure, which carries directly into confidential executive support work.</p>
                 </div>
             </div>
 
-            <!-- Certifications Grid -->
-            <div class="certs-3d-grid">
-                <div class="cert-3d-card">
-                    <div class="cert-icon-3d"><i class="fas fa-certificate"></i></div>
-                    <div class="cert-shine"></div>
+            <div class="cert-grid reveal">
+                <div class="cert-card glass-card">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
                     <h4>Professional Diploma of Virtual Executive Assistant</h4>
-                    <p>MTF Institute — Udemy</p>
-                    <span class="cert-year-badge">2025</span>
+                    <p>MTF Institute, via Udemy</p>
+                    <span class="cert-year">2025</span>
                 </div>
-                <div class="cert-3d-card">
-                    <div class="cert-icon-3d"><i class="fas fa-award"></i></div>
-                    <div class="cert-shine"></div>
+                <div class="cert-card glass-card">
+                    <div class="cert-icon"><i class="fas fa-award"></i></div>
                     <h4>Virtual Assistant Certificate</h4>
                     <p>ALX Africa</p>
-                    <span class="cert-year-badge">2024</span>
+                    <span class="cert-year">2024</span>
                 </div>
-                <div class="cert-3d-card">
-                    <div class="cert-icon-3d"><i class="fas fa-robot"></i></div>
-                    <div class="cert-shine"></div>
-                    <h4>AI Automation Workflow & AI Agents</h4>
+                <div class="cert-card glass-card">
+                    <div class="cert-icon"><i class="fas fa-gears"></i></div>
+                    <h4>AI Automation Workflow &amp; AI Agents</h4>
                     <p>Udemy</p>
-                    <span class="cert-year-badge">2025</span>
+                    <span class="cert-year">2025</span>
                 </div>
-                <div class="cert-3d-card">
-                    <div class="cert-icon-3d"><i class="fas fa-project-diagram"></i></div>
-                    <div class="cert-shine"></div>
-                    <h4>Project Management (Agile, Scrum, PMP)</h4>
+                <div class="cert-card glass-card">
+                    <div class="cert-icon"><i class="fas fa-diagram-project"></i></div>
+                    <h4>Project Management: Agile, Scrum, PMP</h4>
                     <p>Udemy</p>
-                    <span class="cert-year-badge">2025</span>
+                    <span class="cert-year">2025</span>
                 </div>
-                <div class="cert-3d-card">
-                    <div class="cert-icon-3d"><i class="fas fa-users-cog"></i></div>
-                    <div class="cert-shine"></div>
+                <div class="cert-card glass-card">
+                    <div class="cert-icon"><i class="fas fa-users-gear"></i></div>
                     <h4>Advanced Human Resource Management</h4>
-                    <p>MTF Institute — Udemy</p>
-                    <span class="cert-year-badge">2025</span>
+                    <p>MTF Institute, via Udemy</p>
+                    <span class="cert-year">2025</span>
                 </div>
-                <div class="cert-3d-card">
-                    <div class="cert-icon-3d"><i class="fas fa-chart-bar"></i></div>
-                    <div class="cert-shine"></div>
+                <div class="cert-card glass-card">
+                    <div class="cert-icon"><i class="fas fa-chart-bar"></i></div>
                     <h4>Google Analytics Certification</h4>
                     <p>Google</p>
-                    <span class="cert-year-badge">2024</span>
+                    <span class="cert-year">2024</span>
                 </div>
-                <div class="cert-3d-card">
-                    <div class="cert-icon-3d"><i class="fas fa-bullhorn"></i></div>
-                    <div class="cert-shine"></div>
+                <div class="cert-card glass-card">
+                    <div class="cert-icon"><i class="fas fa-bullhorn"></i></div>
                     <h4>HubSpot Content Marketing Certification</h4>
                     <p>HubSpot Academy</p>
-                    <span class="cert-year-badge">2023</span>
+                    <span class="cert-year">2023</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Me -->
-    <section class="why-section">
+    <!-- Working style -->
+    <section class="section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">The Advantage</span>
-                <h2 class="section-title">Why Hire <span class="gradient-text">Shafiu Jimoh?</span></h2>
+            <div class="section-header reveal">
+                <span class="eyebrow">Working style</span>
+                <h2 class="section-title">How I <em>operate</em></h2>
+                <div class="ornament"><span></span><i></i><span></span></div>
             </div>
-            <div class="why-grid-3d">
-                <div class="why-card-3d">
-                    <div class="why-number">01</div>
-                    <div class="why-icon"><i class="fas fa-clock"></i></div>
-                    <h3>100% On-Time, Every Time</h3>
-                    <p>Three years of remote delivery with zero missed deadlines across 5 simultaneous client accounts. Reliability isn't a goal — it's a standard.</p>
+            <div class="approach-grid reveal">
+                <div class="approach-card glass-card">
+                    <div class="approach-number">I</div>
+                    <h3>Delivery, on time</h3>
+                    <p>Deadlines are treated as commitments, tracked and communicated proactively rather than chased after.</p>
                 </div>
-                <div class="why-card-3d">
-                    <div class="why-number">02</div>
-                    <div class="why-icon"><i class="fas fa-eye-slash"></i></div>
-                    <h3>Zero Supervision Required</h3>
-                    <p>Fully autonomous operation. I proactively identify priorities, troubleshoot roadblocks, and deliver results without needing to be managed.</p>
+                <div class="approach-card glass-card">
+                    <div class="approach-number">II</div>
+                    <h3>Minimal oversight</h3>
+                    <p>I identify priorities and troubleshoot roadblocks independently, checking in with context rather than questions.</p>
                 </div>
-                <div class="why-card-3d">
-                    <div class="why-number">03</div>
-                    <div class="why-icon"><i class="fas fa-lock"></i></div>
-                    <h3>Absolute Discretion</h3>
-                    <p>Experienced in handling sensitive executive, financial, personnel, and strategic information with established confidentiality protocols.</p>
+                <div class="approach-card glass-card">
+                    <div class="approach-number">III</div>
+                    <h3>Careful with detail</h3>
+                    <p>Executive, financial and personnel information is handled under clear confidentiality practice.</p>
                 </div>
-                <div class="why-card-3d">
-                    <div class="why-number">04</div>
-                    <div class="why-icon"><i class="fas fa-globe"></i></div>
-                    <h3>Global Time Zone Flexibility</h3>
-                    <p>Available and adaptable across all time zones. Whether you're in Lagos, London or Los Angeles — I deliver when you need it.</p>
+                <div class="approach-card glass-card">
+                    <div class="approach-number">IV</div>
+                    <h3>Time zone flexible</h3>
+                    <p>Working hours adjust to where the work is, so scheduling across regions is rarely a constraint.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="contact-3d-bg" id="contactCanvas"></div>
+    <!-- Contact -->
+    <section id="contact" class="section section-alt">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Let's Connect</span>
-                <h2 class="section-title">Ready to <span class="gradient-text">Transform Your Operations?</span></h2>
-                <p class="section-subtitle">Let's discuss how I can bring clarity, efficiency, and results to your team</p>
+            <div class="section-header reveal">
+                <span class="eyebrow">Let's talk</span>
+                <h2 class="section-title">Ready to bring <em>order to your operations?</em></h2>
+                <div class="ornament"><span></span><i></i><span></span></div>
+                <p class="section-sub">A short message is enough to start. I typically respond within a day.</p>
             </div>
-            <div class="contact-content-3d">
-                <div class="contact-info-3d">
-                    <div class="contact-info-card glass-card">
-                        <h3>Get In Touch</h3>
-                        <div class="contact-item">
-                            <div class="contact-icon-3d"><i class="fas fa-envelope"></i></div>
-                            <div>
-                                <p class="contact-label">Email</p>
-                                <a href="mailto:shafiujimoh2003@gmail.com">shafiujimoh2003@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon-3d"><i class="fas fa-phone"></i></div>
-                            <div>
-                                <p class="contact-label">Phone / WhatsApp</p>
-                                <a href="tel:+2348130307875">+234-813-030-7875</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon-3d"><i class="fas fa-map-marker-alt"></i></div>
-                            <div>
-                                <p class="contact-label">Location</p>
-                                <p>Abuja, Nigeria &nbsp;|&nbsp; <span class="remote-badge">Remote-First</span></p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon-3d"><i class="fab fa-linkedin"></i></div>
-                            <div>
-                                <p class="contact-label">LinkedIn</p>
-                                <a href="https://linkedin.com/in/shafiujimoh" target="_blank">linkedin.com/in/shafiujimoh</a>
-                            </div>
-                        </div>
-                        <div class="availability-banner">
-                            <div class="avail-dot"></div>
-                            <span>Currently accepting new client engagements</span>
-                        </div>
+            <div class="contact-grid reveal">
+                <div class="contact-card glass-card">
+                    <h3>Get in touch</h3>
+                    <div class="contact-row">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div><p class="label">Email</p><a href="mailto:shafiujimoh2003@gmail.com">shafiujimoh2003@gmail.com</a></div>
                     </div>
+                    <div class="contact-row">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div><p class="label">Phone / WhatsApp</p><a href="tel:+2348130307875">+234 813 030 7875</a></div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
+                        <div><p class="label">Location</p><p>Abuja, Nigeria &nbsp;|&nbsp; remote-first</p></div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                        <div><p class="label">LinkedIn</p><a href="https://linkedin.com/in/shafiujimoh" target="_blank" rel="noopener">linkedin.com/in/shafiujimoh</a></div>
+                    </div>
+                    <div class="status-line"><span class="dot"></span><span>Currently accepting new client engagements</span></div>
                 </div>
-                <div class="contact-form-3d">
-                    <form id="contactForm" class="glass-card">
-                        <h3>Send a Message</h3>
+                <div class="form-card glass-card">
+                    <h3>Send a message</h3>
+                    <form id="contactForm" novalidate>
                         <div class="form-row">
-                            <div class="form-group floating">
-                                <input type="text" id="name" name="name" required placeholder=" ">
-                                <label for="name">Your Name</label>
-                                <div class="form-line"></div>
+                            <div class="field">
+                                <input type="text" id="name" name="name" required placeholder=" " autocomplete="name">
+                                <label for="name">Your name</label>
                             </div>
-                            <div class="form-group floating">
-                                <input type="email" id="email" name="email" required placeholder=" ">
-                                <label for="email">Email Address</label>
-                                <div class="form-line"></div>
+                            <div class="field">
+                                <input type="email" id="email" name="email" required placeholder=" " autocomplete="email">
+                                <label for="email">Email address</label>
                             </div>
                         </div>
-                        <div class="form-group floating">
+                        <div class="field">
                             <input type="text" id="subject" name="subject" required placeholder=" ">
                             <label for="subject">Subject</label>
-                            <div class="form-line"></div>
                         </div>
-                        <div class="form-group floating">
+                        <div class="field">
                             <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
-                            <label for="message">Your Message</label>
-                            <div class="form-line"></div>
+                            <label for="message">Your message</label>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full magnetic">
-                            <span>Send Message</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
+                        <button type="submit" class="btn btn-primary btn-full"><span>Send message</span><i class="fas fa-paper-plane"></i></button>
                     </form>
-                    <div id="formMessage" class="form-message"></div>
+                    <div id="formNote" class="form-note" role="status"></div>
                 </div>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-particles" id="footerParticles"></div>
+    <footer class="site-footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="logo.png" alt="Shafiu Jimoh" class="footer-logo">
-                    <h3>SHAFIU JIMOH</h3>
-                    <p class="footer-tagline">Virtually Unseen. Totally Effective.</p>
-                    <p>Executive Virtual Assistant | Personal Assistant | Remote Operations Specialist</p>
+                    <a href="#top" class="brand">
+                        <span class="brand-mark">SJ</span>
+                        <span class="brand-name">Shafiu Jimoh</span>
+                    </a>
+                    <p class="footer-tagline">Executive Virtual Assistant and Remote Operations Specialist, working with founders and executives across time zones.</p>
+                    <div class="social-row">
+                        <a href="https://www.linkedin.com/in/shafiujimoh" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/ShafiuJimoh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="mailto:shafiujimoh2003@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <h4>Navigation</h4>
+                <div class="footer-col">
+                    <h4>Navigate</h4>
                     <ul>
-                        <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#impact">Impact</a></li>
+                        <li><a href="#results">Results</a></li>
                         <li><a href="#skills">Skills</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#experience">Experience</a></li>
-                        <li><a href="#certifications">Credentials</a></li>
+                        <li><a href="#credentials">Credentials</a></li>
                     </ul>
                 </div>
-                <div class="footer-services">
+                <div class="footer-col">
                     <h4>Services</h4>
                     <ul>
-                        <li>Executive Assistance</li>
-                        <li>Personal Assistance</li>
-                        <li>Workflow Automation</li>
-                        <li>Project Coordination</li>
-                        <li>HR Administration</li>
-                        <li>Digital Operations</li>
+                        <li>Executive assistance</li>
+                        <li>Personal assistance</li>
+                        <li>Workflow automation</li>
+                        <li>Project coordination</li>
+                        <li>HR administration</li>
+                        <li>Digital operations</li>
                     </ul>
                 </div>
-                <div class="footer-contact-info">
+                <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
                         <li><i class="fas fa-envelope"></i> shafiujimoh2003@gmail.com</li>
-                        <li><i class="fas fa-phone"></i> +234-813-030-7875</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Abuja, Nigeria</li>
+                        <li><i class="fas fa-phone"></i> +234 813 030 7875</li>
+                        <li><i class="fas fa-location-dot"></i> Abuja, Nigeria</li>
                     </ul>
-                    <div class="footer-socials">
-                        <a href="https://www.linkedin.com/in/shafiujimoh" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://twitter.com/shafiujimoh" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://github.com/ShafiuJimoh" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Shafiu Jimoh — All Rights Reserved.</p>
-                <p>Executive Virtual Assistant | Open to Global Opportunities</p>
+                <p>&copy; 2026 Shafiu Jimoh. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <button class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
     <script src="script.js"></script>
 </body>
