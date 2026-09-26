@@ -268,6 +268,11 @@ h1, h2, h3, h4 {
 .hero-grid {
     display: grid; grid-template-columns: 1.15fr 0.85fr;
     gap: 70px; align-items: center;
+    position: relative; z-index: 2;
+}
+.hero-motes {
+    position: absolute; inset: 0; z-index: 1;
+    pointer-events: none; opacity: 0.55;
 }
 .eyebrow-line {
     display: flex; align-items: center; gap: 12px;
@@ -304,24 +309,52 @@ h1, h2, h3, h4 {
     margin-top: 6px; max-width: 130px;
 }
 
-.hero-panel { display: flex; flex-direction: column; gap: 22px; }
-.profile-card { padding: 40px 32px; text-align: center; }
-.profile-ring {
-    width: 96px; height: 96px; margin: 0 auto 20px;
-    border-radius: 50%; border: 1px solid var(--brass);
-    display: flex; align-items: center; justify-content: center;
-    position: relative;
+.hero-panel { display: flex; flex-direction: column; gap: 22px; position: relative; z-index: 2; }
+.profile-card { padding: 40px 32px; text-align: center; position: relative; transform-style: preserve-3d; will-change: transform; }
+
+/* Portrait frame: an oval brass-rimmed window onto the photograph, with a
+   soft light sweep and gentle pointer-driven parallax (desktop only). */
+.hero-portrait-frame {
+    width: 176px; height: 176px; margin: 0 auto 20px;
+    border-radius: 50%; position: relative; overflow: hidden;
+    border: 1px solid var(--brass);
+    box-shadow: 0 0 0 6px rgba(201,161,90,0.08), 0 18px 34px rgba(4,6,6,0.5);
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
 }
-.profile-ring::before {
-    content: ''; position: absolute; inset: 6px;
-    border-radius: 50%; border: 1px solid rgba(201,161,90,0.35);
+.hero-portrait-frame::before {
+    content: ''; position: absolute; inset: 8px; border-radius: 50%;
+    border: 1px solid rgba(201,161,90,0.35); z-index: 3; pointer-events: none;
 }
-.profile-ring span {
-    font-family: 'Playfair Display', serif; font-style: italic;
-    font-size: 1.6rem; font-weight: 700; color: var(--brass);
+.hero-portrait-frame picture, .hero-portrait-frame img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transform: scale(1.04);
+    transition: transform 0.6s var(--ease);
 }
+.hero-portrait-frame:hover img { transform: scale(1.1); }
+.hero-portrait-shine {
+    position: absolute; inset: -40% -120%; z-index: 2;
+    background: linear-gradient(75deg, transparent 42%, rgba(244,236,221,0.28) 50%, transparent 58%);
+    transform: translateX(-60%);
+    animation: portraitShine 6.5s ease-in-out infinite;
+    pointer-events: none;
+}
+@keyframes portraitShine {
+    0%, 55% { transform: translateX(-60%); }
+    100% { transform: translateX(60%); }
+}
+
+.local-time-chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin: 0 auto 18px; padding: 6px 14px;
+    border: 1px solid var(--ink-line); border-radius: 30px;
+    font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 600;
+    color: var(--text-secondary); letter-spacing: 0.3px;
+    background: rgba(244, 236, 221, 0.03);
+}
+.local-time-chip i { color: var(--brass); font-size: 0.72rem; }
+
 .profile-card h3 { font-size: 1.25rem; margin-bottom: 6px; }
-.profile-card .location { color: var(--text-muted); font-size: 0.85rem; font-family: 'Inter', sans-serif; margin-bottom: 18px; }
+.profile-card .location { color: var(--text-muted); font-size: 0.85rem; font-family: 'Inter', sans-serif; margin-bottom: 14px; }
 .role-tags { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
 .role-tags li {
     border: 1px solid var(--glass-border);
@@ -360,23 +393,24 @@ h1, h2, h3, h4 {
     gap: 72px; align-items: start;
 }
 .about-media { display: flex; flex-direction: column; align-items: center; gap: 24px; }
-.about-mark {
-    width: 220px; height: 220px; border-radius: 50%;
+.about-portrait-frame {
+    width: 240px; height: 240px; border-radius: 50%;
+    position: relative; overflow: hidden;
     border: 1px solid var(--brass);
-    display: flex; align-items: center; justify-content: center;
-    position: relative;
+    box-shadow: 0 24px 50px rgba(4,6,6,0.5);
+    transition: transform 0.5s var(--ease);
 }
-.about-mark::before {
-    content: ''; position: absolute; inset: 14px; border-radius: 50%;
-    border: 1px solid rgba(201,161,90,0.3);
+.about-portrait-frame picture, .about-portrait-frame img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    filter: saturate(0.94) contrast(1.02);
+    transform: scale(1.02);
+    transition: transform 0.6s var(--ease), filter 0.6s var(--ease);
 }
-.about-mark::after {
-    content: ''; position: absolute; inset: 26px; border-radius: 50%;
-    border: 1px dashed rgba(201,161,90,0.22);
-}
-.about-mark span {
-    font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700;
-    font-size: 3.2rem; color: var(--brass);
+.about-portrait-frame:hover img { transform: scale(1.08); filter: saturate(1.05) contrast(1.04); }
+.about-portrait-ring {
+    position: absolute; inset: 12px; border-radius: 50%;
+    border: 1px dashed rgba(201,161,90,0.28);
+    pointer-events: none;
 }
 .about-badges { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 220px; }
 .about-badge {
@@ -613,7 +647,7 @@ h1, h2, h3, h4 {
 .edu-period { color: var(--text-muted); font-size: 0.8rem; margin-bottom: 10px; font-family: 'Inter', sans-serif; }
 .edu-note { color: var(--text-secondary); font-size: 0.87rem; line-height: 1.7; font-family: 'Inter', sans-serif; }
 
-.cert-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .cert-card { padding: 26px 20px; text-align: center; }
 .cert-icon {
     width: 46px; height: 46px; margin: 0 auto 16px;
@@ -741,6 +775,239 @@ h1, h2, h3, h4 {
 }
 .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
 .back-top:hover { border-color: var(--brass); }
+
+/* ==========================================================================
+   IMMERSIVE LAYER
+   A set of restrained, cohesive interaction systems that make the site feel
+   like a considered environment rather than a static page: a brief ink
+   preloader, a brass lantern that follows the cursor, a chapter progress
+   rail, a keyboard-first command palette, drifting hero motes, an optional
+   ambient sound toggle, and magnetic buttons. Every effect respects
+   prefers-reduced-motion and degrades to plain, functional markup.
+   ========================================================================== */
+
+/* ---- Preloader ---- */
+.preloader {
+    position: fixed; inset: 0; z-index: 9999;
+    background: var(--ink);
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.5s var(--ease), visibility 0.5s var(--ease);
+}
+.preloader-inner { position: relative; display: flex; align-items: center; justify-content: center; }
+.preloader-ring { animation: none; }
+.preloader-arc { transform-origin: 60px 60px; transform: rotate(-90deg); transition: stroke-dashoffset 1.1s var(--ease); }
+.preloader-mark {
+    position: absolute; font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700;
+    color: var(--brass); font-size: 1.3rem; letter-spacing: 0.5px;
+}
+body.is-loading { overflow: hidden; }
+body.preloader-done .preloader { opacity: 0; visibility: hidden; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) {
+    .preloader { display: none; }
+}
+
+/* ---- Lantern cursor (desktop, fine pointer only) ---- */
+.lantern-glow, .cursor-ring, .cursor-dot { display: none; }
+@media (hover: hover) and (pointer: fine) {
+    .lantern-glow, .cursor-ring, .cursor-dot {
+        display: block; position: fixed; top: 0; left: 0; z-index: 40;
+        pointer-events: none; will-change: transform;
+    }
+    .lantern-glow {
+        width: 420px; height: 420px; margin: -210px 0 0 -210px;
+        background: radial-gradient(circle, rgba(201,161,90,0.10), rgba(201,161,90,0.03) 45%, transparent 72%);
+        z-index: 5;
+    }
+    .cursor-ring {
+        width: 30px; height: 30px; margin: -15px 0 0 -15px;
+        border: 1px solid var(--brass-glow); border-radius: 50%;
+        transition: width 0.25s var(--ease), height 0.25s var(--ease), margin 0.25s var(--ease), border-color 0.25s var(--ease), background 0.25s var(--ease);
+    }
+    .cursor-ring.is-active {
+        width: 54px; height: 54px; margin: -27px 0 0 -27px;
+        border-color: var(--brass); background: rgba(201,161,90,0.08);
+    }
+    .cursor-dot {
+        width: 4px; height: 4px; margin: -2px 0 0 -2px;
+        background: var(--brass); border-radius: 50%;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .lantern-glow, .cursor-ring, .cursor-dot { display: none !important; }
+}
+
+/* ---- Hero motes canvas is positioned inline above; nothing extra needed ---- */
+
+/* ---- Palette trigger button inside nav ---- */
+.palette-trigger {
+    display: none; align-items: center; gap: 8px;
+    margin-left: 14px; padding: 7px 12px;
+    border: 1px solid var(--ink-line); border-radius: var(--radius-sm);
+    background: transparent; color: var(--text-muted);
+    font-family: 'Inter', sans-serif; font-size: 0.78rem;
+    cursor: pointer; transition: border-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+.palette-trigger:hover { border-color: var(--brass-glow); color: var(--brass); }
+.palette-trigger .palette-kbd {
+    border: 1px solid var(--ink-line); border-radius: 4px;
+    padding: 1px 7px; font-size: 0.7rem; color: var(--text-muted);
+}
+@media (min-width: 769px) { .palette-trigger { display: inline-flex; } }
+
+/* ---- The Ledger: fixed chapter progress rail ---- */
+.progress-rail {
+    position: fixed; right: 26px; top: 50%; transform: translateY(-50%);
+    z-index: 700; display: none;
+}
+@media (min-width: 1180px) { .progress-rail { display: block; } }
+.progress-rail-track {
+    position: absolute; left: 3px; top: 4px; bottom: 4px; width: 1px;
+    background: var(--ink-line); z-index: 0;
+}
+.progress-rail-fill {
+    position: absolute; left: 0; top: 0; width: 100%; height: 0%;
+    background: linear-gradient(to bottom, var(--brass), var(--brass-glow));
+    transition: height 0.25s linear;
+}
+.progress-rail-nodes { position: relative; display: flex; flex-direction: column; gap: 22px; z-index: 1; }
+.progress-rail-nodes a {
+    display: flex; align-items: center; gap: 10px;
+    position: relative; padding: 2px 0;
+}
+.rail-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    border: 1px solid var(--text-muted); background: var(--ink);
+    transition: border-color 0.3s var(--ease), background 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+    flex-shrink: 0;
+}
+.rail-label {
+    font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--text-muted);
+    opacity: 0; transform: translateX(-6px);
+    transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), color 0.25s var(--ease);
+    white-space: nowrap; position: absolute; right: 20px;
+    background: rgba(18,24,26,0.9); padding: 4px 10px; border-radius: var(--radius-sm);
+    border: 1px solid var(--ink-line);
+}
+.progress-rail-nodes a:hover .rail-label { opacity: 1; transform: translateX(0); color: var(--brass); }
+.progress-rail-nodes a.active .rail-dot {
+    border-color: var(--brass); background: var(--brass);
+    box-shadow: 0 0 0 4px rgba(201,161,90,0.15);
+    transform: scale(1.15);
+}
+
+/* ---- The Call Bell: command palette ---- */
+.command-palette {
+    position: fixed; inset: 0; z-index: 3000;
+    display: flex; align-items: flex-start; justify-content: center;
+    padding-top: 14vh;
+}
+.command-palette[hidden] { display: none; }
+.command-palette-backdrop {
+    position: absolute; inset: 0;
+    background: rgba(8,10,11,0.72); backdrop-filter: blur(4px);
+}
+.command-palette-panel {
+    position: relative; z-index: 1;
+    width: 92%; max-width: 560px;
+    padding: 8px;
+    animation: paletteIn 0.22s var(--ease);
+}
+@keyframes paletteIn {
+    from { opacity: 0; transform: translateY(-10px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.command-palette-input-row {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 16px; border-bottom: 1px solid var(--ink-line);
+}
+.command-palette-input-row i { color: var(--brass); }
+.command-palette-input-row input {
+    flex: 1; background: transparent; border: none; outline: none;
+    color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 1rem;
+}
+.command-palette-input-row input::placeholder { color: var(--text-muted); }
+.command-palette-esc {
+    font-family: 'Inter', sans-serif; font-size: 0.7rem; color: var(--text-muted);
+    border: 1px solid var(--ink-line); border-radius: 4px; padding: 2px 8px;
+}
+.command-palette-list { max-height: 46vh; overflow-y: auto; padding: 8px; }
+.command-palette-list li {
+    display: flex; align-items: center; gap: 12px;
+    padding: 11px 12px; border-radius: var(--radius-sm);
+    cursor: pointer; color: var(--text-secondary);
+    font-family: 'Inter', sans-serif; font-size: 0.9rem;
+    transition: background 0.15s var(--ease), color 0.15s var(--ease);
+}
+.command-palette-list li i { color: var(--brass); width: 16px; text-align: center; font-size: 0.85rem; }
+.command-palette-list li span.pk-hint { margin-left: auto; color: var(--text-muted); font-size: 0.72rem; }
+.command-palette-list li:hover, .command-palette-list li.is-selected { background: rgba(201,161,90,0.10); color: var(--parchment); }
+.command-palette-empty { padding: 20px 12px; color: var(--text-muted); font-family: 'Inter', sans-serif; font-size: 0.85rem; text-align: center; }
+
+/* ---- Ambient sound toggle ---- */
+.ambient-cluster {
+    position: fixed; bottom: 28px; right: 84px; z-index: 500;
+    display: flex; align-items: center; gap: 10px;
+}
+.ambient-toggle {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid var(--brass-glow);
+    background: rgba(18,24,26,0.85);
+    backdrop-filter: blur(10px);
+    color: var(--brass);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; position: relative;
+    transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.ambient-toggle:hover { border-color: var(--brass); transform: translateY(-2px); }
+.ambient-bars { display: none; align-items: flex-end; gap: 2px; height: 12px; position: absolute; }
+.ambient-toggle[aria-pressed="true"] i { display: none; }
+.ambient-toggle[aria-pressed="true"] .ambient-bars { display: flex; }
+.ambient-bars span {
+    width: 3px; background: var(--brass); border-radius: 1px;
+    animation: ambientBar 0.9s ease-in-out infinite;
+}
+.ambient-bars span:nth-child(1) { height: 40%; animation-delay: 0s; }
+.ambient-bars span:nth-child(2) { height: 100%; animation-delay: 0.2s; }
+.ambient-bars span:nth-child(3) { height: 65%; animation-delay: 0.4s; }
+@keyframes ambientBar { 0%, 100% { transform: scaleY(0.4); } 50% { transform: scaleY(1); } }
+.ambient-tooltip {
+    position: absolute; right: 54px;
+    font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--text-muted);
+    background: rgba(18,24,26,0.9); border: 1px solid var(--ink-line);
+    padding: 5px 10px; border-radius: var(--radius-sm);
+    opacity: 0; visibility: hidden; transform: translateX(6px);
+    transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), visibility 0.2s;
+    white-space: nowrap;
+}
+.ambient-cluster:hover .ambient-tooltip { opacity: 1; visibility: visible; transform: translateX(0); }
+
+/* ---- Magnetic buttons: subtle pull toward the cursor ---- */
+@media (hover: hover) and (pointer: fine) {
+    .btn, .ambient-toggle, .back-top { transition: transform 0.15s var(--ease), background 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease); }
+}
+
+/* ---- Reveal variants for staggered / directional entrances ---- */
+.reveal-stagger > * {
+    opacity: 0; transform: translateY(16px);
+    transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+.reveal-stagger.in > * { opacity: 1; transform: translateY(0); }
+.reveal-stagger.in > *:nth-child(1) { transition-delay: 0.02s; }
+.reveal-stagger.in > *:nth-child(2) { transition-delay: 0.08s; }
+.reveal-stagger.in > *:nth-child(3) { transition-delay: 0.14s; }
+.reveal-stagger.in > *:nth-child(4) { transition-delay: 0.20s; }
+.reveal-stagger.in > *:nth-child(5) { transition-delay: 0.26s; }
+.reveal-stagger.in > *:nth-child(6) { transition-delay: 0.32s; }
+.reveal-stagger.in > *:nth-child(7) { transition-delay: 0.38s; }
+.reveal-stagger.in > *:nth-child(8) { transition-delay: 0.44s; }
+.reveal-stagger.in > *:nth-child(9) { transition-delay: 0.5s; }
+@media (prefers-reduced-motion: reduce) {
+    .reveal-stagger > * { opacity: 1; transform: none; transition: none; }
+}
+
+@media (max-width: 1179px) {
+    .progress-rail { display: none; }
+}
 
 /* ==========================================================================
    LEGAL PAGES (Privacy / Terms)
