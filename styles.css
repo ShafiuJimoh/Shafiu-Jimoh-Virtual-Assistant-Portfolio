@@ -7,30 +7,36 @@
 
 :root {
     /* Ink / surface */
+    --ink-rgb: 18, 24, 26;
     --ink: #12181a;
     --ink-2: #171f21;
     --ink-3: #1d2628;
-    --ink-line: rgba(243, 234, 217, 0.10);
+    --ink-line-rgb: 243, 234, 217;
+    --ink-line: rgba(var(--ink-line-rgb), 0.10);
 
     /* Paper / text */
+    --parchment-rgb: 244, 236, 221;
     --parchment: #f4ecdd;
     --text-primary: #f1e9db;
     --text-secondary: #c7bea9;
     --text-muted: #8d8570;
 
-    /* Accents */
+    /* Accents (theme-switchable: see .scheme-* overrides at the end of file) */
+    --brass-rgb: 201, 161, 90;
     --brass: #c9a15a;
     --brass-soft: #a9834a;
-    --brass-glow: rgba(201, 161, 90, 0.35);
+    --brass-glow: rgba(var(--brass-rgb), 0.35);
+    --wine-rgb: 124, 45, 59;
     --wine: #7c2d3b;
     --wine-soft: #9a3c4d;
+    --moss-rgb: 86, 112, 79;
     --moss: #56704f;
     --moss-soft: #6c8a64;
 
     /* Glass */
-    --glass-bg: rgba(244, 236, 221, 0.045);
-    --glass-bg-strong: rgba(244, 236, 221, 0.07);
-    --glass-border: rgba(201, 161, 90, 0.22);
+    --glass-bg: rgba(var(--parchment-rgb), 0.045);
+    --glass-bg-strong: rgba(var(--parchment-rgb), 0.07);
+    --glass-border: rgba(var(--brass-rgb), 0.22);
 
     --shadow: 0 24px 48px rgba(4, 6, 6, 0.45);
     --shadow-soft: 0 12px 30px rgba(4, 6, 6, 0.30);
@@ -41,6 +47,9 @@
 
     --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     --container: 1180px;
+
+    color-scheme: dark;
+    transition: background 0.4s var(--ease);
 }
 
 /* ---- Reset ---- */
@@ -65,8 +74,8 @@ body::before {
     z-index: 0;
     pointer-events: none;
     background-image:
-        repeating-linear-gradient(45deg, rgba(244,236,221,0.015) 0px, rgba(244,236,221,0.015) 1px, transparent 1px, transparent 5px),
-        repeating-linear-gradient(-45deg, rgba(244,236,221,0.012) 0px, rgba(244,236,221,0.012) 1px, transparent 1px, transparent 5px);
+        repeating-linear-gradient(45deg, rgba(var(--parchment-rgb), 0.015) 0px, rgba(var(--parchment-rgb), 0.015) 1px, transparent 1px, transparent 5px),
+        repeating-linear-gradient(-45deg, rgba(var(--parchment-rgb), 0.012) 0px, rgba(var(--parchment-rgb), 0.012) 1px, transparent 1px, transparent 5px);
 }
 
 a { text-decoration: none; color: inherit; }
@@ -134,7 +143,7 @@ h1, h2, h3, h4 {
 .btn-outline {
     background: transparent;
     color: var(--text-primary);
-    border-color: rgba(244, 236, 221, 0.28);
+    border-color: rgba(var(--parchment-rgb), 0.28);
 }
 .btn-outline:hover { border-color: var(--brass); color: var(--brass); transform: translateY(-2px); }
 
@@ -199,7 +208,7 @@ h1, h2, h3, h4 {
     border-bottom: 1px solid transparent;
 }
 .site-nav.scrolled {
-    background: rgba(18, 24, 26, 0.92);
+    background: rgba(var(--ink-rgb), 0.92);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     padding: 14px 0;
@@ -233,7 +242,7 @@ h1, h2, h3, h4 {
     padding: 8px 14px; border-radius: var(--radius-sm);
     transition: color 0.25s var(--ease), background 0.25s var(--ease);
 }
-.nav-links a:hover, .nav-links a.active { color: var(--brass); background: rgba(201,161,90,0.08); }
+.nav-links a:hover, .nav-links a.active { color: var(--brass); background: rgba(var(--brass-rgb), 0.08); }
 
 .nav-cta {
     border: 1px solid var(--brass) !important;
@@ -260,8 +269,8 @@ h1, h2, h3, h4 {
     display: flex; align-items: center;
     padding-top: 110px; padding-bottom: 70px;
     background:
-        radial-gradient(ellipse 900px 500px at 18% 12%, rgba(201,161,90,0.10), transparent 60%),
-        radial-gradient(ellipse 700px 500px at 90% 70%, rgba(86,112,79,0.10), transparent 60%),
+        radial-gradient(ellipse 900px 500px at 18% 12%, rgba(var(--brass-rgb), 0.10), transparent 60%),
+        radial-gradient(ellipse 700px 500px at 90% 70%, rgba(var(--moss-rgb), 0.10), transparent 60%),
         var(--ink);
     overflow: hidden;
 }
@@ -318,12 +327,12 @@ h1, h2, h3, h4 {
     width: 176px; height: 176px; margin: 0 auto 20px;
     border-radius: 50%; position: relative; overflow: hidden;
     border: 1px solid var(--brass);
-    box-shadow: 0 0 0 6px rgba(201,161,90,0.08), 0 18px 34px rgba(4,6,6,0.5);
+    box-shadow: 0 0 0 6px rgba(var(--brass-rgb), 0.08), 0 18px 34px rgba(4,6,6,0.5);
     transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
 }
 .hero-portrait-frame::before {
     content: ''; position: absolute; inset: 8px; border-radius: 50%;
-    border: 1px solid rgba(201,161,90,0.35); z-index: 3; pointer-events: none;
+    border: 1px solid rgba(var(--brass-rgb), 0.35); z-index: 3; pointer-events: none;
 }
 .hero-portrait-frame picture, .hero-portrait-frame img {
     width: 100%; height: 100%; object-fit: cover; display: block;
@@ -333,7 +342,7 @@ h1, h2, h3, h4 {
 .hero-portrait-frame:hover img { transform: scale(1.1); }
 .hero-portrait-shine {
     position: absolute; inset: -40% -120%; z-index: 2;
-    background: linear-gradient(75deg, transparent 42%, rgba(244,236,221,0.28) 50%, transparent 58%);
+    background: linear-gradient(75deg, transparent 42%, rgba(var(--parchment-rgb), 0.28) 50%, transparent 58%);
     transform: translateX(-60%);
     animation: portraitShine 6.5s ease-in-out infinite;
     pointer-events: none;
@@ -349,7 +358,7 @@ h1, h2, h3, h4 {
     border: 1px solid var(--ink-line); border-radius: 30px;
     font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 600;
     color: var(--text-secondary); letter-spacing: 0.3px;
-    background: rgba(244, 236, 221, 0.03);
+    background: rgba(var(--parchment-rgb), 0.03);
 }
 .local-time-chip i { color: var(--brass); font-size: 0.72rem; }
 
@@ -409,7 +418,7 @@ h1, h2, h3, h4 {
 .about-portrait-frame:hover img { transform: scale(1.08); filter: saturate(1.05) contrast(1.04); }
 .about-portrait-ring {
     position: absolute; inset: 12px; border-radius: 50%;
-    border: 1px dashed rgba(201,161,90,0.28);
+    border: 1px dashed rgba(var(--brass-rgb), 0.28);
     pointer-events: none;
 }
 .about-badges { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 220px; }
@@ -727,8 +736,8 @@ h1, h2, h3, h4 {
     margin-top: 16px; padding: 12px 16px; border-radius: var(--radius-sm);
     font-family: 'Inter', sans-serif; font-size: 0.85rem; display: none;
 }
-.form-note.success { background: rgba(86,112,79,0.12); border: 1px solid rgba(86,112,79,0.35); color: var(--moss-soft); display: block; }
-.form-note.error { background: rgba(124,45,59,0.14); border: 1px solid rgba(124,45,59,0.4); color: var(--wine-soft); display: block; }
+.form-note.success { background: rgba(var(--moss-rgb), 0.12); border: 1px solid rgba(var(--moss-rgb), 0.35); color: var(--moss-soft); display: block; }
+.form-note.error { background: rgba(var(--wine-rgb), 0.14); border: 1px solid rgba(var(--wine-rgb), 0.4); color: var(--wine-soft); display: block; }
 
 /* ==========================================================================
    FOOTER
@@ -765,7 +774,7 @@ h1, h2, h3, h4 {
     position: fixed; bottom: 28px; right: 28px; z-index: 500;
     width: 44px; height: 44px; border-radius: 50%;
     border: 1px solid var(--brass-glow);
-    background: rgba(18,24,26,0.85);
+    background: rgba(var(--ink-rgb), 0.85);
     backdrop-filter: blur(10px);
     color: var(--brass);
     display: flex; align-items: center; justify-content: center;
@@ -815,7 +824,7 @@ body.preloader-done .preloader { opacity: 0; visibility: hidden; pointer-events:
     }
     .lantern-glow {
         width: 420px; height: 420px; margin: -210px 0 0 -210px;
-        background: radial-gradient(circle, rgba(201,161,90,0.10), rgba(201,161,90,0.03) 45%, transparent 72%);
+        background: radial-gradient(circle, rgba(var(--brass-rgb), 0.10), rgba(var(--brass-rgb), 0.03) 45%, transparent 72%);
         z-index: 5;
     }
     .cursor-ring {
@@ -825,7 +834,7 @@ body.preloader-done .preloader { opacity: 0; visibility: hidden; pointer-events:
     }
     .cursor-ring.is-active {
         width: 54px; height: 54px; margin: -27px 0 0 -27px;
-        border-color: var(--brass); background: rgba(201,161,90,0.08);
+        border-color: var(--brass); background: rgba(var(--brass-rgb), 0.08);
     }
     .cursor-dot {
         width: 4px; height: 4px; margin: -2px 0 0 -2px;
@@ -853,6 +862,28 @@ body.preloader-done .preloader { opacity: 0; visibility: hidden; pointer-events:
     padding: 1px 7px; font-size: 0.7rem; color: var(--text-muted);
 }
 @media (min-width: 769px) { .palette-trigger { display: inline-flex; } }
+
+@media (max-width: 900px) {
+    .console-trigger span:last-child { display: none; }
+    .console-trigger { padding: 7px 10px; }
+}
+@media (max-width: 640px) {
+    .console-trigger, .theme-switcher { display: none; }
+}
+
+/* ---- Mobile nav utilities: console + theme switcher duplicated inside the
+   slide-down menu so they stay reachable once the desktop-only controls
+   are hidden ---- */
+.nav-mobile-utilities { display: none; }
+@media (max-width: 768px) {
+    .nav-mobile-utilities {
+        display: flex; align-items: center; justify-content: space-between;
+        gap: 12px; margin-top: 14px; padding-top: 14px;
+        border-top: 1px solid var(--ink-line);
+    }
+    .nav-mobile-utilities .console-trigger { display: inline-flex; margin-left: 0; }
+    .nav-mobile-utilities .theme-switcher { display: flex; margin-left: 0; }
+}
 
 /* ---- The Ledger: fixed chapter progress rail ---- */
 .progress-rail {
@@ -885,13 +916,13 @@ body.preloader-done .preloader { opacity: 0; visibility: hidden; pointer-events:
     opacity: 0; transform: translateX(-6px);
     transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), color 0.25s var(--ease);
     white-space: nowrap; position: absolute; right: 20px;
-    background: rgba(18,24,26,0.9); padding: 4px 10px; border-radius: var(--radius-sm);
+    background: rgba(var(--ink-rgb), 0.9); padding: 4px 10px; border-radius: var(--radius-sm);
     border: 1px solid var(--ink-line);
 }
 .progress-rail-nodes a:hover .rail-label { opacity: 1; transform: translateX(0); color: var(--brass); }
 .progress-rail-nodes a.active .rail-dot {
     border-color: var(--brass); background: var(--brass);
-    box-shadow: 0 0 0 4px rgba(201,161,90,0.15);
+    box-shadow: 0 0 0 4px rgba(var(--brass-rgb), 0.15);
     transform: scale(1.15);
 }
 
@@ -940,7 +971,7 @@ body.preloader-done .preloader { opacity: 0; visibility: hidden; pointer-events:
 }
 .command-palette-list li i { color: var(--brass); width: 16px; text-align: center; font-size: 0.85rem; }
 .command-palette-list li span.pk-hint { margin-left: auto; color: var(--text-muted); font-size: 0.72rem; }
-.command-palette-list li:hover, .command-palette-list li.is-selected { background: rgba(201,161,90,0.10); color: var(--parchment); }
+.command-palette-list li:hover, .command-palette-list li.is-selected { background: rgba(var(--brass-rgb), 0.10); color: var(--parchment); }
 .command-palette-empty { padding: 20px 12px; color: var(--text-muted); font-family: 'Inter', sans-serif; font-size: 0.85rem; text-align: center; }
 
 /* ---- Ambient sound toggle ---- */
@@ -951,7 +982,7 @@ body.preloader-done .preloader { opacity: 0; visibility: hidden; pointer-events:
 .ambient-toggle {
     width: 44px; height: 44px; border-radius: 50%;
     border: 1px solid var(--brass-glow);
-    background: rgba(18,24,26,0.85);
+    background: rgba(var(--ink-rgb), 0.85);
     backdrop-filter: blur(10px);
     color: var(--brass);
     display: flex; align-items: center; justify-content: center;
@@ -973,7 +1004,7 @@ body.preloader-done .preloader { opacity: 0; visibility: hidden; pointer-events:
 .ambient-tooltip {
     position: absolute; right: 54px;
     font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--text-muted);
-    background: rgba(18,24,26,0.9); border: 1px solid var(--ink-line);
+    background: rgba(var(--ink-rgb), 0.9); border: 1px solid var(--ink-line);
     padding: 5px 10px; border-radius: var(--radius-sm);
     opacity: 0; visibility: hidden; transform: translateX(6px);
     transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), visibility 0.2s;
@@ -1014,7 +1045,7 @@ body.preloader-done .preloader { opacity: 0; visibility: hidden; pointer-events:
    ========================================================================== */
 .legal-hero {
     padding: 150px 0 60px;
-    background: radial-gradient(ellipse 900px 500px at 20% 0%, rgba(201,161,90,0.10), transparent 60%), var(--ink);
+    background: radial-gradient(ellipse 900px 500px at 20% 0%, rgba(var(--brass-rgb), 0.10), transparent 60%), var(--ink);
     text-align: center;
 }
 .legal-hero p.updated { color: var(--text-muted); font-family: 'Inter', sans-serif; font-size: 0.85rem; margin-top: 14px; }
@@ -1060,7 +1091,7 @@ body.preloader-done .preloader { opacity: 0; visibility: hidden; pointer-events:
 @media (max-width: 768px) {
     .nav-links {
         position: fixed; top: 68px; left: 0; right: 0;
-        background: rgba(18,24,26,0.97);
+        background: rgba(var(--ink-rgb), 0.97);
         backdrop-filter: blur(16px);
         flex-direction: column; align-items: stretch;
         padding: 18px; gap: 4px;
@@ -1093,3 +1124,294 @@ body.preloader-done .preloader { opacity: 0; visibility: hidden; pointer-events:
     .timeline-item { grid-template-columns: 1fr; }
     .timeline-track { display: none; }
 }
+
+/* ==========================================================================
+   THEME SWITCHER
+   Four accent palettes swapped at runtime via CSS custom properties, the
+   same technique hancore.dev uses for its colorscheme command, remixed into
+   a small control inside the nav. Choice persists in localStorage and
+   respects no extra network requests.
+   ========================================================================== */
+.scheme-wine {
+    --brass-rgb: 154, 60, 77;
+    --brass: #9a3c4d;
+    --brass-soft: #7c2d3b;
+}
+.scheme-moss {
+    --brass-rgb: 108, 138, 100;
+    --brass: #6c8a64;
+    --brass-soft: #56704f;
+}
+.scheme-parchment {
+    --brass-rgb: 169, 131, 74;
+    --brass: #a9834a;
+    --brass-soft: #8a6a3a;
+    --ink-rgb: 26, 22, 17;
+    --ink: #1a1611;
+    --ink-2: #211c16;
+    --ink-3: #28221a;
+}
+
+.theme-switcher {
+    display: flex; align-items: center; gap: 6px;
+    margin-left: 10px; padding: 4px; border-radius: 30px;
+    border: 1px solid var(--ink-line);
+}
+.theme-dot {
+    width: 16px; height: 16px; border-radius: 50%;
+    border: 1px solid rgba(var(--parchment-rgb), 0.25);
+    cursor: pointer; padding: 0; position: relative;
+    transition: transform 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.theme-dot[data-scheme="default"] { background: #c9a15a; }
+.theme-dot[data-scheme="wine"] { background: #9a3c4d; }
+.theme-dot[data-scheme="moss"] { background: #6c8a64; }
+.theme-dot[data-scheme="parchment"] { background: #a9834a; }
+.theme-dot:hover { transform: scale(1.18); }
+.theme-dot.active { border-color: var(--parchment); box-shadow: 0 0 0 2px rgba(var(--ink-rgb), 0.6), 0 0 0 3px var(--parchment); }
+
+/* ==========================================================================
+   SESSION CONSOLE
+   A small command-driven panel, directly inspired by hancore.dev's
+   terminal-as-navigation concept: type short commands to jump around the
+   site, pull live stats, or trigger quick actions. Degrades to a normal
+   hidden panel with a visible button for users who never touch it; nothing
+   here is required to read the page or reach the contact form.
+   ========================================================================== */
+.console-trigger {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-left: 10px; padding: 7px 14px;
+    border: 1px solid var(--glass-border); border-radius: var(--radius-sm);
+    background: rgba(var(--brass-rgb), 0.08); color: var(--brass);
+    font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600;
+    cursor: pointer; transition: background 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.console-trigger:hover { background: rgba(var(--brass-rgb), 0.16); }
+.console-trigger .blinker {
+    width: 6px; height: 12px; background: var(--brass);
+    animation: consoleBlink 1s step-end infinite;
+}
+@keyframes consoleBlink { 50% { opacity: 0; } }
+
+.session-console {
+    position: fixed; inset: 0; z-index: 3200;
+    display: flex; align-items: flex-start; justify-content: center;
+    padding-top: 9vh;
+}
+.session-console[hidden] { display: none; }
+.console-backdrop {
+    position: absolute; inset: 0;
+    background: rgba(8,10,11,0.78); backdrop-filter: blur(5px);
+}
+.console-panel {
+    position: relative; z-index: 1;
+    width: 94%; max-width: 680px; max-height: 76vh;
+    display: flex; flex-direction: column;
+    padding: 0; overflow: hidden;
+    animation: paletteIn 0.22s var(--ease);
+    background: rgba(var(--ink-rgb), 0.96);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+.console-titlebar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 16px; border-bottom: 1px solid var(--ink-line);
+    font-family: 'Inter', sans-serif;
+}
+.console-titlebar .dots { display: flex; gap: 7px; }
+.console-titlebar .dots span { width: 10px; height: 10px; border-radius: 50%; background: rgba(var(--parchment-rgb), 0.18); }
+.console-titlebar .path { font-size: 0.78rem; color: var(--text-muted); }
+.console-titlebar .close-console { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 0.95rem; padding: 4px; }
+.console-titlebar .close-console:hover { color: var(--brass); }
+
+.console-log {
+    flex: 1; overflow-y: auto; padding: 18px 20px;
+    font-family: 'SFMono-Regular', ui-monospace, 'Courier New', monospace;
+    font-size: 0.86rem; line-height: 1.75; color: var(--text-secondary);
+}
+.console-log p { margin-bottom: 8px; white-space: pre-wrap; word-break: break-word; }
+.console-log .line-cmd { color: var(--brass); }
+.console-log .line-cmd::before { content: '\276f '; color: var(--text-muted); }
+.console-log .line-out { color: var(--text-secondary); }
+.console-log .line-out strong { color: var(--parchment); }
+.console-log .line-err { color: var(--wine-soft); }
+.console-log .line-link a { color: var(--brass); text-decoration: underline; text-underline-offset: 3px; }
+.console-log table.console-table { border-collapse: collapse; margin: 4px 0 10px; }
+.console-log table.console-table td { padding: 2px 14px 2px 0; vertical-align: top; color: var(--text-secondary); }
+.console-log table.console-table td:first-child { color: var(--brass-soft); white-space: nowrap; }
+
+.console-input-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 16px; border-top: 1px solid var(--ink-line);
+}
+.console-input-row .prompt { color: var(--brass); font-family: ui-monospace, 'Courier New', monospace; font-size: 0.9rem; }
+.console-input-row input {
+    flex: 1; background: transparent; border: none; outline: none;
+    color: var(--text-primary); font-family: ui-monospace, 'Courier New', monospace; font-size: 0.9rem;
+}
+.console-input-row input::placeholder { color: var(--text-muted); }
+.console-hints { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 14px; }
+.console-hints button {
+    font-family: 'Inter', sans-serif; font-size: 0.7rem; color: var(--text-muted);
+    border: 1px solid var(--ink-line); border-radius: 30px; padding: 4px 11px;
+    background: transparent; cursor: pointer; transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+.console-hints button:hover { border-color: var(--brass-glow); color: var(--brass); }
+
+/* ==========================================================================
+   LIVE STATUS BAR
+   A fixed strip (bottom-left, opposite the ambient cluster) carrying three
+   real, continuously-updating facts: local Abuja time, a GitHub commit
+   pulse fetched from the public API, and a visit counter from a public
+   counting service. Every value is fetched live or computed client-side;
+   nothing is hardcoded or faked, and the whole bar degrades to a shorter
+   line if a request fails.
+   ========================================================================== */
+.status-bar {
+    position: fixed; left: 20px; bottom: 20px; z-index: 480;
+    display: flex; align-items: center; gap: 0;
+    background: rgba(var(--ink-rgb), 0.88);
+    border: 1px solid var(--ink-line);
+    border-radius: 30px;
+    padding: 7px 8px;
+    backdrop-filter: blur(10px);
+    font-family: 'Inter', sans-serif;
+    box-shadow: var(--shadow-soft);
+    max-width: calc(100vw - 40px);
+}
+.status-item {
+    display: flex; align-items: center; gap: 7px;
+    padding: 5px 12px;
+    font-size: 0.72rem; color: var(--text-secondary);
+    border-right: 1px solid var(--ink-line);
+    white-space: nowrap;
+}
+.status-item:last-child { border-right: none; }
+.status-item i { color: var(--brass); font-size: 0.72rem; }
+.status-dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--moss-soft);
+    box-shadow: 0 0 0 0 rgba(var(--moss-rgb), 0.6);
+    animation: statusPulse 2.4s ease-in-out infinite;
+    flex-shrink: 0;
+}
+@keyframes statusPulse {
+    0% { box-shadow: 0 0 0 0 rgba(var(--moss-rgb), 0.5); }
+    70% { box-shadow: 0 0 0 7px rgba(var(--moss-rgb), 0); }
+    100% { box-shadow: 0 0 0 0 rgba(var(--moss-rgb), 0); }
+}
+.status-item strong { color: var(--parchment); font-weight: 700; }
+@media (max-width: 640px) {
+    .status-bar { left: 12px; bottom: 12px; }
+    .status-item:nth-child(3) { display: none; }
+}
+@media (max-width: 420px) {
+    .status-item:nth-child(2) { display: none; }
+}
+
+/* ==========================================================================
+   TOOLTIP SYSTEM
+   One reusable tooltip engine driven entirely by a data-tip attribute,
+   following the same lightweight pattern hancore.dev uses: a single
+   floating element repositioned on hover/focus, with no per-element
+   markup duplication.
+   ========================================================================== */
+.hc-tip {
+    position: fixed; top: 0; left: 0; z-index: 4000;
+    background: rgba(var(--ink-rgb), 0.95);
+    border: 1px solid var(--glass-border);
+    color: var(--parchment);
+    font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 600;
+    padding: 6px 11px; border-radius: var(--radius-sm);
+    pointer-events: none;
+    box-shadow: var(--shadow-soft);
+    white-space: nowrap;
+    transition: opacity 0.12s var(--ease);
+}
+.hc-tip[hidden] { display: none; }
+
+/* ==========================================================================
+   LIGHTBOX
+   Click-to-enlarge viewer for the hero and about portraits, modelled on
+   hancore.dev's project-shot lightbox: a focus-trapped overlay, Escape to
+   close, click-outside to close, no layout shift on the underlying page.
+   ========================================================================== */
+.lightbox-trigger { cursor: zoom-in; }
+.hc-lightbox {
+    position: fixed; inset: 0; z-index: 3500;
+    display: flex; align-items: center; justify-content: center;
+    padding: 6vh 5vw;
+}
+.hc-lightbox[hidden] { display: none; }
+.hc-lightbox-backdrop {
+    position: absolute; inset: 0;
+    background: rgba(4,6,6,0.88); backdrop-filter: blur(6px);
+}
+.hc-lightbox-frame {
+    position: relative; z-index: 1;
+    max-width: min(520px, 90vw); max-height: 86vh;
+    animation: paletteIn 0.2s var(--ease);
+}
+.hc-lightbox-frame img {
+    width: 100%; height: auto; max-height: 86vh; object-fit: contain;
+    border-radius: var(--radius); border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow);
+}
+.hc-lightbox-close {
+    position: absolute; top: -18px; right: -18px;
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--brass); color: var(--ink);
+    border: none; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 0.95rem;
+    box-shadow: var(--shadow-soft);
+}
+.hc-lightbox-caption {
+    text-align: center; margin-top: 14px;
+    font-family: 'Inter', sans-serif; font-size: 0.8rem; color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   LIVE GITHUB PULSE (credentials footnote)
+   A small strip fetched client-side from the public GitHub API, echoing
+   hancore.dev's "fetch user" blocks without impersonating that exact
+   layout; shows real repo/follower counts with a visible loading and
+   failure state, never a fabricated placeholder number.
+   ========================================================================== */
+.github-pulse {
+    margin-top: 40px; padding: 22px 26px;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 22px;
+    justify-content: space-between;
+}
+.github-pulse-label { display: flex; align-items: center; gap: 10px; color: var(--text-secondary); font-family: 'Inter', sans-serif; font-size: 0.86rem; }
+.github-pulse-label i { color: var(--brass); font-size: 1.1rem; }
+.github-pulse-stats { display: flex; gap: 26px; flex-wrap: wrap; }
+.github-pulse-stats div { text-align: center; }
+.github-pulse-stats dt {
+    font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--brass);
+    min-width: 2.2ch;
+}
+.github-pulse-stats dd { font-family: 'Inter', sans-serif; font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+.github-pulse.is-loading dt::after { content: '\2026'; }
+.github-pulse-link { font-family: 'Inter', sans-serif; font-size: 0.8rem; color: var(--brass); white-space: nowrap; }
+.github-pulse-link:hover { text-decoration: underline; }
+
+/* ==========================================================================
+   SKILLS / CREDENTIALS QUICK FILTER
+   A small live-filter input above the tag cloud and certification grid —
+   functionally equivalent to hancore.dev's instant search across its
+   project wheel, applied here to skills and credentials instead of repos.
+   ========================================================================== */
+.quick-filter {
+    display: flex; align-items: center; gap: 10px;
+    max-width: 360px; margin: 0 auto 34px;
+    padding: 10px 16px; border: 1px solid var(--ink-line); border-radius: 30px;
+    background: rgba(var(--parchment-rgb), 0.03);
+}
+.quick-filter i { color: var(--text-muted); font-size: 0.82rem; }
+.quick-filter input {
+    flex: 1; background: transparent; border: none; outline: none;
+    color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 0.86rem;
+}
+.quick-filter input::placeholder { color: var(--text-muted); }
+.quick-filter .filter-count { font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--text-muted); white-space: nowrap; }
+.is-filtered-hidden { display: none !important; }

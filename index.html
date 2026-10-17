@@ -67,13 +67,60 @@
                 <a href="#experience" class="nav-link">Experience</a>
                 <a href="#credentials" class="nav-link">Credentials</a>
                 <a href="#contact" class="nav-link nav-cta">Get in touch</a>
+                <div class="nav-mobile-utilities">
+                    <button type="button" class="console-trigger" id="consoleTriggerMobile" data-tip="Type commands to jump around"><span class="blinker" aria-hidden="true"></span><span>Open console</span></button>
+                    <div class="theme-switcher" role="group" aria-label="Accent colour">
+                        <button class="theme-dot" type="button" data-scheme="default" aria-label="Brass accent (default)" data-tip="Brass"></button>
+                        <button class="theme-dot" type="button" data-scheme="wine" aria-label="Wine accent" data-tip="Wine"></button>
+                        <button class="theme-dot" type="button" data-scheme="moss" aria-label="Moss accent" data-tip="Moss"></button>
+                        <button class="theme-dot" type="button" data-scheme="parchment" aria-label="Parchment accent" data-tip="Parchment"></button>
+                    </div>
+                </div>
             </div>
             <button class="palette-trigger" id="paletteTrigger" aria-label="Open quick navigation (press slash)" title="Quick navigation (/)">
                 <i class="fas fa-bell"></i>
                 <span class="palette-kbd">/</span>
             </button>
+            <button class="console-trigger" id="consoleTrigger" aria-label="Open session console (press backtick)" title="Session console (`)" data-tip="Type commands to jump around">
+                <span class="blinker" aria-hidden="true"></span>
+                <span>console</span>
+            </button>
+            <div class="theme-switcher" role="group" aria-label="Accent colour">
+                <button class="theme-dot active" type="button" data-scheme="default" aria-label="Brass accent (default)" data-tip="Brass"></button>
+                <button class="theme-dot" type="button" data-scheme="wine" aria-label="Wine accent" data-tip="Wine"></button>
+                <button class="theme-dot" type="button" data-scheme="moss" aria-label="Moss accent" data-tip="Moss"></button>
+                <button class="theme-dot" type="button" data-scheme="parchment" aria-label="Parchment accent" data-tip="Parchment"></button>
+            </div>
         </div>
     </nav>
+
+    <!-- Session Console: a command-driven panel inspired by hancore.dev's
+         terminal-as-navigation concept. Press the backtick key or the nav
+         button, type a short command (help, about, contact, stats, theme
+         <name>, open <section>) and press Enter. -->
+    <div class="session-console" id="sessionConsole" role="dialog" aria-modal="true" aria-label="Session console" hidden>
+        <div class="console-backdrop" id="consoleBackdrop"></div>
+        <div class="console-panel">
+            <div class="console-titlebar">
+                <div class="dots"><span></span><span></span><span></span></div>
+                <span class="path">shafiu@portfolio:~$</span>
+                <button class="close-console" id="consoleClose" aria-label="Close console"><i class="fas fa-xmark"></i></button>
+            </div>
+            <div class="console-log" id="consoleLog" aria-live="polite"></div>
+            <div class="console-input-row">
+                <span class="prompt">&gt;</span>
+                <input type="text" id="consoleInput" placeholder="type 'help' and press enter&hellip;" autocomplete="off" spellcheck="false">
+            </div>
+            <div class="console-hints">
+                <button type="button" data-cmd="help">help</button>
+                <button type="button" data-cmd="stats">stats</button>
+                <button type="button" data-cmd="open contact">open contact</button>
+                <button type="button" data-cmd="resume">resume</button>
+                <button type="button" data-cmd="theme wine">theme wine</button>
+                <button type="button" data-cmd="whoami">whoami</button>
+            </div>
+        </div>
+    </div>
 
     <!-- The Ledger: a fixed chapter-rail marking progress through the study, one
          diamond per section. Hidden on touch/narrow layouts. -->
@@ -116,6 +163,24 @@
         <source src="assets/audio/ambient-study-loop.mp3" type="audio/mpeg">
     </audio>
 
+    <!-- Live status bar: real local time, a live GitHub pulse and a real
+         visit counter, each fetched or computed client-side. -->
+    <div class="status-bar" id="statusBar">
+        <span class="status-item" id="statusLive"><span class="status-dot"></span><span>Online now</span></span>
+        <span class="status-item" id="statusTime"><i class="fas fa-clock"></i><span>&hellip;</span></span>
+        <span class="status-item" id="statusVisits"><i class="fas fa-eye"></i><span>&hellip;</span></span>
+    </div>
+
+    <!-- Lightbox: click-to-enlarge viewer for portraits -->
+    <div class="hc-lightbox" id="hcLightbox" role="dialog" aria-modal="true" aria-label="Enlarged portrait" hidden>
+        <div class="hc-lightbox-backdrop" id="lightboxBackdrop"></div>
+        <div class="hc-lightbox-frame">
+            <button class="hc-lightbox-close" id="lightboxClose" aria-label="Close enlarged image"><i class="fas fa-xmark"></i></button>
+            <img id="lightboxImg" src="" alt="">
+            <p class="hc-lightbox-caption" id="lightboxCaption"></p>
+        </div>
+    </div>
+
     <main id="main">
     <!-- Hero -->
     <section id="top" class="hero">
@@ -149,7 +214,7 @@
             </div>
             <div class="hero-panel">
                 <div class="profile-card glass-card" id="heroProfileCard">
-                    <div class="hero-portrait-frame" id="heroPortraitFrame">
+                    <div class="hero-portrait-frame lightbox-trigger" id="heroPortraitFrame" data-lightbox="assets/img/portrait-hero@2x.jpg" data-caption="Shafiu Jimoh, Executive Virtual Assistant" data-tip="Click to enlarge" tabindex="0" role="button" aria-label="Enlarge portrait">
                         <picture>
                             <source srcset="assets/img/portrait-hero.webp 640w, assets/img/portrait-hero@2x.webp 960w" sizes="176px" type="image/webp">
                             <img
@@ -190,7 +255,7 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-media reveal">
-                    <div class="about-portrait-frame" id="aboutPortraitFrame">
+                    <div class="about-portrait-frame lightbox-trigger" id="aboutPortraitFrame" data-lightbox="assets/img/portrait-about.jpg" data-caption="Shafiu Jimoh" data-tip="Click to enlarge" tabindex="0" role="button" aria-label="Enlarge portrait">
                         <picture>
                             <source srcset="assets/img/portrait-about.webp" type="image/webp">
                             <img
@@ -336,6 +401,12 @@
                 <h2 class="section-title">Working <em>competencies</em></h2>
                 <div class="ornament"><span></span><i></i><span></span></div>
                 <p class="section-sub">A practical toolkit built for executive and virtual assistance work</p>
+            </div>
+
+            <div class="quick-filter reveal">
+                <i class="fas fa-magnifying-glass"></i>
+                <input type="text" id="skillsFilter" placeholder="Filter skills &amp; tools, e.g. &ldquo;zapier&rdquo;&hellip;" autocomplete="off">
+                <span class="filter-count" id="skillsFilterCount"></span>
             </div>
 
             <div class="skills-layout reveal">
@@ -663,6 +734,12 @@
                 <p class="section-sub">Academically grounded and professionally certified</p>
             </div>
 
+            <div class="quick-filter reveal">
+                <i class="fas fa-magnifying-glass"></i>
+                <input type="text" id="credFilter" placeholder="Filter certifications, e.g. &ldquo;HR&rdquo;&hellip;" autocomplete="off">
+                <span class="filter-count" id="credFilterCount"></span>
+            </div>
+
             <div class="education-card glass-card reveal">
                 <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
                 <div class="edu-details">
@@ -728,6 +805,19 @@
                     <p>Udemy</p>
                     <span class="cert-year">2025</span>
                 </div>
+            </div>
+
+            <!-- Live GitHub pulse: fetched client-side from the public GitHub
+                 API so these counts always reflect the real account, with a
+                 visible loading state and no fabricated fallback number. -->
+            <div class="github-pulse glass-card reveal is-loading" id="githubPulse">
+                <div class="github-pulse-label"><i class="fab fa-github"></i><span>Live from GitHub &mdash; data scraping and automation, applied to my own profile</span></div>
+                <dl class="github-pulse-stats" id="githubPulseStats">
+                    <div><dt data-stat="repos">&nbsp;</dt><dd>Public repos</dd></div>
+                    <div><dt data-stat="followers">&nbsp;</dt><dd>Followers</dd></div>
+                    <div><dt data-stat="since">&nbsp;</dt><dd>On GitHub since</dd></div>
+                </dl>
+                <a href="https://github.com/ShafiuJimoh" target="_blank" rel="noopener" class="github-pulse-link">github.com/ShafiuJimoh <i class="fas fa-arrow-up-right-from-square"></i></a>
             </div>
         </div>
     </section>

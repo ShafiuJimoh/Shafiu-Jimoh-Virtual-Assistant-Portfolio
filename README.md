@@ -19,7 +19,44 @@ marketing statistics.
 
 Layered on top of that restraint is a cohesive **immersive layer**, built to
 feel like a considered environment rather than a static page rather than
-a pile of unrelated gimmicks:
+a pile of unrelated gimmicks. A second wave of functional components, added
+after studying [hancore.dev](https://hancore.dev/site/#about)'s
+terminal-as-navigation concept, adapts that same spirit of "the UI is a
+small live tool" into features that fit a professional VA portfolio:
+
+- **Session Console** — press the backtick key or the nav's `console`
+  button to open a small command panel (`help`, `open <section>`,
+  `whoami`, `stats`, `theme <name>`, `resume`, `email`, `github`, `clear`).
+  `stats` makes a live `fetch()` to the public GitHub REST API for this
+  profile; every other command reaches a destination that is also
+  reachable from the ordinary nav, so the console is additive, never a
+  gate.
+- **Theme switcher** — four accent palettes (brass/wine/moss/parchment)
+  swapped instantly via CSS custom properties, saved to `localStorage`,
+  with no page reload and no extra request, directly adapting hancore.dev's
+  `:colorscheme` command to a point-and-click control (and reachable from
+  the console too, via `theme wine` etc.).
+- **Live status bar** — a fixed strip showing the real current time in
+  Abuja (`Intl` time zone conversion) and a genuine page-visit counter
+  from a public counting API; both are fetched/computed live and show a
+  quiet fallback rather than a fabricated number if a request fails.
+- **Live GitHub pulse** — a credentials-section strip that calls the
+  public GitHub API client-side for this exact account's real repo count,
+  follower count and join year, with a visible loading state.
+- **Quick filters** — live-filter inputs above the skills tag cloud/tool
+  stack and the certifications grid, functionally equivalent to
+  hancore.dev's instant project search, applied here to skills and
+  credentials.
+- **Lightbox** — click-to-enlarge viewer for both portraits, with
+  Escape/backdrop/close-button dismissal and sensible focus return.
+- **Tooltip engine** — a single floating tooltip positioned from
+  `data-tip` attributes, the same lightweight single-instance pattern
+  hancore.dev uses for its UI hints.
+
+All of the above degrade safely: every `init*` function checks for its DOM
+hooks before doing anything, so loading `script.js` on the legal pages
+(which don't include this markup) is a silent no-op, and every effect
+respects `prefers-reduced-motion` where motion is involved.
 
 - **Ink-and-brass preloader** — a one-second entrance arc, skipped instantly
   for `prefers-reduced-motion` and hard-capped so it never blocks content.

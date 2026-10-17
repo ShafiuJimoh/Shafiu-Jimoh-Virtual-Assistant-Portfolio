@@ -26,6 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
     initAmbientSound();
     initMagneticButtons();
     initPortraitTilt();
+    initTooltips();
+    initThemeSwitcher();
+    initSessionConsole();
+    initStatusBar();
+    initLightbox();
+    initQuickFilters();
+    initGithubPulse();
 });
 
 /* ----------------------------------------------------------------------
@@ -602,4 +609,506 @@ function initPortraitTilt() {
         card.style.transform = '';
         frame.style.transform = '';
     });
+}
+
+/* ----------------------------------------------------------------------
+   Tooltip system: one floating element positioned over whichever element
+   carries a data-tip attribute, shown on hover/focus. Adapted from the
+   same lightweight single-instance pattern hancore.dev uses for its UI
+   hints, applied here to the theme switcher, console trigger and
+   lightbox triggers.
+   ---------------------------------------------------------------------- */
+function initTooltips() {
+    const tip = document.createElement('div');
+    tip.className = 'hc-tip';
+    tip.hidden = true;
+    tip.setAttribute('role', 'tooltip');
+    document.body.appendChild(tip);
+
+    let current = null;
+
+    function place(target) {
+        const text = target.getAttribute('data-tip');
+        if (!text) { hide(); return; }
+        tip.textContent = text;
+        tip.hidden = false;
+        current = target;
+        const box = target.getBoundingClientRect();
+        const w = tip.offsetWidth;
+        const h = tip.offsetHeight;
+        const x = Math.max(6, Math.min(window.innerWidth - w - 6, box.left + box.width / 2 - w / 2));
+        const y = box.top - h - 8 < 6 ? box.bottom + 8 : box.top - h - 8;
+        tip.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px)`;
+    }
+
+    function hide() {
+        current = null;
+        tip.hidden = true;
+    }
+
+    document.addEventListener('pointerover', (e) => {
+        const target = e.target.closest ? e.target.closest('[data-tip]') : null;
+        if (target) place(target); else if (current) hide();
+    });
+    document.addEventListener('pointerout', (e) => {
+        if (current && !(e.relatedTarget instanceof Node && current.contains(e.relatedTarget))) hide();
+    });
+    document.addEventListener('focusin', (e) => {
+        const target = e.target.closest ? e.target.closest('[data-tip]') : null;
+        if (target) place(target);
+    });
+    document.addEventListener('focusout', hide);
+    window.addEventListener('scroll', hide, { passive: true, capture: true });
+    window.addEventListener('resize', hide);
+}
+
+/* ----------------------------------------------------------------------
+   Theme switcher: four accent palettes swapped at runtime by toggling a
+   class on <body>, directly inspired by hancore.dev's :colorscheme
+   command (which recolors the whole editor from a palette file). The
+   choice is remembered in localStorage and applies instantly, with no
+   page reload and no extra network request.
+   ---------------------------------------------------------------------- */
+function initThemeSwitcher() {
+    const dots = document.querySelectorAll('.theme-dot');
+    if (!dots.length) return;
+    const STORAGE_KEY = 'sj-portfolio-scheme';
+    const schemes = ['default', 'wine', 'moss', 'parchment'];
+
+    function apply(scheme, persist) {
+        schemes.forEach((s) => {
+            if (s !== 'default') document.body.classList.remove('scheme-' + s);
+        });
+        if (scheme !== 'default') document.body.classList.add('scheme-' + scheme);
+        dots.forEach((dot) => dot.classList.toggle('active', dot.getAttribute('data-scheme') === scheme));
+        if (persist) {
+            try { localStorage.setItem(STORAGE_KEY, scheme); } catch (err) { /* storage unavailable */ }
+        }
+        return scheme;
+    }
+
+    let saved = 'default';
+    try { saved = localStorage.getItem(STORAGE_KEY) || 'default'; } catch (err) { /* ignore */ }
+    if (!schemes.includes(saved)) saved = 'default';
+    apply(saved, false);
+
+    dots.forEach((dot) => {
+        dot.addEventListener('click', () => apply(dot.getAttribute('data-scheme'), true));
+    });
+
+    window.__sjApplyTheme = (name) => {
+        const match = schemes.find((s) => s === name);
+        if (!match) return null;
+        return apply(match, true);
+    };
+}
+
+/* ----------------------------------------------------------------------
+   Session console: a small command-driven panel, directly inspired by
+   hancore.dev's terminal-as-navigation concept (its editor reads ":e",
+   ":colorscheme" and similar vim-style commands to move around). Here a
+   short vocabulary of commands lets a visitor jump to any section, open
+   quick actions or switch the accent colour without ever leaving the
+   keyboard. It is entirely optional: every destination it reaches is
+   also reachable from the normal nav and footer.
+   ---------------------------------------------------------------------- */
+function initSessionConsole() {
+    const panel = document.getElementById('sessionConsole');
+    const trigger = document.getElementById('consoleTrigger');
+    const backdrop = document.getElementById('consoleBackdrop');
+    const closeBtn = document.getElementById('consoleClose');
+    const log = document.getElementById('consoleLog');
+    const input = document.getElementById('consoleInput');
+    const hints = document.querySelectorAll('.console-hints button');
+    if (!panel || !log || !input) return;
+
+    const SECTION_IDS = ['about', 'results', 'skills', 'services', 'experience', 'credentials', 'contact'];
+
+    function printLine(text, className) {
+        const p = document.createElement('p');
+        p.className = className || 'line-out';
+        p.innerHTML = text;
+        log.appendChild(p);
+        log.scrollTop = log.scrollHeight;
+    }
+
+    function printCommand(text) {
+        printLine(escapeHtml(text), 'line-cmd');
+    }
+
+    function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
+    function printTable(rows) {
+        const table = document.createElement('table');
+        table.className = 'console-table';
+        rows.forEach(([key, value]) => {
+            const tr = document.createElement('tr');
+            const tdKey = document.createElement('td');
+            tdKey.textContent = key;
+            const tdVal = document.createElement('td');
+            tdVal.innerHTML = value;
+            tr.append(tdKey, tdVal);
+            table.appendChild(tr);
+        });
+        log.appendChild(table);
+        log.scrollTop = log.scrollHeight;
+    }
+
+    function greet() {
+        log.innerHTML = '';
+        printLine('<strong>Session console</strong> &mdash; type <strong>help</strong> for a list of commands.', 'line-out');
+    }
+
+    function scrollToSection(id) {
+        const target = document.getElementById(id);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    async function runCommand(raw) {
+        const text = raw.trim();
+        if (!text) return;
+        printCommand(text);
+        const [cmd, ...rest] = text.toLowerCase().split(/\s+/);
+        const arg = rest.join(' ');
+
+        if (cmd === 'help' || cmd === '?') {
+            printTable([
+                ['open &lt;section&gt;', 'Scroll to about, results, skills, services, experience, credentials or contact'],
+                ['whoami', 'A one-line summary'],
+                ['stats', 'Live GitHub numbers for this profile'],
+                ['resume', 'Open the LinkedIn profile (treated as the public resume)'],
+                ['email', 'Open a pre-addressed email'],
+                ['theme &lt;name&gt;', 'default, wine, moss or parchment'],
+                ['clear', 'Clear this console'],
+                ['exit / esc', 'Close the console'],
+            ]);
+            return;
+        }
+        if (cmd === 'whoami') {
+            printLine('Shafiu Jimoh &mdash; Executive Virtual Assistant &amp; Remote Operations Specialist, Abuja, Nigeria. Calendar management, workflow automation, project coordination.', 'line-out');
+            return;
+        }
+        if (cmd === 'clear') {
+            log.innerHTML = '';
+            return;
+        }
+        if (cmd === 'exit' || cmd === 'quit' || cmd === 'q') {
+            closeConsole();
+            return;
+        }
+        if (cmd === 'open' || cmd === 'go' || cmd === 'cd') {
+            const id = SECTION_IDS.find((section) => section === arg || section.startsWith(arg));
+            if (id) {
+                printLine(`Opening <strong>#${id}</strong>&hellip;`, 'line-out');
+                scrollToSection(id);
+                setTimeout(closeConsole, 350);
+            } else {
+                printLine(`No section matches "${escapeHtml(arg)}". Try: ${SECTION_IDS.join(', ')}`, 'line-err');
+            }
+            return;
+        }
+        if (SECTION_IDS.includes(cmd) && !arg) {
+            printLine(`Opening <strong>#${cmd}</strong>&hellip;`, 'line-out');
+            scrollToSection(cmd);
+            setTimeout(closeConsole, 350);
+            return;
+        }
+        if (cmd === 'resume' || cmd === 'linkedin') {
+            printLine('Opening LinkedIn in a new tab&hellip;', 'line-link');
+            window.open('https://www.linkedin.com/in/shafiujimoh', '_blank', 'noopener');
+            return;
+        }
+        if (cmd === 'email' || cmd === 'contact') {
+            printLine('Opening your mail client&hellip;', 'line-out');
+            window.location.href = 'mailto:shafiujimoh2003@gmail.com';
+            return;
+        }
+        if (cmd === 'github') {
+            printLine('Opening GitHub in a new tab&hellip;', 'line-link');
+            window.open('https://github.com/ShafiuJimoh', '_blank', 'noopener');
+            return;
+        }
+        if (cmd === 'theme' || cmd === 'colorscheme' || cmd === 'colo') {
+            const valid = ['default', 'wine', 'moss', 'parchment'];
+            if (!arg) { printLine(`Current theme hints: ${valid.join(', ')}`, 'line-out'); return; }
+            const applied = window.__sjApplyTheme ? window.__sjApplyTheme(arg) : null;
+            if (applied) printLine(`Theme set to <strong>${applied}</strong>.`, 'line-out');
+            else printLine(`Unknown theme "${escapeHtml(arg)}". Try: ${valid.join(', ')}`, 'line-err');
+            return;
+        }
+        if (cmd === 'stats') {
+            printLine('Fetching live GitHub stats&hellip;', 'line-out');
+            try {
+                const res = await fetch('https://api.github.com/users/ShafiuJimoh');
+                if (!res.ok) throw new Error('request failed');
+                const data = await res.json();
+                printTable([
+                    ['public_repos', String(data.public_repos ?? '—')],
+                    ['followers', String(data.followers ?? '—')],
+                    ['following', String(data.following ?? '—')],
+                    ['member since', data.created_at ? new Date(data.created_at).getFullYear() : '—'],
+                ]);
+            } catch (err) {
+                printLine('Could not reach the GitHub API right now. Try again shortly.', 'line-err');
+            }
+            return;
+        }
+        if (cmd === 'time') {
+            printLine(document.getElementById('localTimeText')?.textContent || 'Time unavailable.', 'line-out');
+            return;
+        }
+        printLine(`Unknown command: "${escapeHtml(cmd)}". Type <strong>help</strong> for options.`, 'line-err');
+    }
+
+    function openConsole() {
+        panel.hidden = false;
+        document.body.style.overflow = 'hidden';
+        if (!log.childElementCount) greet();
+        setTimeout(() => input.focus(), 20);
+    }
+
+    function closeConsole() {
+        panel.hidden = true;
+        document.body.style.overflow = '';
+    }
+
+    if (trigger) trigger.addEventListener('click', openConsole);
+    const mobileTrigger = document.getElementById('consoleTriggerMobile');
+    if (mobileTrigger) mobileTrigger.addEventListener('click', () => { closeMobileMenu(); openConsole(); });
+    if (backdrop) backdrop.addEventListener('click', closeConsole);
+    if (closeBtn) closeBtn.addEventListener('click', closeConsole);
+
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const value = input.value;
+            input.value = '';
+            runCommand(value);
+        } else if (e.key === 'Escape') {
+            closeConsole();
+        }
+    });
+
+    hints.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const cmd = btn.getAttribute('data-cmd');
+            if (cmd) runCommand(cmd);
+            input.focus();
+        });
+    });
+
+    document.addEventListener('keydown', (e) => {
+        const tag = (e.target.tagName || '').toLowerCase();
+        const typing = tag === 'input' || tag === 'textarea' || e.target.isContentEditable;
+        if (e.key === '`' && !typing) {
+            e.preventDefault();
+            panel.hidden ? openConsole() : closeConsole();
+        } else if (e.key === 'Escape' && !panel.hidden) {
+            closeConsole();
+        }
+    });
+}
+
+/* ----------------------------------------------------------------------
+   Live status bar: local Abuja time (same Intl conversion as the hero
+   chip), a GitHub-sourced pulse, and a genuine visit counter from a free
+   public counting service (abacus.jasoncameron.dev). Every number here
+   is fetched or computed live; nothing is hardcoded, and each item
+   degrades to a quiet placeholder if its request fails, rather than
+   displaying a fabricated figure.
+   ---------------------------------------------------------------------- */
+function initStatusBar() {
+    const timeEl = document.querySelector('#statusTime span:last-child');
+    const visitsEl = document.querySelector('#statusVisits span:last-child');
+    if (!timeEl && !visitsEl) return;
+
+    function updateTime() {
+        if (!timeEl) return;
+        try {
+            const formatter = new Intl.DateTimeFormat('en-GB', {
+                timeZone: 'Africa/Lagos', hour: '2-digit', minute: '2-digit', hour12: false,
+            });
+            timeEl.textContent = formatter.format(new Date()) + ' WAT';
+        } catch (err) {
+            timeEl.textContent = 'WAT unavailable';
+        }
+    }
+    updateTime();
+    setInterval(updateTime, 30000);
+
+    if (visitsEl) {
+        const NAMESPACE = 'shafiujimoh-va-portfolio';
+        const KEY = 'visits';
+        const SESSION_FLAG = 'sj-portfolio-counted';
+        let alreadyCounted = false;
+        try { alreadyCounted = sessionStorage.getItem(SESSION_FLAG) === '1'; } catch (err) { /* ignore */ }
+
+        const endpoint = alreadyCounted
+            ? `https://abacus.jasoncameron.dev/get/${NAMESPACE}/${KEY}`
+            : `https://abacus.jasoncameron.dev/hit/${NAMESPACE}/${KEY}`;
+
+        fetch(endpoint)
+            .then((res) => {
+                if (!res.ok) throw new Error('counter unavailable');
+                return res.json();
+            })
+            .then((data) => {
+                const value = typeof data.value === 'number' ? data.value : null;
+                if (value === null) throw new Error('no value');
+                visitsEl.textContent = value.toLocaleString('en-US') + ' visits';
+                if (!alreadyCounted) {
+                    try { sessionStorage.setItem(SESSION_FLAG, '1'); } catch (err) { /* ignore */ }
+                }
+            })
+            .catch(() => {
+                visitsEl.textContent = 'counter offline';
+            });
+    }
+}
+
+/* ----------------------------------------------------------------------
+   Lightbox: click-to-enlarge viewer for the hero and about portraits.
+   Modelled on hancore.dev's project-shot viewer: an overlay that opens on
+   click or Enter/Space, closes on Escape, backdrop click, or the close
+   button, and returns focus sensibly.
+   ---------------------------------------------------------------------- */
+function initLightbox() {
+    const lightbox = document.getElementById('hcLightbox');
+    const backdrop = document.getElementById('lightboxBackdrop');
+    const closeBtn = document.getElementById('lightboxClose');
+    const img = document.getElementById('lightboxImg');
+    const caption = document.getElementById('lightboxCaption');
+    const triggers = document.querySelectorAll('.lightbox-trigger');
+    if (!lightbox || !img || !triggers.length) return;
+
+    let lastFocused = null;
+
+    function open(trigger) {
+        const src = trigger.getAttribute('data-lightbox');
+        if (!src) return;
+        lastFocused = document.activeElement;
+        img.src = src;
+        img.alt = trigger.getAttribute('data-caption') || '';
+        caption.textContent = trigger.getAttribute('data-caption') || '';
+        lightbox.hidden = false;
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+    }
+
+    function close() {
+        lightbox.hidden = true;
+        document.body.style.overflow = '';
+        img.src = '';
+        if (lastFocused && lastFocused.focus) lastFocused.focus();
+    }
+
+    triggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => open(trigger));
+        trigger.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                open(trigger);
+            }
+        });
+    });
+
+    if (backdrop) backdrop.addEventListener('click', close);
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !lightbox.hidden) close();
+    });
+}
+
+/* ----------------------------------------------------------------------
+   Quick filters: live-filter inputs above the skills tag cloud / tool
+   stack and the credentials grid, functionally equivalent to hancore.dev's
+   instant search over its project wheel, applied here to skills and
+   certifications. Matching is a simple case-insensitive substring test
+   against each item's visible text, with a live match count.
+   ---------------------------------------------------------------------- */
+function initQuickFilters() {
+    wireFilter('skillsFilter', 'skillsFilterCount', [
+        '.tag-cloud span',
+        '.tool-chip',
+    ]);
+    wireFilter('credFilter', 'credFilterCount', [
+        '.cert-card',
+    ]);
+}
+
+function wireFilter(inputId, countId, selectors) {
+    const input = document.getElementById(inputId);
+    const countEl = document.getElementById(countId);
+    if (!input) return;
+
+    const items = Array.from(document.querySelectorAll(selectors.join(', ')));
+    if (!items.length) return;
+
+    function apply() {
+        const q = input.value.trim().toLowerCase();
+        let visible = 0;
+        items.forEach((item) => {
+            const text = item.textContent.toLowerCase();
+            const match = !q || text.includes(q);
+            item.classList.toggle('is-filtered-hidden', !match);
+            if (match) visible++;
+        });
+        if (countEl) {
+            countEl.textContent = q ? `${visible} of ${items.length}` : '';
+        }
+        // Also reveal skill panels so a match inside a hidden tab is visible.
+        if (q && selectors[0] === '.tag-cloud span') {
+            document.querySelectorAll('.skill-panel').forEach((panel) => {
+                const hasMatch = Array.from(panel.querySelectorAll('span')).some((span) => !span.classList.contains('is-filtered-hidden'));
+                panel.style.display = hasMatch ? 'block' : 'none';
+            });
+        } else if (!q && selectors[0] === '.tag-cloud span') {
+            document.querySelectorAll('.skill-panel').forEach((panel) => { panel.style.display = ''; });
+            const activeTab = document.querySelector('.skill-tab.active');
+            document.querySelectorAll('.skill-panel').forEach((panel) => panel.classList.remove('active'));
+            const targetId = activeTab ? activeTab.getAttribute('data-target') : null;
+            const target = targetId && document.getElementById(targetId);
+            if (target) target.classList.add('active');
+        }
+    }
+
+    input.addEventListener('input', apply);
+}
+
+/* ----------------------------------------------------------------------
+   Live GitHub pulse: a small strip fetched client-side from the public
+   GitHub REST API (no auth, no proxy), showing real repo and follower
+   counts for this exact profile. Echoes hancore.dev's own "fetch user"
+   blocks in spirit without copying their layout, and never substitutes a
+   fabricated number if the request fails.
+   ---------------------------------------------------------------------- */
+function initGithubPulse() {
+    const wrap = document.getElementById('githubPulse');
+    if (!wrap) return;
+    const repos = wrap.querySelector('[data-stat="repos"]');
+    const followers = wrap.querySelector('[data-stat="followers"]');
+    const since = wrap.querySelector('[data-stat="since"]');
+
+    fetch('https://api.github.com/users/ShafiuJimoh')
+        .then((res) => {
+            if (!res.ok) throw new Error('GitHub API unavailable');
+            return res.json();
+        })
+        .then((data) => {
+            if (repos) repos.textContent = data.public_repos ?? '—';
+            if (followers) followers.textContent = data.followers ?? '—';
+            if (since) since.textContent = data.created_at ? new Date(data.created_at).getFullYear() : '—';
+            wrap.classList.remove('is-loading');
+        })
+        .catch(() => {
+            if (repos) repos.textContent = '—';
+            if (followers) followers.textContent = '—';
+            if (since) since.textContent = '—';
+            wrap.classList.remove('is-loading');
+            const label = wrap.querySelector('.github-pulse-label span');
+            if (label) label.textContent = 'GitHub stats are temporarily unavailable.';
+        });
 }
